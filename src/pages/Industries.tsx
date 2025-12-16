@@ -101,10 +101,9 @@ const Industries = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
- 
-
+    <>
       <Header />
+      <div className="min-h-screen bg-black text-white overflow-x-hidden">
       
       {/* Hero Section */}
       <div className="relative pt-20 md:pt-28 lg:pt-32 pb-12 md:pb-16 lg:pb-20 px-4 md:px-6 overflow-hidden">
@@ -256,7 +255,8 @@ const Industries = () => {
       </div>
 
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 
