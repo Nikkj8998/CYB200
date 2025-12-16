@@ -36,7 +36,19 @@ import {
   Briefcase,
   ArrowRight,
   CheckCircle,
-  Star
+  Star,
+  Monitor,
+  Layers,
+  RefreshCw,
+  Gauge,
+  ShieldCheck,
+  Network,
+  Wifi,
+  Cable,
+  HardDrive,
+  Building2,
+  MonitorCheck,
+  Activity
 } from "lucide-react";
 
 // Import generated images
@@ -71,18 +83,23 @@ const ManagedServices = () => {
 
   // Managed IT Infrastructure Services
   const infrastructureServices = [
-    { icon: Server, title: "Server Management", description: "Complete server administration and optimization" },
-    { icon: Shield, title: "Firewall & Network Security", description: "Advanced security protocols and monitoring" },
-    { icon: Cloud, title: "Cloud Infrastructure", description: "Scalable cloud solutions and migration services" },
-    { icon: Database, title: "Data Backup & Recovery", description: "Automated backup systems and disaster recovery" },
-    { icon: Clock, title: "24/7 Monitoring & Helpdesk Support", description: "Round-the-clock system monitoring and technical support" },
-    { icon: TrendingUp, title: "Scalable Solutions", description: "Flexible infrastructure that grows with your business" },
-    { icon: Settings, title: "End-to-End Management", description: "Complete IT lifecycle management and optimization" },
-    { icon: FileText, title: "Monthly Health Check Reports", description: "Comprehensive system performance and security reports" },
-    { icon: Users, title: "Technology Consulting", description: "Strategic IT planning and implementation guidance" },
-    { icon: Wrench, title: "Preventive Maintenance", description: "Proactive system maintenance and optimization" },
-    { icon: Download, title: "Patch Management", description: "Automated security updates and system patches" },
-    { icon: Lock, title: "User Access Control", description: "Secure user management and access permissions" }
+    { icon: Monitor, title: "Windows & Linux Deployment", description: "Expert deployment and configuration of Windows and Linux servers" },
+    { icon: Layers, title: "Virtualization (VMware, Hyper-V)", description: "Virtual infrastructure setup and management using VMware and Hyper-V" },
+    { icon: RefreshCw, title: "Server Migration & Upgrades", description: "Seamless server migrations and system upgrades with minimal downtime" },
+    { icon: Gauge, title: "Performance & Optimization", description: "Server performance tuning and resource optimization" },
+    { icon: ShieldCheck, title: "Security Hardening", description: "Comprehensive security hardening for servers and infrastructure" },
+    { icon: Clock, title: "24/7 Server Maintenance", description: "Round-the-clock server monitoring and maintenance support" },
+    { icon: Network, title: "LAN/WAN Setup & Management", description: "Complete local and wide area network design and management" },
+    { icon: Shield, title: "Firewall Configuration", description: "Advanced firewall setup and security policy implementation" },
+    { icon: Globe, title: "VPN & Remote Connectivity", description: "Secure VPN solutions for remote access and connectivity" },
+    { icon: Cable, title: "Structured Cabling", description: "Professional network cabling infrastructure design and installation" },
+    { icon: Activity, title: "Network Monitoring & Optimization", description: "Continuous network performance monitoring and optimization" },
+    { icon: Wifi, title: "Wireless Deployment", description: "Enterprise wireless network design and deployment" },
+    { icon: Building2, title: "Datacenter Setup", description: "Complete datacenter design, setup, and management" },
+    { icon: MonitorCheck, title: "VDI", description: "Virtual Desktop Infrastructure solutions for flexible workspaces" },
+    { icon: HardDrive, title: "SAN/NAS Storage Solutions", description: "Enterprise storage area network and NAS implementation" },
+    { icon: Server, title: "Network Operations Center (NOC)", description: "24/7 NOC services for infrastructure monitoring and support" },
+    { icon: Settings, title: "Infra Monitoring & Optimization", description: "Comprehensive infrastructure monitoring and performance optimization" }
   ];
 
   // Email Hosting Services
@@ -227,7 +244,7 @@ const ManagedServices = () => {
                 { 
                   id: "infrastructure", 
                   label: "IT Infrastructure", 
-                  count: 12,
+                  count: 17,
                   icon: Server,
                   description: "Complete infrastructure management"
                 },
