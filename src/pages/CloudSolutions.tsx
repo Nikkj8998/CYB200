@@ -501,7 +501,7 @@ const CloudSolutions = () => {
             Get a free cloud readiness assessment and discover how we can
             accelerate your digital transformation.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex justify-center">
             <Link to="/contact">
               <Button
                 size="lg"
@@ -512,19 +512,6 @@ const CloudSolutions = () => {
                 Schedule Free Consultation
               </Button>
             </Link>
-            <a
-              href="https://cybaemtech.com/Managed-IT-Infrastructure-CyberSecurity-and-Cloud-Services.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button
-                size="lg"
-                variant="outline"
-                className="px-8 py-4 text-lg border-2 border-white text-white bg-transparent hover:bg-white/10 focus-visible:ring-white/30 transform motion-safe:hover:scale-105 transition-all duration-300"
-              >
-                Download Cloud Guide
-              </Button>
-            </a>
           </div>
         </div>
       </section>
