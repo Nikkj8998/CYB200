@@ -474,7 +474,7 @@ const Header = () => {
                 <div className="grid gap-3 p-4 w-[280px]">
                   <NavigationMenuLink asChild>
                     <Link
-                      to="/industries"
+                      to="/industries#it-software"
                       className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100"
                     >
                       <div className="text-sm font-medium leading-none">
@@ -484,7 +484,7 @@ const Header = () => {
                   </NavigationMenuLink>
                   <NavigationMenuLink asChild>
                     <Link
-                      to="/industries"
+                      to="/industries#manufacturing"
                       className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100"
                     >
                       <div className="text-sm font-medium leading-none">
@@ -494,7 +494,7 @@ const Header = () => {
                   </NavigationMenuLink>
                   <NavigationMenuLink asChild>
                     <Link
-                      to="/industries"
+                      to="/industries#healthcare"
                       className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100"
                     >
                       <div className="text-sm font-medium leading-none">
@@ -504,7 +504,7 @@ const Header = () => {
                   </NavigationMenuLink>
                   <NavigationMenuLink asChild>
                     <Link
-                      to="/industries"
+                      to="/industries#finance"
                       className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100"
                     >
                       <div className="text-sm font-medium leading-none">
@@ -514,7 +514,7 @@ const Header = () => {
                   </NavigationMenuLink>
                   <NavigationMenuLink asChild>
                     <Link
-                      to="/industries"
+                      to="/industries#education"
                       className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100"
                     >
                       <div className="text-sm font-medium leading-none">
@@ -524,7 +524,7 @@ const Header = () => {
                   </NavigationMenuLink>
                   <NavigationMenuLink asChild>
                     <Link
-                      to="/industries"
+                      to="/industries#ecommerce"
                       className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100"
                     >
                       <div className="text-sm font-medium leading-none">
@@ -534,7 +534,7 @@ const Header = () => {
                   </NavigationMenuLink>
                   <NavigationMenuLink asChild>
                     <Link
-                      to="/industries"
+                      to="/industries#logistics"
                       className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100"
                     >
                       <div className="text-sm font-medium leading-none">
@@ -544,7 +544,7 @@ const Header = () => {
                   </NavigationMenuLink>
                   <NavigationMenuLink asChild>
                     <Link
-                      to="/industries"
+                      to="/industries#smes-corporates"
                       className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100"
                     >
                       <div className="text-sm font-medium leading-none">

@@ -182,14 +182,14 @@ const MobileNavigation = ({
   ];
 
   const industries = [
-    "IT & Software",
-    "Manufacturing",
-    "Healthcare",
-    "Finance",
-    "Education",
-    "Ecommerce",
-    "Logistics",
-    "SMEs & Corporates",
+    { name: "IT & Software", hash: "it-software" },
+    { name: "Manufacturing", hash: "manufacturing" },
+    { name: "Healthcare", hash: "healthcare" },
+    { name: "Finance", hash: "finance" },
+    { name: "Education", hash: "education" },
+    { name: "Ecommerce", hash: "ecommerce" },
+    { name: "Logistics", hash: "logistics" },
+    { name: "SMEs & Corporates", hash: "smes-corporates" },
   ];
 
   const aboutUsLinks = [
@@ -278,11 +278,11 @@ const MobileNavigation = ({
                 {industries.map((industry, index) => (
                   <li key={index} className="list-none">
                     <Link 
-                      to="/industries" 
+                      to={`/industries#${industry.hash}`}
                       onClick={onToggle} 
                       className="block px-7 py-2 text-sm transition-colors touch-target text-gray-300 hover:text-white hover:bg-white/5"
                     >
-                      {industry}
+                      {industry.name}
                     </Link>
                   </li>
                 ))}

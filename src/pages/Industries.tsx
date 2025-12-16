@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import { ArrowLeft, Factory, Heart, DollarSign, ShoppingCart, Cpu, ChevronRight, Zap, TrendingUp, GraduationCap, Truck, Building2 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
@@ -11,8 +12,31 @@ import retailImage from "@/assets/retail-ecommerce.jpg";
 import technologyImage from "@/assets/technology-sector.jpg";
 
 const Industries = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.slice(1));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, [location.hash]);
+
   const industries = [
     {
+      id: "it-software",
+      icon: Cpu,
+      title: "IT & Software Solutions",
+      description: "Support tech companies with cloud migration, DevOps implementation, and software development services that accelerate product development cycles.",
+      color: "from-indigo-500 to-purple-500",
+      image: technologyImage,
+      features: ["Cloud Migration", "DevOps Implementation", "Software Development", "Product Acceleration"]
+    },
+    {
+      id: "manufacturing",
       icon: Factory,
       title: "Manufacturing IT Solutions",
       description: "Optimize production processes, implement ERP systems, and enhance supply chain management with our specialized manufacturing technology solutions.",
@@ -21,6 +45,7 @@ const Industries = () => {
       features: ["ERP Implementation", "Supply Chain Optimization", "Process Automation", "Quality Management"]
     },
     {
+      id: "healthcare",
       icon: Heart,
       title: "Healthcare Technology Services",
       description: "Develop HIPAA-compliant healthcare applications, implement EMR systems, and create telehealth solutions that improve patient care and operational efficiency.",
@@ -29,6 +54,7 @@ const Industries = () => {
       features: ["HIPAA Compliance", "EMR Systems", "Telehealth Solutions", "Patient Care Optimization"]
     },
     {
+      id: "finance",
       icon: DollarSign,
       title: "Financial Services IT",
       description: "Build secure fintech applications, implement compliance solutions, and create trading platforms that meet regulatory requirements and security standards.",
@@ -37,22 +63,7 @@ const Industries = () => {
       features: ["Fintech Applications", "Compliance Solutions", "Trading Platforms", "Security Standards"]
     },
     {
-      icon: ShoppingCart,
-      title: "Retail & E-commerce Solutions",
-      description: "Develop omnichannel retail platforms, implement inventory management systems, and create customer engagement solutions that drive sales growth.",
-      color: "from-purple-500 to-pink-500",
-      image: retailImage,
-      features: ["Omnichannel Platforms", "Inventory Management", "Customer Engagement", "Sales Growth"]
-    },
-    {
-      icon: Cpu,
-      title: "Technology Sector Services",
-      description: "Support tech companies with cloud migration, DevOps implementation, and software development services that accelerate product development cycles.",
-      color: "from-indigo-500 to-purple-500",
-      image: technologyImage,
-      features: ["Cloud Migration", "DevOps Implementation", "Software Development", "Product Acceleration"]
-    },
-    {
+      id: "education",
       icon: GraduationCap,
       title: "Education Technology Solutions",
       description: "Develop innovative e-learning platforms, student management systems, and digital classroom solutions that enhance learning experiences and educational outcomes.",
@@ -61,6 +72,16 @@ const Industries = () => {
       features: ["E-Learning Platforms", "Student Management", "Digital Classrooms", "Learning Analytics"]
     },
     {
+      id: "ecommerce",
+      icon: ShoppingCart,
+      title: "Retail & E-commerce Solutions",
+      description: "Develop omnichannel retail platforms, implement inventory management systems, and create customer engagement solutions that drive sales growth.",
+      color: "from-purple-500 to-pink-500",
+      image: retailImage,
+      features: ["Omnichannel Platforms", "Inventory Management", "Customer Engagement", "Sales Growth"]
+    },
+    {
+      id: "logistics",
       icon: Truck,
       title: "Logistics & Supply Chain",
       description: "Implement fleet management systems, warehouse automation, and real-time tracking solutions that optimize logistics operations and reduce delivery times.",
@@ -69,6 +90,7 @@ const Industries = () => {
       features: ["Fleet Management", "Warehouse Automation", "Real-Time Tracking", "Route Optimization"]
     },
     {
+      id: "smes-corporates",
       icon: Building2,
       title: "SMEs & Corporates Solutions",
       description: "Deliver tailored IT solutions for small, medium enterprises and large corporates including infrastructure setup, digital transformation, and managed IT services.",
@@ -114,7 +136,7 @@ const Industries = () => {
       <div className="px-4 md:px-6 pb-12 md:pb-16 lg:pb-20 overflow-hidden">
         <div className="max-w-7xl mx-auto space-y-12 md:space-y-16 lg:space-y-20">
           {industries.map((industry, index) => (
-            <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center animate-fade-in ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`} style={{ animationDelay: `${index * 200}ms` }}>
+            <div id={industry.id} key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center animate-fade-in scroll-mt-24 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`} style={{ animationDelay: `${index * 200}ms` }}>
               {/* Content Column */}
               <div className={`${index % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
                 <Card className="bg-gray-900/50 border-0 hover:bg-gray-900/70 transition-all duration-300 group h-full">
