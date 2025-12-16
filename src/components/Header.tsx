@@ -67,19 +67,29 @@ const Header = () => {
       icon: Cloud,
       path: "/cloud-solutions",
       services: [],
-      twoColumnServices: {
+      threeColumnServices: {
         column1: {
-          title: "Cloud & Hosting Services",
+          title: "Cloud Services",
+          items: [
+            "Cloud Architecture & Deployment",
+            "Cloud Migration",
+            "Hybrid & Multi-Cloud Solutions",
+            "Managed Cloud Services",
+            "Cloud Security",
+            "Auto-Scaling & High Availability",
+          ]
+        },
+        column2: {
+          title: "Web & Hosting Services",
           items: [
             "Web & Email Hosting",
             "VPS & Dedicated Hosting",
             "Cloud Infrastructure (Azure, AWS, GCP)",
             "Backup & Disaster Recovery",
-            "Cloud Security & Cost Optimization",
             "Domain Registration & SSL",
           ]
         },
-        column2: {
+        column3: {
           title: "Microsoft 365 / Office 365",
           items: [
             "Licensing & Setup",
