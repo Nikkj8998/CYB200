@@ -16,6 +16,12 @@ import {
   TrendingUp,
   Award,
   Clock,
+  Mail,
+  Server,
+  FileCheck,
+  MessageSquare,
+  HardDrive,
+  Settings,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -189,6 +195,104 @@ const CloudSolutions = () => {
       category: "optimization",
       image: cloudMonitoringDashboard,
     },
+    {
+      icon: Mail,
+      title: "Web & Email Hosting",
+      description:
+        "Professional web and email hosting solutions with enterprise-grade reliability and security for your business.",
+      features: [
+        "Business email hosting",
+        "Web hosting solutions",
+        "SSL certificates",
+        "99.9% uptime guarantee",
+      ],
+      category: "hosting",
+      image: cloudArchitecture,
+    },
+    {
+      icon: Server,
+      title: "VPS & Dedicated Hosting",
+      description:
+        "High-performance virtual private servers and dedicated hosting with full root access and customizable resources.",
+      features: [
+        "Full root access",
+        "Scalable resources",
+        "SSD storage",
+        "DDoS protection",
+      ],
+      category: "hosting",
+      image: cloudGlobalScaling,
+    },
+    {
+      icon: Globe,
+      title: "Domain Registration & SSL",
+      description:
+        "Complete domain registration, DNS management, and SSL certificate services for secure online presence.",
+      features: [
+        "Domain registration",
+        "DNS management",
+        "SSL certificates",
+        "Domain privacy",
+      ],
+      category: "hosting",
+      image: cloudSecurityShield,
+    },
+    {
+      icon: FileCheck,
+      title: "Microsoft 365 Licensing & Setup",
+      description:
+        "Complete Microsoft 365 licensing, deployment, and configuration services for seamless business productivity.",
+      features: [
+        "License management",
+        "User provisioning",
+        "Initial configuration",
+        "Policy setup",
+      ],
+      category: "microsoft365",
+      image: cloudMonitoringDashboard,
+    },
+    {
+      icon: HardDrive,
+      title: "SharePoint & OneDrive Setup",
+      description:
+        "Professional SharePoint and OneDrive deployment for secure document management and team collaboration.",
+      features: [
+        "Site architecture",
+        "Permission management",
+        "Document libraries",
+        "Sync configuration",
+      ],
+      category: "microsoft365",
+      image: hybridCloud,
+    },
+    {
+      icon: MessageSquare,
+      title: "Teams Implementation & Training",
+      description:
+        "Microsoft Teams deployment and comprehensive training for effective communication and collaboration.",
+      features: [
+        "Teams deployment",
+        "Channel structure",
+        "User training",
+        "Integration setup",
+      ],
+      category: "microsoft365",
+      image: devopsAutomationPipeline,
+    },
+    {
+      icon: Settings,
+      title: "Ongoing M365 Admin & Support",
+      description:
+        "Continuous Microsoft 365 administration, monitoring, and support for optimal productivity and security.",
+      features: [
+        "User management",
+        "Security monitoring",
+        "Issue resolution",
+        "Regular updates",
+      ],
+      category: "microsoft365",
+      image: cloudBackupRecovery,
+    },
   ];
 
   const categories = [
@@ -206,6 +310,16 @@ const CloudSolutions = () => {
       id: "optimization",
       name: "Cloud Optimization",
       description: "Optimize and automate",
+    },
+    {
+      id: "hosting",
+      name: "Web & Hosting",
+      description: "Hosting and domain services",
+    },
+    {
+      id: "microsoft365",
+      name: "Microsoft 365",
+      description: "M365 solutions and support",
     },
   ];
 
