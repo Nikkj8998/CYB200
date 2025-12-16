@@ -414,7 +414,7 @@ const Header = () => {
                             {activeCategory.twoColumnServices.column1.items.map((service, index) => (
                               <Link
                                 key={index}
-                                to={activeCategory.path}
+                                to={`${activeCategory.path}#${service.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
                                 className="block text-xs text-gray-600 hover:text-primary hover:bg-gray-100 transition-colors py-1.5 px-2 rounded-md"
                               >
                                 {service}
@@ -430,7 +430,7 @@ const Header = () => {
                             {activeCategory.twoColumnServices.column2.items.map((service, index) => (
                               <Link
                                 key={index}
-                                to={activeCategory.path}
+                                to={`${activeCategory.path}#${service.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
                                 className="block text-xs text-gray-600 hover:text-primary hover:bg-gray-100 transition-colors py-1.5 px-2 rounded-md"
                               >
                                 {service}
