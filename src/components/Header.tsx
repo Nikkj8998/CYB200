@@ -92,12 +92,12 @@ const Header = () => {
         column3: {
           title: "Microsoft 365 / Office 365",
           items: [
-            "Licensing & Setup",
+            "Microsoft 365 Licensing & Setup",
             "Email Migration",
             "SharePoint & OneDrive Setup",
             "Teams Implementation & Training",
             "Data Security & Compliance",
-            "Ongoing Admin & Support",
+            "Ongoing M365 Admin & Support",
           ]
         }
       }

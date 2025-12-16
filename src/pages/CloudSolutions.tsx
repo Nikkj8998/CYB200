@@ -265,6 +265,34 @@ const CloudSolutions = () => {
       image: cloudMonitoringDashboard,
     },
     {
+      icon: Mail,
+      title: "Email Migration",
+      description:
+        "Seamless email migration services from legacy systems to Microsoft 365, Google Workspace, or other platforms.",
+      features: [
+        "Zero data loss",
+        "Minimal downtime",
+        "User training",
+        "Post-migration support",
+      ],
+      category: "microsoft365",
+      image: cloudMigration,
+    },
+    {
+      icon: Shield,
+      title: "Data Security & Compliance",
+      description:
+        "Comprehensive data protection and compliance solutions for Microsoft 365 to meet regulatory requirements.",
+      features: [
+        "DLP policies",
+        "Compliance center",
+        "eDiscovery setup",
+        "Audit logging",
+      ],
+      category: "microsoft365",
+      image: cloudSecurityShield,
+    },
+    {
       icon: HardDrive,
       title: "SharePoint & OneDrive Setup",
       description:
