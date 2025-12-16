@@ -322,18 +322,6 @@ const ManagedServices = () => {
                       <CardDescription className="text-gray-300 leading-relaxed">
                         {service.description}
                       </CardDescription>
-                      <button
-                        onClick={() => {
-                          if (service.title === "Firewall & Network Security") {
-                            setIsFirewallModalOpen(true);
-                          } else if (service.title === "Server Management") {
-                            setIsServerModalOpen(true);
-                          }
-                        }}
-                        className="mt-4 flex items-center text-primary text-sm font-medium group-hover:translate-x-2 transition-transform cursor-pointer"
-                      >
-                        Learn more <ArrowRight className="ml-1 h-4 w-4" />
-                      </button>
                     </CardContent>
                   </Card>
                 ))}
@@ -408,9 +396,6 @@ const ManagedServices = () => {
                       <CardDescription className="text-gray-300 leading-relaxed">
                         {service.description}
                       </CardDescription>
-                      <div className="mt-4 flex items-center text-primary text-sm font-medium group-hover:translate-x-2 transition-transform">
-                        Learn more <ArrowRight className="ml-1 h-4 w-4" />
-                      </div>
                     </CardContent>
                   </Card>
                 ))}
