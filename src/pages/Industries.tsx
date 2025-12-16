@@ -1,4 +1,4 @@
-import { ArrowLeft, Factory, Heart, DollarSign, ShoppingCart, Cpu, ChevronRight, Zap, TrendingUp } from "lucide-react";
+import { ArrowLeft, Factory, Heart, DollarSign, ShoppingCart, Cpu, ChevronRight, Zap, TrendingUp, GraduationCap, Truck, Building2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -51,6 +51,30 @@ const Industries = () => {
       color: "from-indigo-500 to-purple-500",
       image: technologyImage,
       features: ["Cloud Migration", "DevOps Implementation", "Software Development", "Product Acceleration"]
+    },
+    {
+      icon: GraduationCap,
+      title: "Education Technology Solutions",
+      description: "Develop innovative e-learning platforms, student management systems, and digital classroom solutions that enhance learning experiences and educational outcomes.",
+      color: "from-teal-500 to-cyan-500",
+      image: technologyImage,
+      features: ["E-Learning Platforms", "Student Management", "Digital Classrooms", "Learning Analytics"]
+    },
+    {
+      icon: Truck,
+      title: "Logistics & Supply Chain",
+      description: "Implement fleet management systems, warehouse automation, and real-time tracking solutions that optimize logistics operations and reduce delivery times.",
+      color: "from-amber-500 to-orange-500",
+      image: manufacturingImage,
+      features: ["Fleet Management", "Warehouse Automation", "Real-Time Tracking", "Route Optimization"]
+    },
+    {
+      icon: Building2,
+      title: "SMEs & Corporates Solutions",
+      description: "Deliver tailored IT solutions for small, medium enterprises and large corporates including infrastructure setup, digital transformation, and managed IT services.",
+      color: "from-slate-500 to-gray-600",
+      image: financialImage,
+      features: ["IT Infrastructure", "Digital Transformation", "Managed Services", "Business Automation"]
     }
   ];
 
