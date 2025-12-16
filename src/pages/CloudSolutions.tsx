@@ -41,15 +41,28 @@ import devopsAutomationPipeline from "@/assets/devops-automation-pipeline.jpg";
 import cloudBackupRecovery from "@/assets/cloud-backup-recovery.jpg";
 import cloudGlobalScaling from "@/assets/cloud-global-scaling.jpg";
 import wordcloudImage from "../../public/uploads/wordcloud.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const CloudSolutions = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [activeService, setActiveService] = useState(0);
+  const location = useLocation();
 
   useEffect(() => {
     setIsLoaded(true);
   }, []);
+
+  useEffect(() => {
+    if (location.hash) {
+      const elementId = location.hash.substring(1);
+      setTimeout(() => {
+        const element = document.getElementById(elementId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 500);
+    }
+  }, [location.hash]);
 
   const [heroRef, heroInView] = useInView({
     threshold: 0.1,
@@ -497,6 +510,7 @@ const CloudSolutions = () => {
             {filteredServices.map((service, index) => (
               <Card
                 key={service.title}
+                id={service.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}
                 className={`group cursor-pointer transform transition-all duration-500 motion-safe:hover:scale-105 hover:shadow-2xl border border-white/10 bg-white/[0.04] hover:bg-white/[0.07] backdrop-blur-md relative overflow-hidden min-h-[420px] ${servicesInView
                     ? "animate-fade-in-up"
                     : "opacity-0 translate-y-20"
