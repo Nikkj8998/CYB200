@@ -55,18 +55,40 @@ import {
 import managedInfrastructure from "@/assets/managed-infrastructure.jpg";
 import emailHosting from "@/assets/email-hosting.jpg";
 import onsiteSupport from "@/assets/onsite-support.jpg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
+const generateId = (title: string) => {
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+};
 
 const ManagedServices = () => {
   const [activeSection, setActiveSection] = useState("infrastructure");
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isFirewallModalOpen, setIsFirewallModalOpen] = useState(false);
   const [isServerModalOpen, setIsServerModalOpen] = useState(false);
+  const location = useLocation();
   
   // Intersection Observer hooks for animations
   const [heroRef, heroInView] = useInView({ threshold: 0.1, triggerOnce: true });
   const [servicesRef, servicesInView] = useInView({ threshold: 0.1, triggerOnce: true });
   const [benefitsRef, benefitsInView] = useInView({ threshold: 0.1, triggerOnce: true });
+  
+  // Handle hash-based scrolling
+  useEffect(() => {
+    if (location.hash) {
+      setActiveSection("infrastructure");
+      setTimeout(() => {
+        const element = document.getElementById(location.hash.slice(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          element.classList.add('ring-2', 'ring-primary', 'ring-offset-2', 'ring-offset-black');
+          setTimeout(() => {
+            element.classList.remove('ring-2', 'ring-primary', 'ring-offset-2', 'ring-offset-black');
+          }, 2000);
+        }
+      }, 300);
+    }
+  }, [location.hash]);
   
   // Scroll progress tracking
   useEffect(() => {
@@ -320,8 +342,9 @@ const ManagedServices = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {infrastructureServices.map((service, index) => (
                   <Card 
-                    key={index} 
-                    className={`bg-gray-900 border-gray-800 card-interactive hover-lift group animate-fade-in animate-delay-${(index % 6 + 1) * 100}`}
+                    key={index}
+                    id={generateId(service.title)}
+                    className={`bg-gray-900 border-gray-800 card-interactive hover-lift group animate-fade-in animate-delay-${(index % 6 + 1) * 100} transition-all duration-300`}
                   >
                     <CardHeader>
                       <div className="flex items-center gap-4">
