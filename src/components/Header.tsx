@@ -108,12 +108,12 @@ const Header = () => {
       icon: Brain,
       path: "/ai-data-analytics",
       services: [
-        "Machine Learning & AI Development",
-        "Business Intelligence & Analytics",
-        "Real-Time Data Processing",
-        "Intelligent Automation",
-        "Data Engineering & Pipelines",
-        "Computer Vision & NLP",
+        { name: "Machine Learning & AI Development", hash: "machine-learning-ai-development" },
+        { name: "Business Intelligence & Analytics", hash: "business-intelligence-analytics" },
+        { name: "Real-Time Data Processing", hash: "real-time-data-processing" },
+        { name: "Intelligent Automation", hash: "intelligent-automation" },
+        { name: "Data Engineering & Pipelines", hash: "data-engineering-pipelines" },
+        { name: "Computer Vision & NLP", hash: "computer-vision-nlp" },
       ]
     },
     {
@@ -441,15 +441,19 @@ const Header = () => {
                       </div>
                     ) : (
                       <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-                        {activeCategory.services.map((service, index) => (
-                          <Link
-                            key={index}
-                            to={activeCategory.path}
-                            className="text-xs text-gray-600 hover:text-primary hover:bg-gray-100 transition-colors py-1.5 px-2 rounded-md"
-                          >
-                            {service}
-                          </Link>
-                        ))}
+                        {activeCategory.services.map((service, index) => {
+                          const serviceName = typeof service === 'string' ? service : service.name;
+                          const serviceHash = typeof service === 'string' ? '' : `#${service.hash}`;
+                          return (
+                            <Link
+                              key={index}
+                              to={`${activeCategory.path}${serviceHash}`}
+                              className="text-xs text-gray-600 hover:text-primary hover:bg-gray-100 transition-colors py-1.5 px-2 rounded-md"
+                            >
+                              {serviceName}
+                            </Link>
+                          );
+                        })}
                       </div>
                     )}
                     <div className="mt-4 pt-3 border-t border-gray-200">

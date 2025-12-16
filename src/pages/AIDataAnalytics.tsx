@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -7,41 +8,59 @@ import aiHeroImage from "@/assets/ai-data-analytics-hero.jpg";
 import mlNetworkImage from "@/assets/machine-learning-network.jpg";
 import dataVisualizationImage from "@/assets/data-visualization-dashboard.jpg";
 import edgeComputingImage from "@/assets/edge-computing-iot.jpg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const AIDataAnalytics = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.slice(1));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, [location.hash]);
   const services = [
     {
+      id: "machine-learning-ai-development",
       icon: Brain,
       title: "Machine Learning & AI Development",
       description: "Custom AI models, neural networks, and intelligent automation solutions",
       features: ["Deep Learning Models", "Natural Language Processing", "Computer Vision", "Predictive Analytics"]
     },
     {
+      id: "business-intelligence-analytics",
       icon: BarChart3,
       title: "Business Intelligence & Analytics",
       description: "Transform raw data into actionable insights with advanced analytics platforms",
       features: ["Interactive Dashboards", "Real-time Reporting", "Data Mining", "Statistical Analysis"]
     },
     {
+      id: "real-time-data-processing",
       icon: Zap,
       title: "Real-Time Data Processing",
       description: "Stream processing and instant analytics for immediate decision making",
       features: ["Stream Analytics", "Real-time Dashboards", "Event Processing", "IoT Data Streams"]
     },
     {
+      id: "intelligent-automation",
       icon: Bot,
       title: "Intelligent Automation",
       description: "RPA with AI capabilities for smart process automation",
       features: ["Process Mining", "Intelligent Bots", "Workflow Automation", "Decision Trees"]
     },
     {
+      id: "data-engineering-pipelines",
       icon: Network,
       title: "Data Engineering & Pipelines",
       description: "Robust data infrastructure for scalable analytics solutions",
       features: ["ETL/ELT Pipelines", "Data Lakes", "Cloud Data Platforms", "Data Governance"]
     },
     {
+      id: "computer-vision-nlp",
       icon: Eye,
       title: "Computer Vision & NLP",
       description: "Advanced AI for image recognition and language understanding",
@@ -211,7 +230,7 @@ const AIDataAnalytics = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="bg-gray-800/50 border-gray-700 backdrop-blur-sm hover-lift card-interactive animate-slide-up" style={{ animationDelay: `${index * 100}ms` }}>
+              <Card id={service.id} key={index} className="bg-gray-800/50 border-gray-700 backdrop-blur-sm hover-lift card-interactive animate-slide-up scroll-mt-24" style={{ animationDelay: `${index * 100}ms` }}>
                 <CardHeader>
                   <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
                     <service.icon className="h-6 w-6 text-primary" />

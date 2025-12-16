@@ -74,12 +74,12 @@ const MobileNavigation = ({
       icon: Brain,
       path: "/ai-data-analytics",
       services: [
-        "Machine Learning & AI Development",
-        "Business Intelligence & Analytics",
-        "Real-Time Data Processing",
-        "Intelligent Automation",
-        "Data Engineering & Pipelines",
-        "Computer Vision & NLP",
+        { name: "Machine Learning & AI Development", hash: "machine-learning-ai-development" },
+        { name: "Business Intelligence & Analytics", hash: "business-intelligence-analytics" },
+        { name: "Real-Time Data Processing", hash: "real-time-data-processing" },
+        { name: "Intelligent Automation", hash: "intelligent-automation" },
+        { name: "Data Engineering & Pipelines", hash: "data-engineering-pipelines" },
+        { name: "Computer Vision & NLP", hash: "computer-vision-nlp" },
       ]
     },
     {
@@ -241,16 +241,20 @@ const MobileNavigation = ({
                       </Button>
                     </CollapsibleTrigger>
                     <CollapsibleContent className="bg-gray-900/80">
-                      {category.services.map((service, index) => (
-                        <Link 
-                          key={index}
-                          to={category.path} 
-                          onClick={onToggle}
-                          className="block px-10 py-2 text-xs text-gray-400 hover:text-primary hover:bg-white/5 transition-colors touch-target"
-                        >
-                          {service}
-                        </Link>
-                      ))}
+                      {category.services.map((service, index) => {
+                        const serviceName = typeof service === 'string' ? service : service.name;
+                        const serviceHash = typeof service === 'string' ? '' : `#${service.hash}`;
+                        return (
+                          <Link 
+                            key={index}
+                            to={`${category.path}${serviceHash}`}
+                            onClick={onToggle}
+                            className="block px-10 py-2 text-xs text-gray-400 hover:text-primary hover:bg-white/5 transition-colors touch-target"
+                          >
+                            {serviceName}
+                          </Link>
+                        );
+                      })}
                       <Link 
                         to={category.path} 
                         onClick={onToggle}
