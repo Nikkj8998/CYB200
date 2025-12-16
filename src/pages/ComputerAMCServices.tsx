@@ -23,8 +23,18 @@ import {
   Building2,
   BadgeCheck,
   RefreshCw,
+  Headphones,
+  Bug,
+  Activity,
+  ShieldCheck,
+  Download,
+  Settings,
+  FileCheck,
+  Phone,
+  Calendar,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import computerAmcHero from "@/assets/computer-amc-hero.png";
 import computerAmcNetwork from "@/assets/computer-amc-network.png";
 import computerAmcOffice from "@/assets/computer-amc-office.png";
@@ -35,7 +45,45 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+const generateId = (title: string) => {
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+};
+
 const ComputerAMCServices = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      setTimeout(() => {
+        const element = document.getElementById(location.hash.slice(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          element.classList.add('ring-2', 'ring-primary', 'ring-offset-2', 'ring-offset-black');
+          setTimeout(() => {
+            element.classList.remove('ring-2', 'ring-primary', 'ring-offset-2', 'ring-offset-black');
+          }, 2000);
+        }
+      }, 300);
+    }
+  }, [location.hash]);
+
+  const amcServices = [
+    { icon: RefreshCw, title: "Preventive & Corrective Maintenance", description: "Regular system maintenance and quick fixes for hardware and software issues" },
+    { icon: Wrench, title: "Hardware & Software Support", description: "Comprehensive support for all your computer hardware and software needs" },
+    { icon: Shield, title: "Security Patches", description: "Timely security updates and patches to protect your systems" },
+    { icon: Phone, title: "Onsite & Remote Support", description: "Flexible support options with both on-location and remote assistance" },
+    { icon: FileCheck, title: "SLA Driven Services", description: "Service level agreement based support with guaranteed response times" },
+    { icon: Calendar, title: "Quarterly Performance Review", description: "Regular performance assessments and system health reports" },
+  ];
+
+  const remoteITServices = [
+    { icon: Headphones, title: "Helpdesk & Ticketing", description: "24/7 helpdesk support with efficient ticket management system" },
+    { icon: Bug, title: "Troubleshooting (Desktop, Laptop, Printers)", description: "Expert troubleshooting for all your office equipment" },
+    { icon: Activity, title: "RMM Monitoring", description: "Remote Monitoring and Management for proactive IT support" },
+    { icon: ShieldCheck, title: "Antivirus & Malware Removal", description: "Protection against viruses, malware, and cyber threats" },
+    { icon: Download, title: "OS/Software Installations", description: "Professional installation of operating systems and software" },
+    { icon: Settings, title: "Remote Tuning & Fixes", description: "Remote optimization and quick fixes for system performance" },
+  ];
   const whyChooseUs = [
     { icon: CheckCircle, title: "Guaranteed onsite & remote IT support" },
     { icon: Clock, title: "SLA-based response for critical issues" },
@@ -258,8 +306,88 @@ const ComputerAMCServices = () => {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
+      {/* Annual Maintenance Contract Services Section */}
       <section className="py-24 bg-gradient-to-b from-black to-gray-900">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="text-white">Annual Maintenance Contract </span>
+              <span className="text-primary">(IT AMC)</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Comprehensive IT maintenance services to keep your systems running at peak performance
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {amcServices.map((service, index) => (
+              <Card
+                key={index}
+                id={generateId(service.title)}
+                className="bg-gray-800/50 border-gray-700 backdrop-blur-sm hover-lift card-interactive animate-slide-up transition-all duration-300"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                      <service.icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <CardTitle className="text-white text-xl">{service.title}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-gray-300 text-base">
+                    {service.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Remote IT Support Services Section */}
+      <section className="py-24 bg-black">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="text-white">Remote IT </span>
+              <span className="text-primary">Support</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Expert remote assistance for all your IT needs, available when you need it
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {remoteITServices.map((service, index) => (
+              <Card
+                key={index}
+                id={generateId(service.title)}
+                className="bg-gray-800/50 border-gray-700 backdrop-blur-sm hover-lift card-interactive animate-slide-up transition-all duration-300"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                      <service.icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <CardTitle className="text-white text-xl">{service.title}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-gray-300 text-base">
+                    {service.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-24 bg-gradient-to-b from-gray-900 to-black">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
