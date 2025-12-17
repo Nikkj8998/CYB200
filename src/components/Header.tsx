@@ -209,38 +209,38 @@ const Header = () => {
       id: "consulting",
       name: "ITSM, Compliance & Consulting",
       icon: Briefcase,
-      path: "/managed-services",
+      path: "/itsm-consulting",
       services: [],
       threeColumnServices: {
         column1: {
           title: "ITSM (IT Service Management)",
           items: [
-            "ITIL Process Implementation",
-            "Incident/Change/Problem Management",
-            "Service Desk Setup",
-            "SLA Reporting",
-            "Asset & Configuration Management",
-            "Knowledge Base Setup",
+            { name: "ITIL Process Implementation", hash: "itil-process-implementation" },
+            { name: "Incident/Change/Problem Management", hash: "incident-change-problem-management" },
+            { name: "Service Desk Setup", hash: "service-desk-setup" },
+            { name: "SLA Reporting", hash: "sla-reporting" },
+            { name: "Asset & Configuration Management", hash: "asset-configuration-management" },
+            { name: "Knowledge Base Setup", hash: "knowledge-base-setup" },
           ]
         },
         column2: {
           title: "IT Consulting & Advisory",
           items: [
-            "IT Strategy & Roadmap",
-            "Technology Gap Analysis",
-            "Digital Transformation",
-            "Cloud Adoption Strategy",
-            "ROI & Cost Optimization",
+            { name: "IT Strategy & Roadmap", hash: "it-strategy-roadmap" },
+            { name: "Technology Gap Analysis", hash: "technology-gap-analysis" },
+            { name: "Digital Transformation", hash: "digital-transformation" },
+            { name: "Cloud Adoption Strategy", hash: "cloud-adoption-strategy" },
+            { name: "ROI & Cost Optimization", hash: "roi-cost-optimization" },
           ]
         },
         column3: {
           title: "IT Compliance & Audits",
           items: [
-            "IT Policy & Governance",
-            "Risk Management Audits",
-            "License & Asset Compliance",
-            "Cybersecurity Assessments",
-            "Regulatory Compliance (PCI-DSS, SOC 2, etc.)",
+            { name: "IT Policy & Governance", hash: "it-policy-governance" },
+            { name: "Risk Management Audits", hash: "risk-management-audits" },
+            { name: "License & Asset Compliance", hash: "license-asset-compliance" },
+            { name: "Cybersecurity Assessments", hash: "cybersecurity-assessments" },
+            { name: "Regulatory Compliance (PCI-DSS, SOC 2, etc.)", hash: "regulatory-compliance" },
           ]
         }
       }
@@ -360,15 +360,21 @@ const Header = () => {
                             {activeCategory.threeColumnServices.column1.title}
                           </h4>
                           <div className="space-y-1">
-                            {activeCategory.threeColumnServices.column1.items.map((service, index) => (
-                              <Link
-                                key={index}
-                                to={`${activeCategory.path}#${service.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
-                                className="block text-xs text-gray-600 hover:text-primary hover:bg-gray-100 transition-colors py-1.5 px-2 rounded-md"
-                              >
-                                {service}
-                              </Link>
-                            ))}
+                            {activeCategory.threeColumnServices.column1.items.map((service, index) => {
+                              const serviceName = typeof service === 'string' ? service : service.name;
+                              const serviceHash = typeof service === 'string' 
+                                ? service.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+                                : service.hash;
+                              return (
+                                <Link
+                                  key={index}
+                                  to={`${activeCategory.path}#${serviceHash}`}
+                                  className="block text-xs text-gray-600 hover:text-primary hover:bg-gray-100 transition-colors py-1.5 px-2 rounded-md"
+                                >
+                                  {serviceName}
+                                </Link>
+                              );
+                            })}
                           </div>
                         </div>
                         <div>
@@ -376,15 +382,21 @@ const Header = () => {
                             {activeCategory.threeColumnServices.column2.title}
                           </h4>
                           <div className="space-y-1">
-                            {activeCategory.threeColumnServices.column2.items.map((service, index) => (
-                              <Link
-                                key={index}
-                                to={`${activeCategory.path}#${service.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
-                                className="block text-xs text-gray-600 hover:text-primary hover:bg-gray-100 transition-colors py-1.5 px-2 rounded-md"
-                              >
-                                {service}
-                              </Link>
-                            ))}
+                            {activeCategory.threeColumnServices.column2.items.map((service, index) => {
+                              const serviceName = typeof service === 'string' ? service : service.name;
+                              const serviceHash = typeof service === 'string' 
+                                ? service.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+                                : service.hash;
+                              return (
+                                <Link
+                                  key={index}
+                                  to={`${activeCategory.path}#${serviceHash}`}
+                                  className="block text-xs text-gray-600 hover:text-primary hover:bg-gray-100 transition-colors py-1.5 px-2 rounded-md"
+                                >
+                                  {serviceName}
+                                </Link>
+                              );
+                            })}
                           </div>
                         </div>
                         <div>
@@ -392,15 +404,21 @@ const Header = () => {
                             {activeCategory.threeColumnServices.column3.title}
                           </h4>
                           <div className="space-y-1">
-                            {activeCategory.threeColumnServices.column3.items.map((service, index) => (
-                              <Link
-                                key={index}
-                                to={`${activeCategory.path}#${service.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
-                                className="block text-xs text-gray-600 hover:text-primary hover:bg-gray-100 transition-colors py-1.5 px-2 rounded-md"
-                              >
-                                {service}
-                              </Link>
-                            ))}
+                            {activeCategory.threeColumnServices.column3.items.map((service, index) => {
+                              const serviceName = typeof service === 'string' ? service : service.name;
+                              const serviceHash = typeof service === 'string' 
+                                ? service.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+                                : service.hash;
+                              return (
+                                <Link
+                                  key={index}
+                                  to={`${activeCategory.path}#${serviceHash}`}
+                                  className="block text-xs text-gray-600 hover:text-primary hover:bg-gray-100 transition-colors py-1.5 px-2 rounded-md"
+                                >
+                                  {serviceName}
+                                </Link>
+                              );
+                            })}
                           </div>
                         </div>
                       </div>

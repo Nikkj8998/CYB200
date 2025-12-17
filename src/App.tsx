@@ -20,6 +20,7 @@ import AIDataAnalytics from "./pages/AIDataAnalytics";
 import ComputerAMCServices from "./pages/ComputerAMCServices";
 import Contact from "./pages/Contact";
 import ITAugmentation from "./pages/ITAugmentation";
+import ITSMConsulting from "./pages/ITSMConsulting";
 import OnsiteITEngineer from "./pages/OnsiteITEngineer";
 import ScrollToTop from "@/components/ScrollToTop";
 import BlogPost from "./components/BlogPost";
@@ -76,6 +77,7 @@ const App = () => (
               <Route path="/computer-amc-services" element={<ComputerAMCServices />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/it-augmentation" element={<ITAugmentation />} />
+              <Route path="/itsm-consulting" element={<ITSMConsulting />} />
               <Route path="/onsite-it-engineer" element={<OnsiteITEngineer />} />
               <Route path="/blog/:type/:slug" element={<BlogPost />} />
               <Route path="/blog/:id" element={<BlogPost />} />
