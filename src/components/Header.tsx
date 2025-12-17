@@ -267,12 +267,12 @@ const Header = () => {
       icon: UsersRound,
       path: "/it-augmentation",
       services: [
-        "Dedicated Onsite IT Engineers",
-        "Remote IT Specialists",
-        "Project-Based Staffing",
-        "Helpdesk Outsourcing",
-        "Network & System Admins",
-        "Contract / Long-Term Hiring",
+        { name: "Dedicated Onsite IT Engineers", hash: "dedicated-onsite-it-engineers" },
+        { name: "Remote IT Specialists", hash: "remote-it-specialists" },
+        { name: "Project-Based Staffing", hash: "project-based-staffing" },
+        { name: "Helpdesk Outsourcing", hash: "helpdesk-outsourcing" },
+        { name: "Network & System Admins", hash: "network-system-admins" },
+        { name: "Contract / Long-Term Hiring", hash: "contract-long-term-hiring" },
       ]
     },
   ];

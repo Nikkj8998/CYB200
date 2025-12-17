@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import { ArrowRight, BugPlay, CalendarCheck, CloudCog, Code2, Globe, GlobeIcon, LayoutDashboard, Mail, MonitorSmartphone, QuoteIcon, ShieldCheck, Timer, UserCheck, Users2, Workflow } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
+import { ArrowRight, BugPlay, CalendarCheck, CloudCog, Code2, Globe, GlobeIcon, LayoutDashboard, Mail, MonitorSmartphone, QuoteIcon, ShieldCheck, Timer, UserCheck, Users2, Workflow, Building, Laptop, Headphones, Network, FileText } from 'lucide-react';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { CreditCard, Heart, ShoppingCart, Truck, Monitor, Settings } from 'lucide-react';
@@ -7,6 +8,19 @@ import { FaCode, FaCloud, FaHeadset, FaShieldAlt, FaCheckCircle, FaUser } from '
 
 function ITAugmentation({ onBack }: { onBack?: () => void }) {
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, [location.hash]);
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(
@@ -61,6 +75,120 @@ function ITAugmentation({ onBack }: { onBack?: () => void }) {
           >
             Get in Touch <ArrowRight className="ml-2 h-5 w-5" />
           </button>
+        </div>
+      </section>
+
+      {/* IT Staff Augmentation Services */}
+      <section className="py-24 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center text-white mb-6">Our IT Staff Augmentation Services</h2>
+          <p className="text-lg text-center text-gray-300 mb-16 max-w-3xl mx-auto">
+            Choose from our comprehensive range of staffing solutions designed to meet your unique business needs.
+          </p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Dedicated Onsite IT Engineers */}
+            <div id="dedicated-onsite-it-engineers" className="scroll-mt-24 bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-blue-500 transition-all duration-300">
+              <div className="flex items-center justify-center w-16 h-16 mb-6 mx-auto rounded-full bg-blue-900/50">
+                <Building className="text-blue-400 w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-semibold text-center text-white mb-4">Dedicated Onsite IT Engineers</h3>
+              <p className="text-gray-300 text-center mb-4">
+                Get experienced IT professionals working directly at your office, fully integrated with your team culture and workflows.
+              </p>
+              <ul className="text-sm text-gray-400 space-y-2 list-disc list-inside">
+                <li>Full-time onsite presence</li>
+                <li>Seamless team integration</li>
+                <li>Direct communication & collaboration</li>
+                <li>Immediate issue resolution</li>
+              </ul>
+            </div>
+
+            {/* Remote IT Specialists */}
+            <div id="remote-it-specialists" className="scroll-mt-24 bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-green-500 transition-all duration-300">
+              <div className="flex items-center justify-center w-16 h-16 mb-6 mx-auto rounded-full bg-green-900/50">
+                <Laptop className="text-green-400 w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-semibold text-center text-white mb-4">Remote IT Specialists</h3>
+              <p className="text-gray-300 text-center mb-4">
+                Access top-tier IT talent from anywhere in the world, working remotely but fully committed to your projects.
+              </p>
+              <ul className="text-sm text-gray-400 space-y-2 list-disc list-inside">
+                <li>Global talent pool access</li>
+                <li>Cost-effective solutions</li>
+                <li>Flexible working hours</li>
+                <li>Scalable team size</li>
+              </ul>
+            </div>
+
+            {/* Project-Based Staffing */}
+            <div id="project-based-staffing" className="scroll-mt-24 bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-orange-500 transition-all duration-300">
+              <div className="flex items-center justify-center w-16 h-16 mb-6 mx-auto rounded-full bg-orange-900/50">
+                <LayoutDashboard className="text-orange-400 w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-semibold text-center text-white mb-4">Project-Based Staffing</h3>
+              <p className="text-gray-300 text-center mb-4">
+                Hire skilled professionals for specific projects with defined scope, timeline, and deliverables.
+              </p>
+              <ul className="text-sm text-gray-400 space-y-2 list-disc list-inside">
+                <li>Clear project milestones</li>
+                <li>Fixed budget control</li>
+                <li>Specialized expertise</li>
+                <li>End-to-end delivery</li>
+              </ul>
+            </div>
+
+            {/* Helpdesk Outsourcing */}
+            <div id="helpdesk-outsourcing" className="scroll-mt-24 bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-yellow-500 transition-all duration-300">
+              <div className="flex items-center justify-center w-16 h-16 mb-6 mx-auto rounded-full bg-yellow-900/50">
+                <Headphones className="text-yellow-400 w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-semibold text-center text-white mb-4">Helpdesk Outsourcing</h3>
+              <p className="text-gray-300 text-center mb-4">
+                24/7 IT support desk services to handle user queries, technical issues, and maintain service levels.
+              </p>
+              <ul className="text-sm text-gray-400 space-y-2 list-disc list-inside">
+                <li>L1/L2/L3 support tiers</li>
+                <li>Ticketing & SLA management</li>
+                <li>Multi-channel support</li>
+                <li>Knowledge base maintenance</li>
+              </ul>
+            </div>
+
+            {/* Network & System Admins */}
+            <div id="network-system-admins" className="scroll-mt-24 bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-purple-500 transition-all duration-300">
+              <div className="flex items-center justify-center w-16 h-16 mb-6 mx-auto rounded-full bg-purple-900/50">
+                <Network className="text-purple-400 w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-semibold text-center text-white mb-4">Network & System Admins</h3>
+              <p className="text-gray-300 text-center mb-4">
+                Expert administrators to manage, monitor, and optimize your network infrastructure and systems.
+              </p>
+              <ul className="text-sm text-gray-400 space-y-2 list-disc list-inside">
+                <li>Server & network management</li>
+                <li>Security & patch updates</li>
+                <li>Performance monitoring</li>
+                <li>Disaster recovery planning</li>
+              </ul>
+            </div>
+
+            {/* Contract / Long-Term Hiring */}
+            <div id="contract-long-term-hiring" className="scroll-mt-24 bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-red-500 transition-all duration-300">
+              <div className="flex items-center justify-center w-16 h-16 mb-6 mx-auto rounded-full bg-red-900/50">
+                <FileText className="text-red-400 w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-semibold text-center text-white mb-4">Contract / Long-Term Hiring</h3>
+              <p className="text-gray-300 text-center mb-4">
+                Flexible contract arrangements for extended engagements, from 6 months to multi-year commitments.
+              </p>
+              <ul className="text-sm text-gray-400 space-y-2 list-disc list-inside">
+                <li>Long-term stability</li>
+                <li>Contract-to-hire options</li>
+                <li>Competitive rates</li>
+                <li>Easy contract renewals</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 

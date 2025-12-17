@@ -171,12 +171,12 @@ const MobileNavigation = ({
       icon: UsersRound,
       path: "/it-augmentation",
       services: [
-        { name: "Dedicated Onsite IT Engineers", hash: "" },
-        { name: "Remote IT Specialists", hash: "" },
-        { name: "Project-Based Staffing", hash: "" },
-        { name: "Helpdesk Outsourcing", hash: "" },
-        { name: "Network & System Admins", hash: "" },
-        { name: "Contract / Long-Term Hiring", hash: "" },
+        { name: "Dedicated Onsite IT Engineers", hash: "dedicated-onsite-it-engineers" },
+        { name: "Remote IT Specialists", hash: "remote-it-specialists" },
+        { name: "Project-Based Staffing", hash: "project-based-staffing" },
+        { name: "Helpdesk Outsourcing", hash: "helpdesk-outsourcing" },
+        { name: "Network & System Admins", hash: "network-system-admins" },
+        { name: "Contract / Long-Term Hiring", hash: "contract-long-term-hiring" },
       ]
     },
   ];
