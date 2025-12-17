@@ -4,13 +4,13 @@ import Footer from "@/components/Footer";
 import digitalTransformationHero from "@/assets/digital-transformation-hero.jpg";
 import digitalMarketingServices from "@/assets/digital-marketing-services.jpg";
 import techTeamCollaboration from "@/assets/tech-team-collaboration.jpg";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Search, Share2, MousePointerClick, FileText, Mail, Award, BarChart3, ArrowRight, Smartphone, Target, Layout, Video, Users, Zap, TrendingUp, Rocket, Settings, ChevronDown } from "lucide-react";
 import { FaQuoteLeft, FaStar, FaChartLine, FaEye, FaUsers, FaCog, FaHeadphones, FaTrophy } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { MagazineCards } from "@/components/MagazineCards";
-import { DigitalMarketingBook } from "@/components/DigitalMarketingBook";
+import { DigitalMarketingBook, serviceToPageMap, DigitalMarketingBookRef } from "@/components/DigitalMarketingBook";
 import {
   Accordion,
   AccordionContent,
@@ -369,6 +369,24 @@ const ProcessSection = () => {
 
 const DigitalMarketing = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const bookSectionRef = useRef<HTMLDivElement>(null);
+  const bookRef = useRef<DigitalMarketingBookRef>(null);
+  const [initialBookPage, setInitialBookPage] = useState<number | undefined>(undefined);
+
+  useEffect(() => {
+    const hash = location.hash.replace('#', '');
+    if (hash && serviceToPageMap[hash] !== undefined) {
+      const pageIndex = serviceToPageMap[hash];
+      setInitialBookPage(pageIndex);
+      
+      setTimeout(() => {
+        if (bookSectionRef.current) {
+          bookSectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 500);
+    }
+  }, [location.hash]);
   
   return (
     <div className="min-h-screen bg-black">
@@ -548,7 +566,11 @@ const DigitalMarketing = () => {
       </section>
 
       {/* Our Digital Marketing Services Section - Book Flip */}
-      <section className="relative py-20 bg-black overflow-hidden min-h-screen flex flex-col justify-center">
+      <section 
+        ref={bookSectionRef}
+        id="services-book"
+        className="relative py-20 bg-black overflow-hidden min-h-screen flex flex-col justify-center"
+      >
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16 animate-fade-in">
@@ -560,11 +582,11 @@ const DigitalMarketing = () => {
               Comprehensive solutions to elevate your online presence and drive measurable results
             </p>
             <p className="text-sm text-gray-400 italic">
-              📖 Flip through our service catalog
+              Flip through our service catalog
             </p>
           </div>
 
-          <DigitalMarketingBook />
+          <DigitalMarketingBook ref={bookRef} initialPage={initialBookPage} />
         </div>
       </section>
 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useImperativeHandle, forwardRef } from "react";
 
 // BookPage Component - Updated Title Section
 const BookPage = ({
@@ -140,8 +140,30 @@ const BookPage = ({
   );
 };
 
+export const serviceToPageMap: { [key: string]: number } = {
+  "seo": 1,
+  "search-engine-optimization-seo": 1,
+  "ppc": 2,
+  "pay-per-click-ppc-google-ads": 2,
+  "social-media": 3,
+  "social-media-marketing-management": 3,
+  "content-marketing": 4,
+  "content-marketing-copywriting": 4,
+  "email-marketing": 5,
+  "email-marketing-campaigns": 5,
+  "analytics": 6,
+  "website-analytics-reporting": 6,
+  "influencer-marketing": 7,
+  "branding-online-reputation": 3,
+  "video-production-reels": 4,
+};
+
+export interface DigitalMarketingBookRef {
+  goToPage: (pageIndex: number) => void;
+}
+
 // BookFlip Component
-export const DigitalMarketingBook = () => {
+export const DigitalMarketingBook = forwardRef<DigitalMarketingBookRef, { initialPage?: number }>(({ initialPage }, ref) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -254,17 +276,54 @@ export const DigitalMarketingBook = () => {
     },
   ];
 
-  const [currentSpread, setCurrentSpread] = useState(0);
+  const getSpreadFromPage = (pageIndex: number) => {
+    if (isMobile) return pageIndex;
+    return Math.floor(pageIndex / 2);
+  };
+
+  const [currentSpread, setCurrentSpread] = useState(() => {
+    if (initialPage !== undefined && initialPage >= 0 && initialPage < 8) {
+      return isMobile ? initialPage : Math.floor(initialPage / 2);
+    }
+    return 0;
+  });
   const [isFlipping, setIsFlipping] = useState(false);
+  const [autoFlip, setAutoFlip] = useState(initialPage === undefined);
   const totalSpreads = Math.ceil(pages.length / 2);
 
+  useImperativeHandle(ref, () => ({
+    goToPage: (pageIndex: number) => {
+      if (pageIndex >= 0 && pageIndex < pages.length) {
+        setAutoFlip(false);
+        const targetSpread = getSpreadFromPage(pageIndex);
+        if (targetSpread !== currentSpread) {
+          setIsFlipping(true);
+          setTimeout(() => {
+            setCurrentSpread(targetSpread);
+            setIsFlipping(false);
+          }, 100);
+        }
+      }
+    }
+  }));
+
   useEffect(() => {
+    if (initialPage !== undefined && initialPage >= 0 && initialPage < pages.length) {
+      const targetSpread = isMobile ? initialPage : Math.floor(initialPage / 2);
+      setCurrentSpread(targetSpread);
+      setAutoFlip(false);
+    }
+  }, [initialPage, isMobile, pages.length]);
+
+  useEffect(() => {
+    if (!autoFlip) return;
+    
     const interval = setInterval(() => {
       nextSpread();
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [currentSpread, isMobile]);
+  }, [currentSpread, isMobile, autoFlip]);
 
   const nextSpread = () => {
     if (isFlipping) return;
@@ -639,4 +698,4 @@ export const DigitalMarketingBook = () => {
       </div>
     </div>
   );
-};
+});
