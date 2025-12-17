@@ -251,14 +251,14 @@ const Header = () => {
       icon: Code,
       path: "/enterprise-solutions",
       services: [
-        "Website Development",
-        "Web Applications",
-        "Mobile App Development",
-        "ERP Development",
-        "CRM Development",
-        "UI/UX Design",
-        "API Integrations",
-        "Website Maintenance",
+        { name: "Website Development", hash: "website-development" },
+        { name: "Web Applications", hash: "web-applications" },
+        { name: "Mobile App Development", hash: "mobile-app-development" },
+        { name: "ERP Development", hash: "erp-development" },
+        { name: "CRM Development", hash: "crm-development" },
+        { name: "UI/UX Design", hash: "ui-ux-design" },
+        { name: "API Integrations", hash: "api-integrations" },
+        { name: "Website Maintenance", hash: "website-maintenance" },
       ]
     },
     {

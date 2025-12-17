@@ -1,14 +1,30 @@
+import { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Check, Star } from "lucide-react";
+import { Check, Star, Globe, Smartphone, Code2, Palette, Settings, Wrench, Link as LinkIcon, LayoutDashboard } from "lucide-react";
 import enterpriseSolutionsHero from "@/assets/enterprise-solutions-hero.jpg";
 import customSoftwareDev from "@/assets/custom-software-dev.jpg";
 import aiAutomationProcess from "@/assets/ai-automation-process.jpg";
 import { Link } from "react-router-dom";
 
 const EnterpriseSolutions = () => {
+  const location = useLocation();
+  const servicesRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const hash = location.hash.replace('#', '');
+    if (hash) {
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 300);
+    }
+  }, [location.hash]);
   return (
     <div className="min-h-screen bg-black overflow-x-hidden">
 
@@ -71,6 +87,308 @@ const EnterpriseSolutions = () => {
                   className="w-full h-auto rounded-xl md:rounded-2xl shadow-2xl hover-lift"
                 />
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Individual Software Development Services */}
+      <section ref={servicesRef} className="py-12 md:py-16 px-4 md:px-6 animate-fade-in overflow-hidden bg-gradient-to-b from-black to-gray-900">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 md:mb-6 text-white px-4">
+            Software Development & Web Design Services
+          </h2>
+          <p className="text-base md:text-lg lg:text-xl text-center mb-8 md:mb-12 max-w-4xl mx-auto text-white/80 px-4">
+            Comprehensive development solutions tailored to your business needs
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            {/* Website Development */}
+            <div id="website-development" className="scroll-mt-24">
+              <Card className="bg-card/10 backdrop-blur-sm border-white/20 hover-lift h-full">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Globe className="h-8 w-8 text-primary" />
+                    <h3 className="text-xl md:text-2xl font-bold text-white">Website Development</h3>
+                  </div>
+                  <p className="text-white/80 mb-4">
+                    Professional website development services that create stunning, responsive, and SEO-optimized websites that drive business growth and enhance your online presence.
+                  </p>
+                  <ul className="space-y-2 mb-4">
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">Custom website design & development</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">E-commerce website solutions</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">WordPress & CMS development</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">Landing pages & microsites</span>
+                    </li>
+                  </ul>
+                  <a href="https://wa.me/919028541383?text=Hi%20CybaemTech%2C%20I%20am%20interested%20in%20Website%20Development%20services" target="_blank" rel="noopener noreferrer">
+                    <Button className="w-full bg-accent hover:bg-accent/90">Get Quote</Button>
+                  </a>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Web Applications */}
+            <div id="web-applications" className="scroll-mt-24">
+              <Card className="bg-card/10 backdrop-blur-sm border-white/20 hover-lift h-full">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <LayoutDashboard className="h-8 w-8 text-primary" />
+                    <h3 className="text-xl md:text-2xl font-bold text-white">Web Applications</h3>
+                  </div>
+                  <p className="text-white/80 mb-4">
+                    Scalable and secure web applications built with modern technologies like React, Angular, Vue.js, and Node.js to automate your business processes.
+                  </p>
+                  <ul className="space-y-2 mb-4">
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">Single Page Applications (SPA)</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">Progressive Web Apps (PWA)</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">Custom dashboards & portals</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">Real-time web applications</span>
+                    </li>
+                  </ul>
+                  <a href="https://wa.me/919028541383?text=Hi%20CybaemTech%2C%20I%20am%20interested%20in%20Web%20Applications%20development" target="_blank" rel="noopener noreferrer">
+                    <Button className="w-full bg-accent hover:bg-accent/90">Get Quote</Button>
+                  </a>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Mobile App Development */}
+            <div id="mobile-app-development" className="scroll-mt-24">
+              <Card className="bg-card/10 backdrop-blur-sm border-white/20 hover-lift h-full">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Smartphone className="h-8 w-8 text-primary" />
+                    <h3 className="text-xl md:text-2xl font-bold text-white">Mobile App Development</h3>
+                  </div>
+                  <p className="text-white/80 mb-4">
+                    Native and cross-platform mobile applications for iOS and Android that deliver exceptional user experiences and business functionality.
+                  </p>
+                  <ul className="space-y-2 mb-4">
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">React Native & Flutter apps</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">Native iOS & Android development</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">App store submission & optimization</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">Enterprise mobile solutions</span>
+                    </li>
+                  </ul>
+                  <a href="https://wa.me/919028541383?text=Hi%20CybaemTech%2C%20I%20am%20interested%20in%20Mobile%20App%20Development" target="_blank" rel="noopener noreferrer">
+                    <Button className="w-full bg-accent hover:bg-accent/90">Get Quote</Button>
+                  </a>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* ERP Development */}
+            <div id="erp-development" className="scroll-mt-24">
+              <Card className="bg-card/10 backdrop-blur-sm border-white/20 hover-lift h-full">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Settings className="h-8 w-8 text-primary" />
+                    <h3 className="text-xl md:text-2xl font-bold text-white">ERP Development</h3>
+                  </div>
+                  <p className="text-white/80 mb-4">
+                    Custom ERP solutions that streamline your business operations, from inventory management to financial reporting and resource planning.
+                  </p>
+                  <ul className="space-y-2 mb-4">
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">Custom ERP development</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">Inventory & supply chain management</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">Financial & accounting modules</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">HR & payroll systems</span>
+                    </li>
+                  </ul>
+                  <a href="https://wa.me/919028541383?text=Hi%20CybaemTech%2C%20I%20am%20interested%20in%20ERP%20Development" target="_blank" rel="noopener noreferrer">
+                    <Button className="w-full bg-accent hover:bg-accent/90">Get Quote</Button>
+                  </a>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* CRM Development */}
+            <div id="crm-development" className="scroll-mt-24">
+              <Card className="bg-card/10 backdrop-blur-sm border-white/20 hover-lift h-full">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Code2 className="h-8 w-8 text-primary" />
+                    <h3 className="text-xl md:text-2xl font-bold text-white">CRM Development</h3>
+                  </div>
+                  <p className="text-white/80 mb-4">
+                    Custom CRM solutions to manage customer relationships, sales pipelines, and marketing campaigns effectively.
+                  </p>
+                  <ul className="space-y-2 mb-4">
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">Sales & lead management</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">Customer service & support portals</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">Marketing automation integration</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">Analytics & reporting dashboards</span>
+                    </li>
+                  </ul>
+                  <a href="https://wa.me/919028541383?text=Hi%20CybaemTech%2C%20I%20am%20interested%20in%20CRM%20Development" target="_blank" rel="noopener noreferrer">
+                    <Button className="w-full bg-accent hover:bg-accent/90">Get Quote</Button>
+                  </a>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* UI/UX Design */}
+            <div id="ui-ux-design" className="scroll-mt-24">
+              <Card className="bg-card/10 backdrop-blur-sm border-white/20 hover-lift h-full">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Palette className="h-8 w-8 text-primary" />
+                    <h3 className="text-xl md:text-2xl font-bold text-white">UI/UX Design</h3>
+                  </div>
+                  <p className="text-white/80 mb-4">
+                    User-centered design services that create intuitive, visually appealing interfaces that enhance user engagement and conversion rates.
+                  </p>
+                  <ul className="space-y-2 mb-4">
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">User research & persona development</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">Wireframing & prototyping</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">Visual design & branding</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">Usability testing & optimization</span>
+                    </li>
+                  </ul>
+                  <a href="https://wa.me/919028541383?text=Hi%20CybaemTech%2C%20I%20am%20interested%20in%20UI%2FUX%20Design%20services" target="_blank" rel="noopener noreferrer">
+                    <Button className="w-full bg-accent hover:bg-accent/90">Get Quote</Button>
+                  </a>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* API Integrations */}
+            <div id="api-integrations" className="scroll-mt-24">
+              <Card className="bg-card/10 backdrop-blur-sm border-white/20 hover-lift h-full">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <LinkIcon className="h-8 w-8 text-primary" />
+                    <h3 className="text-xl md:text-2xl font-bold text-white">API Integrations</h3>
+                  </div>
+                  <p className="text-white/80 mb-4">
+                    Seamless API integration services to connect your applications with third-party services, payment gateways, and enterprise systems.
+                  </p>
+                  <ul className="space-y-2 mb-4">
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">RESTful & GraphQL API development</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">Payment gateway integrations</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">Third-party service connections</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">Legacy system integration</span>
+                    </li>
+                  </ul>
+                  <a href="https://wa.me/919028541383?text=Hi%20CybaemTech%2C%20I%20am%20interested%20in%20API%20Integration%20services" target="_blank" rel="noopener noreferrer">
+                    <Button className="w-full bg-accent hover:bg-accent/90">Get Quote</Button>
+                  </a>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Website Maintenance */}
+            <div id="website-maintenance" className="scroll-mt-24">
+              <Card className="bg-card/10 backdrop-blur-sm border-white/20 hover-lift h-full">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Wrench className="h-8 w-8 text-primary" />
+                    <h3 className="text-xl md:text-2xl font-bold text-white">Website Maintenance</h3>
+                  </div>
+                  <p className="text-white/80 mb-4">
+                    Comprehensive website maintenance and support services to keep your digital assets secure, updated, and performing optimally.
+                  </p>
+                  <ul className="space-y-2 mb-4">
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">Regular updates & security patches</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">Performance monitoring & optimization</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">Content updates & management</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-white/70">24/7 technical support</span>
+                    </li>
+                  </ul>
+                  <a href="https://wa.me/919028541383?text=Hi%20CybaemTech%2C%20I%20am%20interested%20in%20Website%20Maintenance%20services" target="_blank" rel="noopener noreferrer">
+                    <Button className="w-full bg-accent hover:bg-accent/90">Get Quote</Button>
+                  </a>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
