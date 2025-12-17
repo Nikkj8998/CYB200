@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { Shield, Lock, Eye, Wifi, Database, Key, Search, AlertTriangle, Zap } from "lucide-react";
+import { Shield, Lock, Eye, Wifi, Database, Key, Search, AlertTriangle, Zap, Mail, HardDrive, FileCheck, GraduationCap } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Link, useLocation } from "react-router-dom";
 
 // Import HQ images
 import firewallImage from "@/assets/cybersecurity-firewall.jpg";
@@ -14,10 +15,23 @@ import iamImage from "@/assets/cybersecurity-iam.jpg";
 import vaptImage from "@/assets/cybersecurity-vapt.jpg";
 import siemImage from "@/assets/cybersecurity-siem.jpg";
 import incidentImage from "@/assets/cybersecurity-incident.jpg";
-import { Link } from "react-router-dom";
 
 const CybersecurityServices = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const location = useLocation();
+
+  // Scroll to hash on navigation
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, [location.hash]);
 
   // Scroll progress tracking
   useEffect(() => {
@@ -96,35 +110,19 @@ const CybersecurityServices = () => {
 
   const services = [
     {
-      icon: Shield,
-      title: "Advanced Firewall Protection",
-      description: "Next-generation firewall solutions with deep packet inspection, application control, and AI-powered threat detection.",
-      details: "Deploy enterprise-grade firewalls with advanced threat intelligence, real-time monitoring, and automated response capabilities.",
-      image: firewallImage,
-      category: "Perimeter Defense",
-      color: "from-cyan-500 to-blue-600"
+      id: "vapt",
+      icon: Search,
+      title: "VAPT (Vulnerability Assessment & Penetration Testing)",
+      description: "Comprehensive security assessments with ethical hacking and vulnerability management programs.",
+      details: "Regular penetration testing, vulnerability scanning, and detailed security posture reports.",
+      image: vaptImage,
+      category: "Assessment & Testing",
+      color: "from-orange-500 to-red-600"
     },
     {
-      icon: Eye,
-      title: "Threat Detection & Response",
-      description: "24/7 monitoring with machine learning algorithms to detect, analyze, and respond to sophisticated cyber threats.",
-      details: "Continuous threat hunting, behavioral analysis, and rapid incident response to minimize security breaches.",
-      image: threatDetectionImage,
-      category: "Perimeter Defense",
-      color: "from-green-500 to-cyan-600"
-    },
-    {
-      icon: Wifi,
-      title: "Secure VPN Solutions",
-      description: "Enterprise VPN infrastructure with zero-trust architecture and encrypted tunneling protocols.",
-      details: "Secure remote access, site-to-site connectivity, and cloud VPN solutions with military-grade encryption.",
-      image: vpnImage,
-      category: "Perimeter Defense",
-      color: "from-purple-500 to-pink-600"
-    },
-    {
+      id: "endpoint-security",
       icon: Lock,
-      title: "Endpoint Protection",
+      title: "Endpoint Security & Antivirus",
       description: "Comprehensive endpoint security with EDR capabilities, behavioral analysis, and automated threat remediation.",
       details: "Protect all devices with advanced anti-malware, device control, and continuous monitoring solutions.",
       image: endpointImage,
@@ -132,49 +130,74 @@ const CybersecurityServices = () => {
       color: "from-blue-500 to-purple-600"
     },
     {
-      icon: Database,
-      title: "Data Loss Prevention (DLP)",
-      description: "Advanced DLP solutions to prevent unauthorized data access, transfer, and ensure regulatory compliance.",
-      details: "Real-time data monitoring, content inspection, and automated policy enforcement across all channels.",
+      id: "firewall-ids-ips",
+      icon: Shield,
+      title: "Firewall, IDS/IPS",
+      description: "Next-generation firewall solutions with intrusion detection and prevention systems for comprehensive network protection.",
+      details: "Deploy enterprise-grade firewalls with advanced threat intelligence, real-time monitoring, and automated response capabilities.",
+      image: firewallImage,
+      category: "Perimeter Defense",
+      color: "from-cyan-500 to-blue-600"
+    },
+    {
+      id: "email-security",
+      icon: Mail,
+      title: "Email Security",
+      description: "Advanced email protection with anti-phishing, malware filtering, and data loss prevention for enterprise communications.",
+      details: "Secure your organization's email with AI-powered threat detection, encryption, and compliance controls.",
+      image: threatDetectionImage,
+      category: "Communication Security",
+      color: "from-green-500 to-cyan-600"
+    },
+    {
+      id: "encryption-secure-backup",
+      icon: HardDrive,
+      title: "Encryption & Secure Backup",
+      description: "Military-grade encryption for data at rest and in transit, with secure backup and disaster recovery solutions.",
+      details: "Protect sensitive data with AES-256 encryption, secure cloud backups, and rapid recovery capabilities.",
       image: dlpImage,
-      category: "Endpoint & Data Security",
+      category: "Data Protection",
       color: "from-cyan-500 to-green-600"
     },
     {
-      icon: Key,
-      title: "Identity & Access Management",
-      description: "Zero-trust IAM with multi-factor authentication, privileged access management, and identity governance.",
-      details: "Centralized identity management, single sign-on, and risk-based authentication protocols.",
-      image: iamImage,
-      category: "Endpoint & Data Security",
-      color: "from-green-500 to-blue-600"
-    },
-    {
-      icon: Search,
-      title: "Vulnerability Assessment & Penetration Testing",
-      description: "Comprehensive security assessments with ethical hacking and vulnerability management programs.",
-      details: "Regular penetration testing, vulnerability scanning, and detailed security posture reports.",
-      image: vaptImage,
-      category: "Assessment & Response",
-      color: "from-orange-500 to-red-600"
-    },
-    {
+      id: "siem-soc-monitoring",
       icon: AlertTriangle,
-      title: "Security Information & Event Management",
-      description: "Centralized SIEM platform with real-time log analysis, correlation, and automated threat response.",
-      details: "Advanced security analytics, compliance reporting, and integrated threat intelligence feeds.",
+      title: "SIEM & SOC Monitoring",
+      description: "Centralized SIEM platform with 24/7 Security Operations Center monitoring and automated threat response.",
+      details: "Advanced security analytics, real-time log analysis, correlation, and integrated threat intelligence feeds.",
       image: siemImage,
-      category: "Assessment & Response",
+      category: "Monitoring & Response",
       color: "from-yellow-500 to-orange-600"
     },
     {
+      id: "threat-hunting-incident-response",
       icon: Zap,
-      title: "Incident Response & Forensics",
-      description: "Rapid incident response with digital forensics, threat containment, and business continuity planning.",
-      details: "24/7 emergency response, forensic analysis, and complete incident lifecycle management.",
+      title: "Threat Hunting & Incident Response",
+      description: "Proactive threat hunting combined with rapid incident response and digital forensics capabilities.",
+      details: "24/7 emergency response, forensic analysis, threat containment, and complete incident lifecycle management.",
       image: incidentImage,
-      category: "Assessment & Response",
+      category: "Monitoring & Response",
       color: "from-red-500 to-pink-600"
+    },
+    {
+      id: "compliance",
+      icon: FileCheck,
+      title: "Compliance (ISO, GDPR, HIPAA)",
+      description: "Comprehensive compliance management for ISO 27001, GDPR, HIPAA, PCI-DSS, and other regulatory frameworks.",
+      details: "Gap assessments, policy development, audit preparation, and continuous compliance monitoring.",
+      image: iamImage,
+      category: "Compliance & Governance",
+      color: "from-green-500 to-blue-600"
+    },
+    {
+      id: "user-awareness-training",
+      icon: GraduationCap,
+      title: "User Awareness Training",
+      description: "Security awareness programs to educate employees on cyber threats, phishing prevention, and security best practices.",
+      details: "Interactive training modules, simulated phishing campaigns, and ongoing security culture development.",
+      image: vpnImage,
+      category: "Training & Education",
+      color: "from-purple-500 to-pink-600"
     }
   ];
 
@@ -186,8 +209,9 @@ const CybersecurityServices = () => {
 
     return (
       <div
+        id={service.id}
         ref={ref}
-        className={`group relative cursor-pointer ${inView ? 'animate-fade-in' : 'opacity-0'}`}
+        className={`group relative cursor-pointer scroll-mt-24 ${inView ? 'animate-fade-in' : 'opacity-0'}`}
         style={{
           animationDelay: `${index * 100}ms`,
         }}
