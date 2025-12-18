@@ -214,7 +214,7 @@ const SoftwareDevelopment = () => {
               <div className="text-primary">Development</div>
             </h1>
 
-            <p className="text-lg md:text-xl leading-relaxed mb-10 opacity-95">
+            <p className="text-lg md:text-xl leading-relaxed mb-10 opacity-95 text-white">
               Custom software solutions designed to transform your business. From web development to enterprise systems, we deliver end-to-end solutions with cutting-edge technology and proven expertise.
             </p>
 
