@@ -133,6 +133,11 @@ const SoftwareDevelopment = () => {
             0%, 100% { transform: translateY(0) rotateY(-5deg); }
             50% { transform: translateY(-15px) rotateY(-5deg); }
           }
+          @media (min-width: 768px) {
+            #hero-content-wrapper {
+              grid-template-columns: 1fr 1fr !important;
+            }
+          }
         `}</style>
 
         {/* Animated Background */}
@@ -190,13 +195,6 @@ const SoftwareDevelopment = () => {
           width: '100%',
           padding: '0 clamp(1rem, 3vw, 3rem)'
         }}>
-          <style>{`
-            @media (min-width: 768px) {
-              #hero-content-wrapper {
-                grid-template-columns: 1fr 1fr;
-              }
-            }
-          `}</style>
           {/* Left Content */}
           <div style={{ animation: 'fadeInLeft 1s ease-out' }}>
 
