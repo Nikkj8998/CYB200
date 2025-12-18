@@ -39,16 +39,22 @@ import {
 
 const SoftwareDevelopment = () => {
   const location = useLocation();
+  const [highlightedService, setHighlightedService] = useState<string | null>(null);
 
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.replace('#', '');
+      setHighlightedService(id);
       setTimeout(() => {
         const element = document.getElementById(id);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
       }, 100);
+      // Remove highlight after 3 seconds
+      setTimeout(() => {
+        setHighlightedService(null);
+      }, 3000);
     }
   }, [location.hash]);
 
@@ -626,6 +632,24 @@ const SoftwareDevelopment = () => {
                 0%, 100% { transform: scale(1); opacity: 1; }
                 50% { transform: scale(1.2); opacity: 0.8; }
               }
+              @keyframes serviceHighlight {
+                0% { 
+                  box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 40px rgba(59, 130, 246, 0.4);
+                  transform: scale(1.02);
+                }
+                50% { 
+                  box-shadow: 0 0 30px rgba(59, 130, 246, 1), 0 0 60px rgba(59, 130, 246, 0.6);
+                  transform: scale(1.025);
+                }
+                100% { 
+                  box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 40px rgba(59, 130, 246, 0.4);
+                  transform: scale(1.02);
+                }
+              }
+              .service-highlighted {
+                animation: serviceHighlight 0.6s ease-in-out 1;
+                border-color: rgba(59, 130, 246, 0.9) !important;
+              }
             `}</style>
           </div>
         </div>
@@ -657,7 +681,11 @@ const SoftwareDevelopment = () => {
                   }`}
                   style={{ transitionDelay: `${index * 80}ms` }}
                 >
-                  <Card className="h-full bg-black border border-primary/20 hover:border-primary/50 backdrop-blur-sm shadow-lg hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:-translate-y-3 relative overflow-hidden">
+                  <Card className={`h-full bg-black border backdrop-blur-sm shadow-lg transition-all duration-500 hover:-translate-y-3 relative overflow-hidden ${
+                    highlightedService === serviceId 
+                      ? 'service-highlighted border-primary/90 shadow-2xl shadow-primary/50' 
+                      : 'border-primary/20 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/20'
+                  }`}>
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <CardContent className="p-6 relative z-10 flex gap-5">
                       {/* Icon Container */}
