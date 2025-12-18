@@ -252,7 +252,7 @@ const SoftwareDevelopment = () => {
             </div>
 
             <p style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '0.95rem' }}>
-              Trusted by <strong style={{ color: '#00ff9d' }}>150+ enterprises</strong> • Serving businesses globally
+              Trusted by <strong style={{ color: '#ffffff', fontWeight: 'bold' }}>150+ enterprises</strong> • Serving businesses globally
             </p>
           </div>
 
