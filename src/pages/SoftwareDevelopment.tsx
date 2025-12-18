@@ -94,79 +94,208 @@ const SoftwareDevelopment = () => {
       <Header />
       
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen text-white overflow-hidden" style={{ background: 'linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #0a3a3a 100%)' }}>
-        {/* Animated Background Shapes */}
+      <section ref={heroRef} className="hero-section" style={{
+        minHeight: '100vh',
+        padding: '8rem 3rem 4rem',
+        position: 'relative',
+        overflow: 'hidden',
+        display: 'flex',
+        alignItems: 'center',
+        background: '#000'
+      }}>
+        <style>{`
+          @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(50px, -50px) scale(1.1); }
+            66% { transform: translate(-30px, 30px) scale(0.9); }
+          }
+          @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+          }
+          @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+          }
+          @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 255, 157, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(0, 255, 157, 0); }
+          }
+          @keyframes sparkle {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+            50% { transform: scale(1.3) rotate(180deg); opacity: 0.7; }
+          }
+          @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+          }
+          @keyframes deviceFloat {
+            0%, 100% { transform: translateY(0) rotateY(-5deg); }
+            50% { transform: translateY(-15px) rotateY(-5deg); }
+          }
+        `}</style>
+
+        {/* Animated Background */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute w-[400px] h-[400px] bg-emerald-500 opacity-20 rounded-full top-[5%] left-[-10%]" style={{ animation: 'float 20s infinite ease-in-out', animationDelay: '0s' }}></div>
-          <div className="absolute w-[300px] h-[300px] bg-cyan-500 opacity-15 top-[40%] right-[-5%]" style={{ borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%', animation: 'float 20s infinite ease-in-out', animationDelay: '5s' }}></div>
-          <div className="absolute w-[250px] h-[250px] bg-blue-500 opacity-10 rounded-full bottom-[10%] left-[10%]" style={{ animation: 'float 20s infinite ease-in-out', animationDelay: '10s' }}></div>
+          <div style={{
+            position: 'absolute',
+            width: '600px',
+            height: '600px',
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, #00ff9d, transparent)',
+            top: '-200px',
+            left: '-100px',
+            filter: 'blur(100px)',
+            opacity: 0.3,
+            animation: 'float 20s infinite ease-in-out'
+          }}></div>
+          <div style={{
+            position: 'absolute',
+            width: '500px',
+            height: '500px',
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, #00b8ff, transparent)',
+            top: '20%',
+            right: '-150px',
+            filter: 'blur(100px)',
+            opacity: 0.3,
+            animation: 'float 20s infinite ease-in-out',
+            animationDelay: '3s'
+          }}></div>
+          <div style={{
+            position: 'absolute',
+            width: '400px',
+            height: '400px',
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, #ff00ff, transparent)',
+            bottom: '-100px',
+            left: '30%',
+            filter: 'blur(100px)',
+            opacity: 0.3,
+            animation: 'float 20s infinite ease-in-out',
+            animationDelay: '6s'
+          }}></div>
         </div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 flex items-center justify-between max-w-[1400px] mx-auto px-[5%] py-12 md:py-16 min-h-[calc(100vh-80px)] flex-col lg:flex-row gap-12">
-          {/* Hero Text */}
-          <div className="flex-1 max-w-[650px] text-center lg:text-left">
-            <div className="mb-8">
-              <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50 px-4 py-2">
-                <Zap className="w-3 h-3 mr-2" />
-                Enterprise Software Solutions
-              </Badge>
+        {/* Content Wrapper */}
+        <div style={{
+          maxWidth: '1400px',
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '4rem',
+          alignItems: 'center',
+          position: 'relative',
+          zIndex: 1,
+          width: '100%',
+          padding: '0 3rem'
+        }}>
+          {/* Left Content */}
+          <div style={{ animation: 'fadeInLeft 1s ease-out' }}>
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              background: 'rgba(0, 255, 157, 0.1)',
+              border: '1px solid rgba(0, 255, 157, 0.3)',
+              padding: '0.6rem 1.5rem',
+              borderRadius: '50px',
+              fontSize: '0.85rem',
+              fontWeight: 500,
+              color: '#00ff9d',
+              marginBottom: '2rem',
+              animation: 'pulse 2s infinite'
+            }}>
+              ✨ Enterprise Software Solutions
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl leading-tight mb-8 font-extrabold">
-              <div className="text-white">Enterprise Software</div>
-              <div className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">Development</div>
+
+            <h1 style={{
+              fontFamily: "'Playfair Display', serif",
+              fontSize: '5rem',
+              fontWeight: 900,
+              lineHeight: 1.1,
+              marginBottom: '1.5rem',
+              letterSpacing: '-2px',
+              color: '#fff'
+            }}>
+              Enterprise Software <span style={{
+                background: 'linear-gradient(135deg, #00ff9d, #00b8ff, #ff00ff)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                animation: 'gradientShift 5s ease infinite',
+                backgroundSize: '200% 200%'
+              }}>Development</span>
             </h1>
-            <p className="text-lg md:text-xl leading-relaxed mb-12 opacity-95 text-gray-300">
-              Custom software solutions designed to transform your business. From web development to enterprise systems, we deliver end-to-end solutions with cutting-edge technology.
+
+            <p style={{
+              fontSize: '1.2rem',
+              lineHeight: 1.8,
+              color: 'rgba(255, 255, 255, 0.7)',
+              marginBottom: '3rem',
+              fontWeight: 300
+            }}>
+              Custom software solutions designed to transform your business. From web development to enterprise systems, we deliver end-to-end solutions with cutting-edge technology and proven expertise.
             </p>
-            <div className="flex gap-5 flex-wrap justify-center lg:justify-start mb-10">
+
+            <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', marginBottom: '2rem' }}>
               <Link to="/contact">
-                <Button size="lg" className="group bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white px-8 py-6 text-base font-semibold rounded-full transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/50 hover:-translate-y-1">
-                  <ArrowRight className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
-                  Get Free Consultation
-                </Button>
+                <button style={{
+                  background: 'linear-gradient(135deg, #00ff9d, #00b8ff)',
+                  color: '#000',
+                  padding: '1rem 2.5rem',
+                  borderRadius: '50px',
+                  fontWeight: 700,
+                  border: 'none',
+                  fontSize: '1rem',
+                  cursor: 'pointer',
+                  boxShadow: '0 5px 30px rgba(0, 255, 157, 0.3)',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.7rem',
+                  transition: 'all 0.4s ease'
+                }} onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-3px) scale(1.05)';
+                  e.currentTarget.style.boxShadow = '0 8px 40px rgba(0, 255, 157, 0.5)';
+                }} onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                  e.currentTarget.style.boxShadow = '0 5px 30px rgba(0, 255, 157, 0.3)';
+                }}>
+                  <ArrowRight size={20} /> Get Free Consultation
+                </button>
               </Link>
-              <Button size="lg" className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-gray-900 px-8 py-6 text-base font-semibold rounded-full transition-all duration-300 hover:-translate-y-1">
+              <button style={{
+                background: 'transparent',
+                color: '#fff',
+                padding: '1rem 2.5rem',
+                borderRadius: '50px',
+                fontWeight: 600,
+                border: '2px solid rgba(255, 255, 255, 0.3)',
+                fontSize: '1rem',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }} onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.5)';
+                e.currentTarget.style.transform = 'translateY(-3px)';
+              }} onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}>
                 Schedule a Demo
-              </Button>
+              </button>
             </div>
-            <p className="text-white/80 text-sm md:text-base">
-              Trusted by <span className="text-emerald-400 font-semibold">150+ enterprises</span> • Serving businesses globally
+
+            <p style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '0.95rem' }}>
+              Trusted by <strong style={{ color: '#00ff9d' }}>150+ enterprises</strong> • Serving businesses globally
             </p>
           </div>
 
-          {/* Hero Illustration */}
-          <div className="flex-1 relative flex justify-center items-center min-h-[400px] md:min-h-[500px]">
-            <div className="relative w-full h-full flex items-center justify-center">
-              {/* Main Screen */}
-              <div className="absolute w-[280px] h-[180px] md:w-[380px] md:h-[260px] bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden border border-slate-700" style={{ animation: 'screenFloat 6s infinite ease-in-out' }}>
-                <div className="bg-slate-700 p-3 border-b border-slate-600 flex gap-2">
-                  <div className="w-3 h-3 rounded-full bg-red-500 animate-pulse"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500 animate-pulse animation-delay-100"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse animation-delay-200"></div>
-                </div>
-                <div className="p-4 md:p-6 bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 h-[calc(100%-40px)] flex flex-col justify-center">
-                  <div className="text-sm md:text-lg font-bold text-white mb-2">Enterprise Software</div>
-                  <div className="text-xs md:text-sm text-gray-300">Scalable • Secure • Innovation</div>
-                </div>
-              </div>
-
-              {/* Floating Elements */}
-              <div className="absolute top-[5%] left-[5%] bg-white rounded-xl p-2.5 md:p-4 shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110" style={{ animation: 'floatElement1 5s infinite ease-in-out' }}>
-                <Code className="w-5 h-5 md:w-7 md:h-7 text-emerald-500" />
-              </div>
-
-              <div className="absolute top-[40%] right-[8%] bg-white rounded-xl p-2.5 md:p-4 shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110" style={{ animation: 'floatElement2 6s infinite ease-in-out', animationDelay: '0.5s' }}>
-                <Database className="w-5 h-5 md:w-7 md:h-7 text-blue-500" />
-              </div>
-
-              <div className="absolute bottom-[15%] left-[10%] bg-white rounded-xl p-2.5 md:p-4 shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110" style={{ animation: 'floatElement3 5.5s infinite ease-in-out', animationDelay: '1s' }}>
-                <Shield className="w-5 h-5 md:w-7 md:h-7 text-pink-500" />
-              </div>
-
-              <div className="absolute bottom-[25%] right-[12%] bg-white rounded-xl p-2.5 md:p-4 shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110" style={{ animation: 'floatElement4 6.5s infinite ease-in-out', animationDelay: '1.5s' }}>
-                <Zap className="w-5 h-5 md:w-7 md:h-7 text-purple-500" />
-              </div>
+          {/* Right Content */}
+          <div style={{ position: 'relative', animation: 'fadeInRight 1s ease-out', textAlign: 'center', color: 'rgba(255, 255, 255, 0.4)', fontSize: '1.2rem', minHeight: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ animation: 'deviceFloat 6s ease-in-out infinite' }}>
+              ✦ Enterprise-grade solutions built with cutting-edge technology ✦
             </div>
           </div>
         </div>
