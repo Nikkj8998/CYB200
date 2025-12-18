@@ -458,21 +458,21 @@ const SoftwareDevelopment = () => {
       {/* Industries Section */}
       <section
         ref={industriesRef}
-        className={`py-20 bg-gray-50 transition-opacity duration-1000 ${
+        className={`py-20 bg-slate-900 text-white transition-opacity duration-1000 ${
           industriesInView ? "opacity-100" : "opacity-0"
         }`}
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="bg-emerald-100 text-emerald-700 border-emerald-300 mb-4">
+            <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50 mb-4">
               Industries We Serve
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Transforming Industries
               <br />
-              <span className="text-emerald-500">Worldwide</span>
+              <span className="text-emerald-400">Worldwide</span>
             </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
               Our solutions power businesses across diverse sectors, each tailored to industry-specific challenges
             </p>
           </div>
@@ -483,7 +483,7 @@ const SoftwareDevelopment = () => {
               return (
                 <Card
                   key={index}
-                  className={`border-0 shadow-md hover:shadow-lg transition-all duration-300 text-center cursor-pointer transform hover:scale-105 ${
+                  className={`bg-slate-800 border-slate-700 hover:border-emerald-500/50 shadow-md hover:shadow-lg hover:shadow-emerald-500/20 transition-all duration-300 text-center cursor-pointer transform hover:scale-105 ${
                     industriesInView
                       ? "translate-y-0 opacity-100"
                       : "translate-y-10 opacity-0"
@@ -491,8 +491,8 @@ const SoftwareDevelopment = () => {
                   style={{ transitionDelay: `${index * 50}ms` }}
                 >
                   <CardContent className="p-6">
-                    <Icon className="w-8 h-8 text-emerald-500 mx-auto mb-3" />
-                    <p className="text-sm font-semibold text-slate-900">
+                    <Icon className="w-8 h-8 text-emerald-400 mx-auto mb-3" />
+                    <p className="text-sm font-semibold">
                       {industry.label}
                     </p>
                   </CardContent>
