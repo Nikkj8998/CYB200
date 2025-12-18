@@ -647,8 +647,10 @@ const SoftwareDevelopment = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {softwareServices.map((service, index) => {
               const Icon = service.icon;
+              const serviceId = service.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
               return (
                 <div
+                  id={serviceId}
                   key={index}
                   className={`group transition-all duration-500 ${
                     servicesInView ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"

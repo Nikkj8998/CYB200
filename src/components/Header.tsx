@@ -249,7 +249,7 @@ const Header = () => {
       id: "software-dev",
       name: "Software Development & Web Design",
       icon: Code,
-      path: "/enterprise-solutions",
+      path: "/software-development",
       services: [
         { name: "Website Development", hash: "website-development" },
         { name: "Web Applications", hash: "web-applications" },
