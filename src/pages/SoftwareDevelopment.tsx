@@ -209,32 +209,12 @@ const SoftwareDevelopment = () => {
               ✨ Enterprise Software Solutions
             </div>
 
-            <h1 style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: '5rem',
-              fontWeight: 900,
-              lineHeight: 1.1,
-              marginBottom: '1.5rem',
-              letterSpacing: '-2px',
-              color: '#fff'
-            }}>
-              Enterprise Software <span style={{
-                background: 'linear-gradient(135deg, #00ff9d, #00b8ff, #ff00ff)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                animation: 'gradientShift 5s ease infinite',
-                backgroundSize: '200% 200%'
-              }}>Development</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 font-extrabold">
+              <div className="text-white">Enterprise Software</div>
+              <div className="text-primary">Development</div>
             </h1>
 
-            <p style={{
-              fontSize: '1.2rem',
-              lineHeight: 1.8,
-              color: 'rgba(255, 255, 255, 0.7)',
-              marginBottom: '3rem',
-              fontWeight: 300
-            }}>
+            <p className="text-lg md:text-xl leading-relaxed mb-10 opacity-95">
               Custom software solutions designed to transform your business. From web development to enterprise systems, we deliver end-to-end solutions with cutting-edge technology and proven expertise.
             </p>
 
