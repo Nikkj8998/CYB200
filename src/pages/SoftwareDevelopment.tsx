@@ -186,36 +186,42 @@ const SoftwareDevelopment = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {softwareServices.map((service, index) => {
               const Icon = service.icon;
               return (
                 <div
                   key={index}
-                  className={`group transition-all duration-500 transform hover:scale-105 ${
+                  className={`group transition-all duration-500 ${
                     servicesInView ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                   }`}
-                  style={{ transitionDelay: `${index * 100}ms` }}
+                  style={{ transitionDelay: `${index * 80}ms` }}
                 >
-                  <Card className="h-full bg-gradient-to-br from-slate-800/50 via-slate-800/30 to-slate-900/50 border-slate-700/50 hover:border-emerald-500/50 backdrop-blur-xl shadow-lg hover:shadow-2xl hover:shadow-emerald-500/30 transition-all duration-300 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-cyan-500/0 group-hover:from-emerald-500/10 group-hover:to-cyan-500/10 transition-all duration-300" />
-                    <CardContent className="p-6 relative z-10">
-                      <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 flex items-center justify-center mb-5 group-hover:from-emerald-500/40 group-hover:to-cyan-500/40 transition-all duration-300">
-                        <Icon className="w-7 h-7 text-emerald-400 group-hover:scale-110 transition-transform" />
+                  <Card className="h-full bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 hover:border-emerald-500/80 backdrop-blur-xl shadow-lg hover:shadow-2xl hover:shadow-emerald-500/40 transition-all duration-500 hover:-translate-y-3 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-cyan-500/0 group-hover:from-emerald-500/15 group-hover:to-cyan-500/10 transition-all duration-500" />
+                    <CardContent className="p-6 relative z-10 flex gap-5">
+                      {/* Icon Container */}
+                      <div className="flex-shrink-0">
+                        <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-emerald-500/30 to-cyan-500/20 flex items-center justify-center group-hover:from-emerald-500/50 group-hover:to-cyan-500/40 transition-all duration-500 group-hover:scale-110">
+                          <Icon className="w-8 h-8 text-emerald-400 group-hover:text-emerald-300 transition-all" />
+                        </div>
                       </div>
-                      <h3 className="font-bold text-lg text-white mb-3 group-hover:text-emerald-400 transition-colors">
-                        {service.title}
-                      </h3>
-                      <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                        {service.description}
-                      </p>
-                      <div className="space-y-2 pt-4 border-t border-slate-700/50">
-                        {service.features.map((feature, i) => (
-                          <div key={i} className="flex items-center text-xs text-gray-300">
-                            <span className="w-1.5 h-1.5 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full mr-2 flex-shrink-0" />
-                            {feature}
-                          </div>
-                        ))}
+                      
+                      {/* Content Container */}
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-bold text-base md:text-lg text-white mb-2 group-hover:text-emerald-300 transition-colors">
+                          {service.title}
+                        </h3>
+                        <p className="text-gray-400 text-xs md:text-sm leading-relaxed mb-3">
+                          {service.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {service.features.slice(0, 2).map((feature, i) => (
+                            <span key={i} className="inline-flex items-center text-xs bg-emerald-500/10 text-emerald-300 px-2 py-1 rounded border border-emerald-500/20 group-hover:border-emerald-500/50 group-hover:bg-emerald-500/20 transition-all">
+                              {feature}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </CardContent>
                   </Card>
