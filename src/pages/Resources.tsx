@@ -17,6 +17,7 @@ const Resources = () => {
   const [resourcesRef, resourcesInView] = useInView({ threshold: 0.1, triggerOnce: true });
   const [blogPosts, setBlogPosts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [imageLoadingStates, setImageLoadingStates] = useState<Record<string, boolean>>({});
 
   // Helper function to normalize image URLs
   const normalizeImageUrl = (url?: string): string => {
@@ -177,28 +178,26 @@ const Resources = () => {
                         loading="lazy"
                         onError={(e) => {
                           console.error('Image failed to load:', resource.image);
-                          console.error('Image src attribute:', e.currentTarget.src);
                           const target = e.currentTarget as HTMLImageElement;
-                          // Try alternative paths before falling back to default
                           if (target.src.includes('/public/uploads/')) {
-                            // Try without public prefix
                             const altUrl = target.src.replace('/public/uploads/', '/uploads/');
                             console.log('Trying alternative URL:', altUrl);
                             target.src = altUrl;
                           } else {
-                            // Use fallback image
                             console.log('Using fallback image');
                             target.src = 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80';
                             target.alt = 'Default blog image';
                           }
+                          setImageLoadingStates(prev => ({ ...prev, [resource.id]: false }));
                         }}
                         onLoad={() => {
                           console.log('Image loaded successfully:', resource.image);
+                          setImageLoadingStates(prev => ({ ...prev, [resource.id]: false }));
                         }}
                       />
                       {/* Loading placeholder */}
-                      <div className="absolute inset-0 bg-gray-800 animate-pulse flex items-center justify-center text-gray-500 opacity-0 transition-opacity duration-300">
-                        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                      <div className={`absolute inset-0 bg-gray-800 flex items-center justify-center text-gray-500 transition-opacity duration-300 ${imageLoadingStates[resource.id] !== false ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+                        <svg className="w-8 h-8 animate-spin" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
                         </svg>
                       </div>
