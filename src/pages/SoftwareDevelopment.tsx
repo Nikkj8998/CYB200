@@ -721,7 +721,7 @@ const SoftwareDevelopment = () => {
                 >
                   <div className="relative h-full">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-300" />
-                    <Card className="relative h-full bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-gray-700/30 hover:border-primary/50 backdrop-blur-sm hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:-translate-y-2">
+                    <Card className="relative h-full bg-black border border-gray-700/30 hover:border-primary/50 backdrop-blur-sm hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:-translate-y-2">
                       <CardContent className="p-8 text-center">
                         <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                           <Icon className="w-8 h-8 text-white" />
