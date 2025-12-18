@@ -197,7 +197,7 @@ const SoftwareDevelopment = () => {
                   }`}
                   style={{ transitionDelay: `${index * 80}ms` }}
                 >
-                  <Card className="h-full bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 hover:border-emerald-500/80 backdrop-blur-xl shadow-lg hover:shadow-2xl hover:shadow-emerald-500/40 transition-all duration-500 hover:-translate-y-3 relative overflow-hidden">
+                  <Card className="h-full bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-gray-700/30 hover:border-emerald-500/80 backdrop-blur-sm shadow-lg hover:shadow-2xl hover:shadow-emerald-500/40 transition-all duration-500 hover:-translate-y-3 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-cyan-500/0 group-hover:from-emerald-500/15 group-hover:to-cyan-500/10 transition-all duration-500" />
                     <CardContent className="p-6 relative z-10 flex gap-5">
                       {/* Icon Container */}
@@ -260,7 +260,7 @@ const SoftwareDevelopment = () => {
                 >
                   <div className="relative h-full">
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 via-cyan-500/0 to-blue-500/0 group-hover:from-emerald-500/20 group-hover:via-cyan-500/20 group-hover:to-blue-500/20 rounded-2xl opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-300" />
-                    <Card className="relative h-full bg-gradient-to-br from-slate-800/40 to-slate-900/40 border-slate-700/50 hover:border-emerald-500/50 backdrop-blur-xl hover:shadow-2xl hover:shadow-emerald-500/20 transition-all duration-300">
+                    <Card className="relative h-full bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-gray-700/30 hover:border-emerald-500/50 backdrop-blur-sm hover:shadow-2xl hover:shadow-emerald-500/20 transition-all duration-500 hover:-translate-y-2">
                       <CardContent className="p-8 text-center">
                         <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                           <Icon className="w-8 h-8 text-emerald-400" />
@@ -308,7 +308,7 @@ const SoftwareDevelopment = () => {
                 >
                   <div className="relative">
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-300" />
-                    <Card className="relative bg-gradient-to-br from-slate-800/60 via-slate-800/40 to-slate-900/40 border-slate-700/50 hover:border-emerald-500/50 backdrop-blur-xl transition-all duration-300 h-full">
+                    <Card className="relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-gray-700/30 hover:border-emerald-500/50 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-500/20 h-full">
                       <CardContent className="p-8 relative z-10">
                         <div className="flex items-start gap-4 mb-4">
                           <div className="w-16 h-16 min-w-fit bg-gradient-to-br from-emerald-400 to-cyan-400 rounded-full flex items-center justify-center text-slate-900 font-bold text-2xl shadow-lg shadow-emerald-500/50 group-hover:shadow-lg group-hover:shadow-cyan-500/50 transition-all duration-300">
@@ -359,7 +359,7 @@ const SoftwareDevelopment = () => {
                   }`}
                   style={{ transitionDelay: `${index * 50}ms` }}
                 >
-                  <Card className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border-slate-700/50 hover:border-emerald-500/50 backdrop-blur-xl shadow-md hover:shadow-lg hover:shadow-emerald-500/30 transition-all duration-300 h-full">
+                  <Card className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-gray-700/30 hover:border-emerald-500/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-emerald-500/30 transition-all duration-300 h-full">
                     <CardContent className="p-6 text-center flex flex-col items-center justify-center">
                       <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 flex items-center justify-center mb-4 group-hover:from-emerald-500/40 group-hover:to-cyan-500/40 transition-all duration-300">
                         <Icon className="w-6 h-6 text-emerald-400 group-hover:scale-125 transition-transform" />
