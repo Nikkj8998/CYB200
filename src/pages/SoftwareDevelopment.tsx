@@ -408,21 +408,21 @@ const SoftwareDevelopment = () => {
       {/* Process Section */}
       <section
         ref={processRef}
-        className={`py-20 bg-white transition-opacity duration-1000 ${
+        className={`py-20 bg-slate-900 text-white transition-opacity duration-1000 ${
           processInView ? "opacity-100" : "opacity-0"
         }`}
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="bg-emerald-100 text-emerald-700 border-emerald-300 mb-4">
+            <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50 mb-4">
               Our Process
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
               How We Build
               <br />
-              <span className="text-emerald-500">Success</span>
+              <span className="text-emerald-400">Success</span>
             </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
               Our proven development process ensures quality delivery, on time and within budget.
             </p>
           </div>
@@ -438,14 +438,14 @@ const SoftwareDevelopment = () => {
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="relative bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-8 border border-emerald-500/20">
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                <div className="relative bg-gradient-to-br from-slate-800/50 to-slate-800/30 rounded-xl p-8 border border-slate-700 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
+                  <div className="absolute -top-6 -left-6 w-14 h-14 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center text-slate-900 font-bold text-lg shadow-lg shadow-emerald-500/50">
                     {step.number}
                   </div>
-                  <h3 className="font-bold text-lg text-slate-900 mb-3 mt-4">
+                  <h3 className="font-bold text-lg mb-3 mt-4">
                     {step.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-400 text-sm leading-relaxed">
                     {step.description}
                   </p>
                 </div>
