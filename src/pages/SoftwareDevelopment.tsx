@@ -30,6 +30,12 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link, useLocation } from "react-router-dom";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const SoftwareDevelopment = () => {
   const location = useLocation();
@@ -822,6 +828,63 @@ const SoftwareDevelopment = () => {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 px-6 container mx-auto">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-16 text-center">
+          <span className="text-white">Frequently Asked </span>
+          <span className="text-primary">Questions</span>
+        </h2>
+
+        <div className="max-w-4xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="item-1" className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-primary/20 rounded-xl px-6 hover:border-primary/50 transition-all duration-300">
+              <AccordionTrigger className="text-left text-white hover:text-primary py-4">
+                What software development services does Cybaem Tech provide?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-400 pb-4">
+                Cybaem Tech provides end-to-end software development services, including website development, web application development, mobile app development, ERP development, CRM development, UI/UX design, API integrations, and website maintenance. Our solutions are designed for startups, SMEs, and enterprises looking for scalable and secure digital systems.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2" className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-primary/20 rounded-xl px-6 hover:border-primary/50 transition-all duration-300">
+              <AccordionTrigger className="text-left text-white hover:text-primary py-4">
+                Is Cybaem Tech a custom software development company in India?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-400 pb-4">
+                Yes, Cybaem Tech is a custom software development company in India, delivering tailored solutions based on specific business requirements. We design and develop custom software for clients across Pune, Mumbai, Bangalore, Delhi, Hyderabad, and also serve international businesses in USA, UAE, UK, and Europe.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3" className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-primary/20 rounded-xl px-6 hover:border-primary/50 transition-all duration-300">
+              <AccordionTrigger className="text-left text-white hover:text-primary py-4">
+                Do you develop ERP and CRM software for enterprises?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-400 pb-4">
+                Absolutely. We specialize in enterprise ERP and CRM software development that helps businesses manage operations, sales, customer data, inventory, finance, and reporting through a single integrated platform. Our ERP and CRM systems are fully customizable, secure, and scalable.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4" className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-primary/20 rounded-xl px-6 hover:border-primary/50 transition-all duration-300">
+              <AccordionTrigger className="text-left text-white hover:text-primary py-4">
+                How does Cybaem Tech ensure quality and scalability in software development?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-400 pb-4">
+                We follow an agile software development process that includes requirement analysis, UI/UX planning, development, testing, deployment, and ongoing support. Our solutions are built using modern technologies, secure coding practices, and scalable architecture to ensure long-term performance and business growth.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5" className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-primary/20 rounded-xl px-6 hover:border-primary/50 transition-all duration-300">
+              <AccordionTrigger className="text-left text-white hover:text-primary py-4">
+                Which industries and locations does Cybaem Tech serve for software development?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-400 pb-4">
+                Cybaem Tech serves industries such as manufacturing, healthcare, logistics, finance, education, IT & SaaS, startups, and enterprises. We provide software development services across India, including Pune and major metro cities, and offer global delivery for clients in USA, UAE, UK, and Europe.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </section>
 
