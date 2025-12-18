@@ -325,7 +325,7 @@ const SoftwareDevelopment = () => {
                 </div>
                 {/* Desktop Screen */}
                 <div style={{
-                  background: 'linear-gradient(135deg, #000 0%, #0a1f3c 50%, #000 100%)',
+                  background: 'linear-gradient(180deg, #0a1628 0%, #0d2240 50%, #0a1628 100%)',
                   borderRadius: '6px',
                   overflow: 'hidden',
                   aspectRatio: '16/10',
@@ -336,58 +336,83 @@ const SoftwareDevelopment = () => {
                 }}>
                   {/* Desktop Header */}
                   <div style={{
-                    background: 'rgba(5, 15, 30, 0.95)',
-                    padding: '8px 16px',
+                    background: 'rgba(255, 255, 255, 0.98)',
+                    padding: '6px 14px',
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    borderBottom: '1px solid rgba(0, 102, 204, 0.15)',
-                    fontSize: '0.45rem',
-                    fontWeight: '600'
+                    fontSize: '0.4rem',
+                    fontWeight: '500'
                   }}>
-                    <div style={{ color: '#0066cc', fontWeight: '700' }}>CybaemTech</div>
-                    <div style={{ fontSize: '0.4rem', color: '#888', display: 'flex', gap: '8px' }}>
-                      <span>Services</span>
-                      <span>Industries</span>
-                      <span>About</span>
+                    <div style={{ color: '#0066cc', fontWeight: '700', fontSize: '0.5rem' }}>Cybaem<span style={{ color: '#333' }}>Tech</span></div>
+                    <div style={{ fontSize: '0.35rem', color: '#333', display: 'flex', gap: '8px' }}>
+                      <span>Services ▾</span>
+                      <span>Industries ▾</span>
+                      <span>About ▾</span>
+                      <span>Resources</span>
                     </div>
-                    <div style={{ color: '#0066cc', background: '#e3f2fd', padding: '2px 6px', borderRadius: '3px', fontSize: '0.4rem', fontWeight: '600' }}>
+                    <div style={{ background: '#0066cc', color: '#fff', padding: '3px 8px', borderRadius: '4px', fontSize: '0.35rem', fontWeight: '600' }}>
                       Contact
                     </div>
                   </div>
                   {/* Desktop Hero Content */}
                   <div style={{
                     flex: 1,
-                    background: 'linear-gradient(135deg, #050f1e 0%, #0a2540 50%, #050f1e 100%)',
+                    background: 'linear-gradient(180deg, #0a1628 0%, #0d2240 100%)',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    padding: '12px',
+                    padding: '10px',
                     textAlign: 'center',
                     position: 'relative',
                     overflow: 'hidden'
                   }}>
-                    <div style={{ fontSize: '0.65rem', color: '#fff', fontWeight: '700', marginBottom: '3px', letterSpacing: '0.5px' }}>
+                    {/* Floating Icons */}
+                    <div style={{ position: 'absolute', top: '8%', left: '8%', fontSize: '0.5rem', color: 'rgba(255,255,255,0.15)' }}>📷</div>
+                    <div style={{ position: 'absolute', top: '15%', left: '20%', fontSize: '0.4rem', color: 'rgba(255,255,255,0.12)' }}>☁️</div>
+                    <div style={{ position: 'absolute', bottom: '25%', left: '12%', fontSize: '0.35rem', color: 'rgba(255,255,255,0.1)' }}>&lt;/&gt;</div>
+                    <div style={{ position: 'absolute', top: '12%', right: '15%', fontSize: '0.5rem', color: 'rgba(255,255,255,0.12)' }}>✉️</div>
+                    <div style={{ position: 'absolute', top: '8%', right: '6%', fontSize: '0.55rem', color: 'rgba(59,89,152,0.4)' }}>f</div>
+                    <div style={{ position: 'absolute', top: '40%', right: '8%', fontSize: '0.5rem', color: 'rgba(255,0,0,0.3)' }}>▶</div>
+                    <div style={{ position: 'absolute', bottom: '20%', right: '10%', fontSize: '0.4rem', color: 'rgba(255,255,255,0.15)' }}>🛡️</div>
+                    <div style={{ position: 'absolute', bottom: '15%', right: '5%', fontSize: '0.45rem', color: 'rgba(10,102,194,0.4)' }}>in</div>
+                    {/* Main Text */}
+                    <div style={{ fontSize: '0.72rem', color: '#fff', fontWeight: '800', marginBottom: '2px', letterSpacing: '1px', fontStyle: 'italic' }}>
                       INNOVATE. SECURE.
                     </div>
-                    <div style={{ fontSize: '0.65rem', color: '#0066cc', fontWeight: '700', marginBottom: '6px', letterSpacing: '0.5px' }}>
+                    <div style={{ fontSize: '0.72rem', color: '#0066cc', fontWeight: '800', marginBottom: '6px', letterSpacing: '1px', fontStyle: 'italic' }}>
                       SCALE!
                     </div>
-                    <div style={{ fontSize: '0.32rem', color: '#aaa', marginBottom: '6px', lineHeight: '1.3', maxWidth: '90%' }}>
-                      Your Trusted Technology Partner for IT Infrastructure
+                    <div style={{ fontSize: '0.28rem', color: 'rgba(255,255,255,0.7)', marginBottom: '8px', lineHeight: '1.4', maxWidth: '85%' }}>
+                      Your Trusted Technology Partner for IT Infrastructure, Cloud Services, Cybersecurity, and Digital Marketing — Globally.
                     </div>
                     <div style={{
-                      fontSize: '0.38rem',
+                      fontSize: '0.35rem',
                       background: '#0066cc',
                       color: '#fff',
-                      padding: '3px 10px',
-                      borderRadius: '3px',
-                      fontWeight: '600',
-                      cursor: 'pointer'
+                      padding: '4px 12px',
+                      borderRadius: '4px',
+                      fontWeight: '600'
                     }}>
                       Get Free Consultation →
                     </div>
+                  </div>
+                  {/* Partner Logos */}
+                  <div style={{
+                    background: 'rgba(255,255,255,0.95)',
+                    padding: '4px 8px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    gap: '6px',
+                    fontSize: '0.25rem',
+                    color: '#333'
+                  }}>
+                    <span style={{ background: '#f5f5f5', padding: '2px 4px', borderRadius: '2px' }}>HP</span>
+                    <span style={{ background: '#f5f5f5', padding: '2px 4px', borderRadius: '2px' }}>aws</span>
+                    <span style={{ background: '#f5f5f5', padding: '2px 4px', borderRadius: '2px' }}>ESET</span>
+                    <span style={{ background: '#f5f5f5', padding: '2px 4px', borderRadius: '2px' }}>Fortinet</span>
                   </div>
                 </div>
               </div>
@@ -428,7 +453,7 @@ const SoftwareDevelopment = () => {
                 border: '3px solid rgba(255, 255, 255, 0.1)'
               }}>
                 <div style={{
-                  background: 'linear-gradient(135deg, #000 0%, #0a1428 100%)',
+                  background: 'linear-gradient(180deg, #0a1628 0%, #0d2240 100%)',
                   borderRadius: '12px',
                   overflow: 'hidden',
                   aspectRatio: '3/4',
@@ -439,46 +464,65 @@ const SoftwareDevelopment = () => {
                 }}>
                   {/* Tablet Header */}
                   <div style={{
-                    background: 'rgba(5, 15, 30, 0.9)',
-                    padding: '6px 10px',
-                    fontSize: '0.35rem',
-                    color: '#0066cc',
-                    fontWeight: '700',
-                    textAlign: 'center',
-                    borderBottom: '1px solid rgba(0, 102, 204, 0.1)'
+                    background: 'rgba(255, 255, 255, 0.98)',
+                    padding: '5px 8px',
+                    fontSize: '0.32rem',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center'
                   }}>
-                    CybaemTech
+                    <span style={{ color: '#0066cc', fontWeight: '700' }}>Cybaem<span style={{ color: '#333' }}>Tech</span></span>
+                    <span style={{ background: '#0066cc', color: '#fff', padding: '2px 5px', borderRadius: '3px', fontSize: '0.25rem' }}>Contact</span>
                   </div>
                   {/* Tablet Content */}
                   <div style={{
                     flex: 1,
-                    background: 'linear-gradient(135deg, #050f1e 0%, #0a2540 100%)',
+                    background: 'linear-gradient(180deg, #0a1628 0%, #0d2240 100%)',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    padding: '10px',
-                    textAlign: 'center'
+                    padding: '8px',
+                    textAlign: 'center',
+                    position: 'relative'
                   }}>
-                    <div style={{ fontSize: '0.4rem', color: '#fff', fontWeight: '700', marginBottom: '3px', letterSpacing: '0.3px' }}>
-                      INNOVATE
+                    {/* Floating Icons */}
+                    <div style={{ position: 'absolute', top: '10%', left: '10%', fontSize: '0.35rem', color: 'rgba(255,255,255,0.12)' }}>📷</div>
+                    <div style={{ position: 'absolute', top: '8%', right: '8%', fontSize: '0.4rem', color: 'rgba(59,89,152,0.3)' }}>f</div>
+                    <div style={{ position: 'absolute', bottom: '18%', right: '8%', fontSize: '0.35rem', color: 'rgba(10,102,194,0.3)' }}>in</div>
+                    <div style={{ fontSize: '0.45rem', color: '#fff', fontWeight: '800', marginBottom: '2px', fontStyle: 'italic' }}>
+                      INNOVATE. SECURE.
                     </div>
-                    <div style={{ fontSize: '0.3rem', color: '#0066cc', fontWeight: '700', marginBottom: '4px' }}>
-                      SECURE. SCALE!
+                    <div style={{ fontSize: '0.45rem', color: '#0066cc', fontWeight: '800', marginBottom: '5px', fontStyle: 'italic' }}>
+                      SCALE!
                     </div>
-                    <div style={{ fontSize: '0.22rem', color: '#888', marginBottom: '6px', lineHeight: '1.2' }}>
+                    <div style={{ fontSize: '0.2rem', color: 'rgba(255,255,255,0.6)', marginBottom: '6px', lineHeight: '1.3' }}>
                       Your Trusted Technology Partner
                     </div>
                     <div style={{
-                      fontSize: '0.3rem',
+                      fontSize: '0.25rem',
                       background: '#0066cc',
                       color: '#fff',
-                      padding: '2px 6px',
+                      padding: '3px 8px',
                       borderRadius: '3px',
                       fontWeight: '600'
                     }}>
-                      Get Consultation
+                      Get Consultation →
                     </div>
+                  </div>
+                  {/* Partner Logos */}
+                  <div style={{
+                    background: 'rgba(255,255,255,0.95)',
+                    padding: '3px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    gap: '4px',
+                    fontSize: '0.18rem',
+                    color: '#333'
+                  }}>
+                    <span style={{ background: '#f5f5f5', padding: '1px 3px', borderRadius: '2px' }}>HP</span>
+                    <span style={{ background: '#f5f5f5', padding: '1px 3px', borderRadius: '2px' }}>aws</span>
+                    <span style={{ background: '#f5f5f5', padding: '1px 3px', borderRadius: '2px' }}>ESET</span>
                   </div>
                 </div>
               </div>
@@ -515,7 +559,7 @@ const SoftwareDevelopment = () => {
                   zIndex: 10
                 }}></div>
                 <div style={{
-                  background: 'linear-gradient(135deg, #000 0%, #0a1428 100%)',
+                  background: 'linear-gradient(180deg, #0a1628 0%, #0d2240 100%)',
                   borderRadius: '22px',
                   overflow: 'hidden',
                   aspectRatio: '9/19.5',
@@ -526,48 +570,66 @@ const SoftwareDevelopment = () => {
                 }}>
                   {/* Mobile Header */}
                   <div style={{
-                    background: 'rgba(5, 15, 30, 0.9)',
-                    padding: '6px 8px',
+                    background: 'rgba(255, 255, 255, 0.98)',
+                    padding: '5px 6px',
                     display: 'flex',
-                    justifyContent: 'center',
+                    justifyContent: 'space-between',
                     alignItems: 'center',
-                    borderBottom: '1px solid rgba(0, 102, 204, 0.1)',
-                    fontSize: '0.3rem',
-                    color: '#0066cc',
-                    fontWeight: '700'
+                    fontSize: '0.25rem'
                   }}>
-                    CybaemTech
+                    <span style={{ color: '#0066cc', fontWeight: '700' }}>Cybaem<span style={{ color: '#333' }}>Tech</span></span>
+                    <span style={{ background: '#0066cc', color: '#fff', padding: '1px 3px', borderRadius: '2px', fontSize: '0.18rem' }}>☰</span>
                   </div>
                   {/* Mobile Content */}
                   <div style={{
                     flex: 1,
-                    background: 'linear-gradient(135deg, #050f1e 0%, #0a2540 100%)',
+                    background: 'linear-gradient(180deg, #0a1628 0%, #0d2240 100%)',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    padding: '8px',
-                    textAlign: 'center'
+                    padding: '6px',
+                    textAlign: 'center',
+                    position: 'relative'
                   }}>
-                    <div style={{ fontSize: '0.35rem', color: '#fff', fontWeight: '700', marginBottom: '2px', letterSpacing: '0.3px' }}>
-                      INNOVATE
+                    {/* Floating Icons */}
+                    <div style={{ position: 'absolute', top: '12%', right: '10%', fontSize: '0.28rem', color: 'rgba(59,89,152,0.3)' }}>f</div>
+                    <div style={{ position: 'absolute', bottom: '20%', left: '12%', fontSize: '0.22rem', color: 'rgba(255,255,255,0.1)' }}>&lt;/&gt;</div>
+                    <div style={{ fontSize: '0.35rem', color: '#fff', fontWeight: '800', marginBottom: '1px', fontStyle: 'italic' }}>
+                      INNOVATE.
                     </div>
-                    <div style={{ fontSize: '0.28rem', color: '#0066cc', fontWeight: '700', marginBottom: '4px' }}>
-                      SECURE
+                    <div style={{ fontSize: '0.32rem', color: '#fff', fontWeight: '800', marginBottom: '1px', fontStyle: 'italic' }}>
+                      SECURE.
                     </div>
-                    <div style={{ fontSize: '0.28rem', color: '#0066cc', fontWeight: '700', marginBottom: '4px' }}>
+                    <div style={{ fontSize: '0.35rem', color: '#0066cc', fontWeight: '800', marginBottom: '4px', fontStyle: 'italic' }}>
                       SCALE!
                     </div>
+                    <div style={{ fontSize: '0.15rem', color: 'rgba(255,255,255,0.5)', marginBottom: '5px' }}>
+                      Your Trusted Partner
+                    </div>
                     <div style={{
-                      fontSize: '0.24rem',
+                      fontSize: '0.2rem',
                       background: '#0066cc',
                       color: '#fff',
-                      padding: '2px 6px',
-                      borderRadius: '3px',
+                      padding: '2px 5px',
+                      borderRadius: '2px',
                       fontWeight: '600'
                     }}>
-                      Consultation
+                      Consultation →
                     </div>
+                  </div>
+                  {/* Partner Logos */}
+                  <div style={{
+                    background: 'rgba(255,255,255,0.95)',
+                    padding: '2px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    gap: '2px',
+                    fontSize: '0.12rem',
+                    color: '#333'
+                  }}>
+                    <span style={{ background: '#f5f5f5', padding: '1px 2px', borderRadius: '1px' }}>HP</span>
+                    <span style={{ background: '#f5f5f5', padding: '1px 2px', borderRadius: '1px' }}>aws</span>
                   </div>
                 </div>
               </div>
