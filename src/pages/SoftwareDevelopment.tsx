@@ -292,11 +292,168 @@ const SoftwareDevelopment = () => {
             </p>
           </div>
 
-          {/* Right Content */}
-          <div style={{ position: 'relative', animation: 'fadeInRight 1s ease-out', textAlign: 'center', color: 'rgba(255, 255, 255, 0.4)', fontSize: '1.2rem', minHeight: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <div style={{ animation: 'deviceFloat 6s ease-in-out infinite' }}>
-              ✦ Enterprise-grade solutions built with cutting-edge technology ✦
+          {/* Right Content - Devices */}
+          <div style={{ position: 'relative', animation: 'fadeInRight 1s ease-out', height: '550px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            {/* Desktop Device */}
+            <div style={{
+              position: 'absolute',
+              width: '500px',
+              zIndex: 3,
+              animation: 'deviceFloat 6s ease-in-out infinite'
+            }}>
+              {/* Desktop Frame */}
+              <div style={{
+                background: 'linear-gradient(135deg, #1a1a1a, #2d2d2d)',
+                borderRadius: '12px 12px 0 0',
+                padding: '8px',
+                boxShadow: '0 30px 80px rgba(0, 0, 0, 0.5)',
+                border: '2px solid rgba(255, 255, 255, 0.1)'
+              }}>
+                {/* Desktop Top Bar */}
+                <div style={{
+                  background: 'rgba(20, 20, 20, 0.95)',
+                  height: '28px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  padding: '0 12px',
+                  gap: '6px',
+                  borderRadius: '6px 6px 0 0'
+                }}>
+                  <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#ff5f57', animation: 'dotPulse 2s infinite' }}></div>
+                  <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#ffbd2e', animation: 'dotPulse 2s infinite', animationDelay: '0.3s' }}></div>
+                  <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#28ca42', animation: 'dotPulse 2s infinite', animationDelay: '0.6s' }}></div>
+                </div>
+                {/* Desktop Screen */}
+                <div style={{
+                  background: 'linear-gradient(135deg, #001a33 0%, #003366 50%, #001a33 100%)',
+                  borderRadius: '6px',
+                  overflow: 'hidden',
+                  aspectRatio: '16/10',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'rgba(255, 255, 255, 0.3)',
+                  fontSize: '0.9rem',
+                  textAlign: 'center',
+                  padding: '1rem'
+                }}>
+                  📊 CybaemTech Dashboard
+                </div>
+              </div>
+              {/* Desktop Stand */}
+              <div style={{
+                width: '180px',
+                height: '6px',
+                background: 'linear-gradient(135deg, #2d2d2d, #1a1a1a)',
+                margin: '0 auto',
+                borderRadius: '0 0 6px 6px'
+              }}></div>
+              {/* Desktop Base */}
+              <div style={{
+                width: '250px',
+                height: '8px',
+                background: 'linear-gradient(135deg, #1a1a1a, #000)',
+                margin: '0 auto',
+                borderRadius: '12px',
+                boxShadow: '0 5px 20px rgba(0, 0, 0, 0.5)'
+              }}></div>
             </div>
+
+            {/* Tablet Device */}
+            <div style={{
+              position: 'absolute',
+              width: '220px',
+              bottom: '60px',
+              left: '-80px',
+              zIndex: 2,
+              animation: 'tabletFloat 5s ease-in-out infinite',
+              animationDelay: '1s'
+            }}>
+              <div style={{
+                background: 'linear-gradient(135deg, #1a1a1a, #2d2d2d)',
+                borderRadius: '20px',
+                padding: '12px',
+                boxShadow: '0 25px 60px rgba(0, 0, 0, 0.4)',
+                border: '3px solid rgba(255, 255, 255, 0.1)'
+              }}>
+                <div style={{
+                  background: 'linear-gradient(135deg, #001a33 0%, #003366 50%, #001a33 100%)',
+                  borderRadius: '12px',
+                  overflow: 'hidden',
+                  aspectRatio: '3/4',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'rgba(255, 255, 255, 0.3)',
+                  fontSize: '0.7rem',
+                  textAlign: 'center'
+                }}>
+                  📱 Responsive
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile Device */}
+            <div style={{
+              position: 'absolute',
+              width: '140px',
+              bottom: '80px',
+              right: '-50px',
+              zIndex: 4,
+              animation: 'mobileFloat 4s ease-in-out infinite',
+              animationDelay: '2s'
+            }}>
+              <div style={{
+                background: 'linear-gradient(135deg, #1a1a1a, #2d2d2d)',
+                borderRadius: '28px',
+                padding: '10px',
+                boxShadow: '0 20px 50px rgba(0, 0, 0, 0.4)',
+                border: '3px solid rgba(255, 255, 255, 0.15)',
+                position: 'relative'
+              }}>
+                {/* Notch */}
+                <div style={{
+                  position: 'absolute',
+                  top: '10px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: '60px',
+                  height: '18px',
+                  background: '#000',
+                  borderRadius: '0 0 12px 12px',
+                  zIndex: 10
+                }}></div>
+                <div style={{
+                  background: 'linear-gradient(135deg, #001a33 0%, #003366 50%, #001a33 100%)',
+                  borderRadius: '22px',
+                  overflow: 'hidden',
+                  aspectRatio: '9/19.5',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'rgba(255, 255, 255, 0.3)',
+                  fontSize: '0.5rem',
+                  textAlign: 'center'
+                }}>
+                  📱 Mobile
+                </div>
+              </div>
+            </div>
+
+            <style>{`
+              @keyframes tabletFloat {
+                0%, 100% { transform: translateY(0) rotate(-8deg); }
+                50% { transform: translateY(-12px) rotate(-8deg); }
+              }
+              @keyframes mobileFloat {
+                0%, 100% { transform: translateY(0) rotate(12deg); }
+                50% { transform: translateY(-10px) rotate(12deg); }
+              }
+              @keyframes dotPulse {
+                0%, 100% { transform: scale(1); opacity: 1; }
+                50% { transform: scale(1.2); opacity: 0.8; }
+              }
+            `}</style>
           </div>
         </div>
       </section>
