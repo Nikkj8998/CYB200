@@ -18,12 +18,10 @@ const Resources = () => {
   const [blogPosts, setBlogPosts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // Helper function to normalize image URLs to absolute paths
+  // Helper function to normalize image URLs
   const normalizeImageUrl = (url?: string): string => {
     if (!url) return "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80";
     if (url.startsWith('http')) return url;
-    
-    const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'http://localhost';
     
     // Clean the URL
     let normalizedUrl = url.trim();
@@ -33,7 +31,7 @@ const Resources = () => {
       normalizedUrl = '/' + normalizedUrl;
     }
     
-    // Handle different path formats and convert to /public/uploads/
+    // Convert /uploads/ to /public/uploads/ if needed
     if (normalizedUrl.startsWith('/uploads/')) {
       normalizedUrl = normalizedUrl.replace('/uploads/', '/public/uploads/');
     } else if (!normalizedUrl.startsWith('/public/uploads/')) {
@@ -42,9 +40,8 @@ const Resources = () => {
       normalizedUrl = `/public/uploads/${filename}`;
     }
     
-    const finalUrl = baseUrl + normalizedUrl;
-    console.log('Image URL normalized:', { original: url, normalized: normalizedUrl, final: finalUrl });
-    return finalUrl;
+    console.log('Image URL normalized:', { original: url, normalized: normalizedUrl });
+    return normalizedUrl;
   };
 
   // Fetch all resources from database

@@ -9,9 +9,20 @@ if ($uri === '/' || $uri === '/health') {
     exit;
 }
 
-// Serve static files from uploads directory
+// Serve static files from uploads directory (both /backend/uploads/ and /public/uploads/)
 if (preg_match('/^\/backend\/uploads\//', $uri)) {
     $file = __DIR__ . $uri;
+    if (file_exists($file)) {
+        $mime = mime_content_type($file);
+        header('Content-Type: ' . $mime);
+        readfile($file);
+        exit;
+    }
+}
+
+// Serve static files from public/uploads
+if (preg_match('/^\/public\/uploads\//', $uri)) {
+    $file = __DIR__ . '/..' . $uri;
     if (file_exists($file)) {
         $mime = mime_content_type($file);
         header('Content-Type: ' . $mime);
