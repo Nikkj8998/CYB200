@@ -768,16 +768,16 @@ const SoftwareDevelopment = () => {
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   <div className="relative">
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-300" />
-                    <Card className="relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-gray-700/30 hover:border-emerald-500/50 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-500/20 h-full">
+                    <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-300" />
+                    <Card className="relative bg-black border border-gray-700/30 hover:border-primary/50 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 h-full">
                       <CardContent className="p-8 relative z-10">
                         <div className="flex items-start gap-4 mb-4">
-                          <div className="w-16 h-16 min-w-fit bg-gradient-to-br from-emerald-400 to-cyan-400 rounded-full flex items-center justify-center text-slate-900 font-bold text-2xl shadow-lg shadow-emerald-500/50 group-hover:shadow-lg group-hover:shadow-cyan-500/50 transition-all duration-300">
+                          <div className="w-16 h-16 min-w-fit bg-primary rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-lg shadow-primary/50 group-hover:shadow-lg group-hover:shadow-primary/50 transition-all duration-300">
                             {process.step}
                           </div>
                           <div>
-                            <h3 className="font-bold text-lg text-white mb-2 group-hover:text-emerald-400 transition-colors flex items-center gap-2">
-                              <Icon className="w-5 h-5 text-emerald-400" />
+                            <h3 className="font-bold text-lg text-white mb-2 group-hover:text-primary transition-colors flex items-center gap-2">
+                              <Icon className="w-5 h-5 text-primary" />
                               {process.title}
                             </h3>
                           </div>
@@ -820,12 +820,12 @@ const SoftwareDevelopment = () => {
                   }`}
                   style={{ transitionDelay: `${index * 50}ms` }}
                 >
-                  <Card className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-gray-700/30 hover:border-emerald-500/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-emerald-500/30 transition-all duration-300 h-full">
+                  <Card className="bg-black border border-gray-700/30 hover:border-primary/50 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 h-full">
                     <CardContent className="p-6 text-center flex flex-col items-center justify-center">
-                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 flex items-center justify-center mb-4 group-hover:from-emerald-500/40 group-hover:to-cyan-500/40 transition-all duration-300">
-                        <Icon className="w-6 h-6 text-emerald-400 group-hover:scale-125 transition-transform" />
+                      <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/40 transition-all duration-300">
+                        <Icon className="w-6 h-6 text-primary group-hover:scale-125 transition-transform" />
                       </div>
-                      <p className="text-sm font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                      <p className="text-sm font-semibold text-white group-hover:text-primary transition-colors">
                         {industry.label}
                       </p>
                     </CardContent>
