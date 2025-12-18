@@ -325,19 +325,59 @@ const SoftwareDevelopment = () => {
                 </div>
                 {/* Desktop Screen */}
                 <div style={{
-                  background: 'linear-gradient(135deg, #001a33 0%, #003366 50%, #001a33 100%)',
+                  background: 'linear-gradient(135deg, #000 0%, #0a1428 50%, #000 100%)',
                   borderRadius: '6px',
                   overflow: 'hidden',
                   aspectRatio: '16/10',
                   display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'rgba(255, 255, 255, 0.3)',
-                  fontSize: '0.9rem',
-                  textAlign: 'center',
-                  padding: '1rem'
+                  flexDirection: 'column'
                 }}>
-                  📊 CybaemTech Dashboard
+                  {/* Desktop Header */}
+                  <div style={{
+                    background: 'rgba(10, 20, 40, 0.8)',
+                    padding: '12px 20px',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    borderBottom: '1px solid rgba(0, 255, 157, 0.2)',
+                    fontSize: '0.6rem',
+                    color: '#00ff9d',
+                    fontWeight: '600'
+                  }}>
+                    <div>CybaemTech</div>
+                    <div style={{ fontSize: '0.5rem', color: '#888' }}>Services | Industries | About</div>
+                  </div>
+                  {/* Desktop Content */}
+                  <div style={{
+                    flex: 1,
+                    background: 'linear-gradient(135deg, #0a1428 0%, #0f2a47 100%)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    padding: '20px',
+                    textAlign: 'center'
+                  }}>
+                    <div style={{ fontSize: '0.7rem', color: '#fff', fontWeight: '700', marginBottom: '6px' }}>
+                      INNOVATE. SECURE. SCALE.
+                    </div>
+                    <div style={{ fontSize: '0.5rem', color: '#00b8ff', marginBottom: '8px' }}>
+                      Enterprise Solutions
+                    </div>
+                    <div style={{ fontSize: '0.35rem', color: '#aaa', marginBottom: '12px', lineHeight: '1.4' }}>
+                      Your Trusted Technology Partner
+                    </div>
+                    <div style={{
+                      fontSize: '0.4rem',
+                      background: 'rgba(0, 255, 157, 0.2)',
+                      color: '#00ff9d',
+                      padding: '4px 12px',
+                      borderRadius: '4px',
+                      border: '1px solid rgba(0, 255, 157, 0.4)'
+                    }}>
+                      Get Consultation →
+                    </div>
+                  </div>
                 </div>
               </div>
               {/* Desktop Stand */}
@@ -365,7 +405,7 @@ const SoftwareDevelopment = () => {
               width: '220px',
               bottom: '60px',
               left: '-80px',
-              zIndex: 2,
+              zIndex: 5,
               animation: 'tabletFloat 5s ease-in-out infinite',
               animationDelay: '1s'
             }}>
@@ -377,18 +417,45 @@ const SoftwareDevelopment = () => {
                 border: '3px solid rgba(255, 255, 255, 0.1)'
               }}>
                 <div style={{
-                  background: 'linear-gradient(135deg, #001a33 0%, #003366 50%, #001a33 100%)',
+                  background: '#000',
                   borderRadius: '12px',
                   overflow: 'hidden',
                   aspectRatio: '3/4',
                   display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'rgba(255, 255, 255, 0.3)',
-                  fontSize: '0.7rem',
-                  textAlign: 'center'
+                  flexDirection: 'column'
                 }}>
-                  📱 Responsive
+                  {/* Tablet Header */}
+                  <div style={{
+                    background: 'linear-gradient(180deg, #0a1428 0%, #0d1f33 100%)',
+                    padding: '8px 10px',
+                    fontSize: '0.4rem',
+                    color: '#00ff9d',
+                    fontWeight: '600',
+                    textAlign: 'center'
+                  }}>
+                    CybaemTech
+                  </div>
+                  {/* Tablet Content */}
+                  <div style={{
+                    flex: 1,
+                    background: 'linear-gradient(135deg, #0a1428 0%, #0f2a47 100%)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    padding: '8px',
+                    textAlign: 'center'
+                  }}>
+                    <div style={{ fontSize: '0.35rem', color: '#fff', fontWeight: '700', marginBottom: '4px' }}>
+                      IT SERVICES
+                    </div>
+                    <div style={{ fontSize: '0.25rem', color: '#00b8ff', marginBottom: '4px' }}>
+                      Digital Solutions
+                    </div>
+                    <div style={{ fontSize: '0.2rem', color: '#666', lineHeight: '1.2' }}>
+                      Enterprise Tech
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -424,18 +491,58 @@ const SoftwareDevelopment = () => {
                   zIndex: 10
                 }}></div>
                 <div style={{
-                  background: 'linear-gradient(135deg, #001a33 0%, #003366 50%, #001a33 100%)',
+                  background: 'linear-gradient(135deg, #000 0%, #0a1428 100%)',
                   borderRadius: '22px',
                   overflow: 'hidden',
                   aspectRatio: '9/19.5',
                   display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'rgba(255, 255, 255, 0.3)',
-                  fontSize: '0.5rem',
-                  textAlign: 'center'
+                  flexDirection: 'column'
                 }}>
-                  📱 Mobile
+                  {/* Mobile Header */}
+                  <div style={{
+                    background: 'rgba(10, 20, 40, 0.9)',
+                    padding: '8px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    borderBottom: '1px solid rgba(0, 255, 157, 0.15)',
+                    fontSize: '0.35rem',
+                    color: '#00ff9d',
+                    fontWeight: '600'
+                  }}>
+                    CybaemTech
+                  </div>
+                  {/* Mobile Content */}
+                  <div style={{
+                    flex: 1,
+                    background: 'linear-gradient(135deg, #0a1428 0%, #0f2a47 100%)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    padding: '8px',
+                    textAlign: 'center'
+                  }}>
+                    <div style={{ fontSize: '0.32rem', color: '#fff', fontWeight: '700', marginBottom: '3px' }}>
+                      INNOVATE
+                    </div>
+                    <div style={{ fontSize: '0.28rem', color: '#00b8ff', marginBottom: '3px' }}>
+                      SECURE
+                    </div>
+                    <div style={{ fontSize: '0.28rem', color: '#00ff9d', marginBottom: '4px' }}>
+                      SCALE
+                    </div>
+                    <div style={{
+                      fontSize: '0.22rem',
+                      background: 'rgba(0, 255, 157, 0.2)',
+                      color: '#00ff9d',
+                      padding: '2px 6px',
+                      borderRadius: '3px',
+                      border: '1px solid rgba(0, 255, 157, 0.3)'
+                    }}>
+                      Services
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
