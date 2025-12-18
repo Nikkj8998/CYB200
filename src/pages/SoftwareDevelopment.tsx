@@ -325,57 +325,68 @@ const SoftwareDevelopment = () => {
                 </div>
                 {/* Desktop Screen */}
                 <div style={{
-                  background: 'linear-gradient(135deg, #000 0%, #0a1428 50%, #000 100%)',
+                  background: 'linear-gradient(135deg, #000 0%, #0a1f3c 50%, #000 100%)',
                   borderRadius: '6px',
                   overflow: 'hidden',
                   aspectRatio: '16/10',
                   display: 'flex',
-                  flexDirection: 'column'
+                  flexDirection: 'column',
+                  fontSize: '0.55rem',
+                  color: '#fff'
                 }}>
                   {/* Desktop Header */}
                   <div style={{
-                    background: 'rgba(10, 20, 40, 0.8)',
-                    padding: '12px 20px',
+                    background: 'rgba(5, 15, 30, 0.95)',
+                    padding: '8px 16px',
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    borderBottom: '1px solid rgba(0, 255, 157, 0.2)',
-                    fontSize: '0.6rem',
-                    color: '#00ff9d',
+                    borderBottom: '1px solid rgba(0, 102, 204, 0.15)',
+                    fontSize: '0.45rem',
                     fontWeight: '600'
                   }}>
-                    <div>CybaemTech</div>
-                    <div style={{ fontSize: '0.5rem', color: '#888' }}>Services | Industries | About</div>
+                    <div style={{ color: '#0066cc', fontWeight: '700' }}>CybaemTech</div>
+                    <div style={{ fontSize: '0.4rem', color: '#888', display: 'flex', gap: '8px' }}>
+                      <span>Services</span>
+                      <span>Industries</span>
+                      <span>About</span>
+                    </div>
+                    <div style={{ color: '#0066cc', background: '#e3f2fd', padding: '2px 6px', borderRadius: '3px', fontSize: '0.4rem', fontWeight: '600' }}>
+                      Contact
+                    </div>
                   </div>
-                  {/* Desktop Content */}
+                  {/* Desktop Hero Content */}
                   <div style={{
                     flex: 1,
-                    background: 'linear-gradient(135deg, #0a1428 0%, #0f2a47 100%)',
+                    background: 'linear-gradient(135deg, #050f1e 0%, #0a2540 50%, #050f1e 100%)',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    padding: '20px',
-                    textAlign: 'center'
+                    padding: '12px',
+                    textAlign: 'center',
+                    position: 'relative',
+                    overflow: 'hidden'
                   }}>
-                    <div style={{ fontSize: '0.7rem', color: '#fff', fontWeight: '700', marginBottom: '6px' }}>
-                      INNOVATE. SECURE. SCALE.
+                    <div style={{ fontSize: '0.65rem', color: '#fff', fontWeight: '700', marginBottom: '3px', letterSpacing: '0.5px' }}>
+                      INNOVATE. SECURE.
                     </div>
-                    <div style={{ fontSize: '0.5rem', color: '#00b8ff', marginBottom: '8px' }}>
-                      Enterprise Solutions
+                    <div style={{ fontSize: '0.65rem', color: '#0066cc', fontWeight: '700', marginBottom: '6px', letterSpacing: '0.5px' }}>
+                      SCALE!
                     </div>
-                    <div style={{ fontSize: '0.35rem', color: '#aaa', marginBottom: '12px', lineHeight: '1.4' }}>
-                      Your Trusted Technology Partner
+                    <div style={{ fontSize: '0.32rem', color: '#aaa', marginBottom: '6px', lineHeight: '1.3', maxWidth: '90%' }}>
+                      Your Trusted Technology Partner for IT Infrastructure
                     </div>
                     <div style={{
-                      fontSize: '0.4rem',
-                      background: 'rgba(0, 255, 157, 0.2)',
-                      color: '#00ff9d',
-                      padding: '4px 12px',
-                      borderRadius: '4px',
-                      border: '1px solid rgba(0, 255, 157, 0.4)'
+                      fontSize: '0.38rem',
+                      background: '#0066cc',
+                      color: '#fff',
+                      padding: '3px 10px',
+                      borderRadius: '3px',
+                      fontWeight: '600',
+                      cursor: 'pointer'
                     }}>
-                      Get Consultation →
+                      Get Free Consultation →
                     </div>
                   </div>
                 </div>
@@ -417,43 +428,56 @@ const SoftwareDevelopment = () => {
                 border: '3px solid rgba(255, 255, 255, 0.1)'
               }}>
                 <div style={{
-                  background: '#000',
+                  background: 'linear-gradient(135deg, #000 0%, #0a1428 100%)',
                   borderRadius: '12px',
                   overflow: 'hidden',
                   aspectRatio: '3/4',
                   display: 'flex',
-                  flexDirection: 'column'
+                  flexDirection: 'column',
+                  fontSize: '0.4rem',
+                  color: '#fff'
                 }}>
                   {/* Tablet Header */}
                   <div style={{
-                    background: 'linear-gradient(180deg, #0a1428 0%, #0d1f33 100%)',
-                    padding: '8px 10px',
-                    fontSize: '0.4rem',
-                    color: '#00ff9d',
-                    fontWeight: '600',
-                    textAlign: 'center'
+                    background: 'rgba(5, 15, 30, 0.9)',
+                    padding: '6px 10px',
+                    fontSize: '0.35rem',
+                    color: '#0066cc',
+                    fontWeight: '700',
+                    textAlign: 'center',
+                    borderBottom: '1px solid rgba(0, 102, 204, 0.1)'
                   }}>
                     CybaemTech
                   </div>
                   {/* Tablet Content */}
                   <div style={{
                     flex: 1,
-                    background: 'linear-gradient(135deg, #0a1428 0%, #0f2a47 100%)',
+                    background: 'linear-gradient(135deg, #050f1e 0%, #0a2540 100%)',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    padding: '8px',
+                    padding: '10px',
                     textAlign: 'center'
                   }}>
-                    <div style={{ fontSize: '0.35rem', color: '#fff', fontWeight: '700', marginBottom: '4px' }}>
-                      IT SERVICES
+                    <div style={{ fontSize: '0.4rem', color: '#fff', fontWeight: '700', marginBottom: '3px', letterSpacing: '0.3px' }}>
+                      INNOVATE
                     </div>
-                    <div style={{ fontSize: '0.25rem', color: '#00b8ff', marginBottom: '4px' }}>
-                      Digital Solutions
+                    <div style={{ fontSize: '0.3rem', color: '#0066cc', fontWeight: '700', marginBottom: '4px' }}>
+                      SECURE. SCALE!
                     </div>
-                    <div style={{ fontSize: '0.2rem', color: '#666', lineHeight: '1.2' }}>
-                      Enterprise Tech
+                    <div style={{ fontSize: '0.22rem', color: '#888', marginBottom: '6px', lineHeight: '1.2' }}>
+                      Your Trusted Technology Partner
+                    </div>
+                    <div style={{
+                      fontSize: '0.3rem',
+                      background: '#0066cc',
+                      color: '#fff',
+                      padding: '2px 6px',
+                      borderRadius: '3px',
+                      fontWeight: '600'
+                    }}>
+                      Get Consultation
                     </div>
                   </div>
                 </div>
@@ -496,26 +520,28 @@ const SoftwareDevelopment = () => {
                   overflow: 'hidden',
                   aspectRatio: '9/19.5',
                   display: 'flex',
-                  flexDirection: 'column'
+                  flexDirection: 'column',
+                  fontSize: '0.32rem',
+                  color: '#fff'
                 }}>
                   {/* Mobile Header */}
                   <div style={{
-                    background: 'rgba(10, 20, 40, 0.9)',
-                    padding: '8px',
+                    background: 'rgba(5, 15, 30, 0.9)',
+                    padding: '6px 8px',
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    borderBottom: '1px solid rgba(0, 255, 157, 0.15)',
-                    fontSize: '0.35rem',
-                    color: '#00ff9d',
-                    fontWeight: '600'
+                    borderBottom: '1px solid rgba(0, 102, 204, 0.1)',
+                    fontSize: '0.3rem',
+                    color: '#0066cc',
+                    fontWeight: '700'
                   }}>
                     CybaemTech
                   </div>
                   {/* Mobile Content */}
                   <div style={{
                     flex: 1,
-                    background: 'linear-gradient(135deg, #0a1428 0%, #0f2a47 100%)',
+                    background: 'linear-gradient(135deg, #050f1e 0%, #0a2540 100%)',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
@@ -523,24 +549,24 @@ const SoftwareDevelopment = () => {
                     padding: '8px',
                     textAlign: 'center'
                   }}>
-                    <div style={{ fontSize: '0.32rem', color: '#fff', fontWeight: '700', marginBottom: '3px' }}>
+                    <div style={{ fontSize: '0.35rem', color: '#fff', fontWeight: '700', marginBottom: '2px', letterSpacing: '0.3px' }}>
                       INNOVATE
                     </div>
-                    <div style={{ fontSize: '0.28rem', color: '#00b8ff', marginBottom: '3px' }}>
+                    <div style={{ fontSize: '0.28rem', color: '#0066cc', fontWeight: '700', marginBottom: '4px' }}>
                       SECURE
                     </div>
-                    <div style={{ fontSize: '0.28rem', color: '#00ff9d', marginBottom: '4px' }}>
-                      SCALE
+                    <div style={{ fontSize: '0.28rem', color: '#0066cc', fontWeight: '700', marginBottom: '4px' }}>
+                      SCALE!
                     </div>
                     <div style={{
-                      fontSize: '0.22rem',
-                      background: 'rgba(0, 255, 157, 0.2)',
-                      color: '#00ff9d',
+                      fontSize: '0.24rem',
+                      background: '#0066cc',
+                      color: '#fff',
                       padding: '2px 6px',
                       borderRadius: '3px',
-                      border: '1px solid rgba(0, 255, 157, 0.3)'
+                      fontWeight: '600'
                     }}>
-                      Services
+                      Consultation
                     </div>
                   </div>
                 </div>
