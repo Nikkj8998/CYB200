@@ -638,12 +638,12 @@ const SoftwareDevelopment = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-20">
             <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50 px-4 py-2 mb-6">Our Expertise</Badge>
-            <h2 className="text-5xl md:text-6xl leading-tight mb-6 font-extrabold">
-              <div className="text-white">Comprehensive Software</div>
-              <div className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">Solutions</div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+              <span className="text-white">Comprehensive Software </span>
+              <span className="text-primary">Solutions</span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              From web development to enterprise systems, we deliver end-to-end solutions tailored to your business needs with cutting-edge technology.
+            <p className="text-gray-400 text-lg">
+              From web development to enterprise systems, we deliver end-to-end solutions tailored to your business needs.
             </p>
           </div>
 
@@ -658,19 +658,19 @@ const SoftwareDevelopment = () => {
                   }`}
                   style={{ transitionDelay: `${index * 80}ms` }}
                 >
-                  <Card className="h-full bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-gray-700/30 hover:border-emerald-500/80 backdrop-blur-sm shadow-lg hover:shadow-2xl hover:shadow-emerald-500/40 transition-all duration-500 hover:-translate-y-3 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-cyan-500/0 group-hover:from-emerald-500/15 group-hover:to-cyan-500/10 transition-all duration-500" />
+                  <Card className="h-full bg-gradient-to-br from-gray-900/80 to-gray-800/80 border border-primary/20 hover:border-primary/50 backdrop-blur-sm shadow-lg hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:-translate-y-3 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <CardContent className="p-6 relative z-10 flex gap-5">
                       {/* Icon Container */}
                       <div className="flex-shrink-0">
-                        <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-emerald-500/30 to-cyan-500/20 flex items-center justify-center group-hover:from-emerald-500/50 group-hover:to-cyan-500/40 transition-all duration-500 group-hover:scale-110">
-                          <Icon className="w-8 h-8 text-emerald-400 group-hover:text-emerald-300 transition-all" />
+                        <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <Icon className="w-6 h-6 text-cyan-400" />
                         </div>
                       </div>
                       
                       {/* Content Container */}
                       <div className="flex-1 min-w-0">
-                        <h3 className="font-bold text-base md:text-lg text-white mb-2 group-hover:text-emerald-300 transition-colors">
+                        <h3 className="font-bold text-base md:text-lg text-white mb-2 group-hover:text-primary transition-colors">
                           {service.title}
                         </h3>
                         <p className="text-gray-400 text-xs md:text-sm leading-relaxed mb-3">
@@ -678,7 +678,7 @@ const SoftwareDevelopment = () => {
                         </p>
                         <div className="flex flex-wrap gap-2">
                           {service.features.slice(0, 2).map((feature, i) => (
-                            <span key={i} className="inline-flex items-center text-xs bg-emerald-500/10 text-emerald-300 px-2 py-1 rounded border border-emerald-500/20 group-hover:border-emerald-500/50 group-hover:bg-emerald-500/20 transition-all">
+                            <span key={i} className="inline-flex items-center text-xs bg-primary/10 text-cyan-400 px-2 py-1 rounded border border-primary/20 group-hover:border-primary/50 group-hover:bg-primary/20 transition-all">
                               {feature}
                             </span>
                           ))}
