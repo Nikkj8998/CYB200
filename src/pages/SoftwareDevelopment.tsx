@@ -306,21 +306,21 @@ const SoftwareDevelopment = () => {
       {/* Services Section */}
       <section
         ref={servicesRef}
-        className={`py-20 bg-white transition-opacity duration-1000 ${
+        className={`py-20 bg-slate-900 text-white transition-opacity duration-1000 ${
           servicesInView ? "opacity-100" : "opacity-0"
         }`}
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="bg-emerald-100 text-emerald-700 border-emerald-300 mb-4">
+            <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50 mb-4">
               Our Services
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Comprehensive Software
               <br />
-              <span className="text-emerald-500">Solutions</span>
+              <span className="text-emerald-400">Solutions</span>
             </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
               From web development to enterprise systems, we deliver end-to-end solutions tailored to your business needs.
             </p>
           </div>
@@ -331,7 +331,7 @@ const SoftwareDevelopment = () => {
               return (
                 <Card
                   key={index}
-                  className={`border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${
+                  className={`bg-slate-800 border-slate-700 hover:border-emerald-500/50 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${
                     servicesInView
                       ? "translate-y-0 opacity-100"
                       : "translate-y-10 opacity-0"
@@ -339,11 +339,11 @@ const SoftwareDevelopment = () => {
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   <CardContent className="p-6">
-                    <Icon className="w-12 h-12 text-emerald-500 mb-4" />
-                    <h3 className="font-bold text-lg text-slate-900 mb-2">
+                    <Icon className="w-12 h-12 text-emerald-400 mb-4" />
+                    <h3 className="font-bold text-lg mb-2">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-400 text-sm leading-relaxed">
                       {service.description}
                     </p>
                   </CardContent>
