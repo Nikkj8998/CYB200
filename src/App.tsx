@@ -22,6 +22,7 @@ import Contact from "./pages/Contact";
 import ITAugmentation from "./pages/ITAugmentation";
 import ITSMConsulting from "./pages/ITSMConsulting";
 import OnsiteITEngineer from "./pages/OnsiteITEngineer";
+import SoftwareDevelopment from "./pages/SoftwareDevelopment";
 import ScrollToTop from "@/components/ScrollToTop";
 import BlogPost from "./components/BlogPost";
 import ThankYou from "./components/ThankYou";
@@ -72,6 +73,7 @@ const App = () => (
               <Route path="/cloud-solutions" element={<CloudSolutions />} />
               <Route path="/cybersecurity-services" element={<CybersecurityServices />} />
               <Route path="/enterprise-solutions" element={<EnterpriseSolutions />} />
+              <Route path="/software-development" element={<SoftwareDevelopment />} />
               <Route path="/digital-marketing" element={<DigitalMarketing />} />
               <Route path="/ai-data-analytics" element={<AIDataAnalytics />} />
               <Route path="/computer-amc-services" element={<ComputerAMCServices />} />
