@@ -698,12 +698,12 @@ const SoftwareDevelopment = () => {
         <div className="absolute inset-0 bg-grid-pattern opacity-5" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-20">
-            <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50 px-4 py-2 mb-6">Why Choose Us</Badge>
-            <h2 className="text-5xl md:text-6xl leading-tight mb-6 font-extrabold">
-              <div className="text-white">Why Businesses Trust</div>
-              <div className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">Cybaem Tech</div>
+            <Badge className="bg-primary/20 text-cyan-400 border-primary/50 px-4 py-2 mb-6">Why Choose Us</Badge>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+              <span className="text-white">Why Businesses Trust </span>
+              <span className="text-primary">Cybaem Tech</span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-gray-400 text-lg max-w-3xl mx-auto">
               We combine technical excellence with business understanding to deliver solutions that drive real results and transform your operations.
             </p>
           </div>
@@ -720,13 +720,13 @@ const SoftwareDevelopment = () => {
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   <div className="relative h-full">
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 via-cyan-500/0 to-blue-500/0 group-hover:from-emerald-500/20 group-hover:via-cyan-500/20 group-hover:to-blue-500/20 rounded-2xl opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-300" />
-                    <Card className="relative h-full bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-gray-700/30 hover:border-emerald-500/50 backdrop-blur-sm hover:shadow-2xl hover:shadow-emerald-500/20 transition-all duration-500 hover:-translate-y-2">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-300" />
+                    <Card className="relative h-full bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-gray-700/30 hover:border-primary/50 backdrop-blur-sm hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:-translate-y-2">
                       <CardContent className="p-8 text-center">
-                        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                          <Icon className="w-8 h-8 text-emerald-400" />
+                        <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                          <Icon className="w-8 h-8 text-white" />
                         </div>
-                        <h3 className="font-bold text-lg text-white mb-3 group-hover:text-emerald-400 transition-colors">
+                        <h3 className="font-bold text-lg text-white mb-3 group-hover:text-primary transition-colors">
                           {point.title}
                         </h3>
                         <p className="text-gray-400 text-sm leading-relaxed">
@@ -746,12 +746,12 @@ const SoftwareDevelopment = () => {
       <section ref={processRef} className="relative py-24 bg-gradient-to-b from-black via-slate-900/60 to-slate-900/30 overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-20">
-            <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50 px-4 py-2 mb-6">Our Process</Badge>
-            <h2 className="text-5xl md:text-6xl leading-tight mb-6 font-extrabold">
-              <div className="text-white">How We Build</div>
-              <div className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">Success</div>
+            <Badge className="bg-primary/20 text-cyan-400 border-primary/50 px-4 py-2 mb-6">Our Process</Badge>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+              <span className="text-white">How We Build </span>
+              <span className="text-primary">Success</span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-gray-400 text-lg max-w-3xl mx-auto">
               Our proven development process ensures quality delivery, on time and within budget with transparent communication.
             </p>
           </div>
@@ -799,12 +799,12 @@ const SoftwareDevelopment = () => {
       <section ref={industriesRef} className="relative py-24 bg-gradient-to-b from-slate-900/30 to-black overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-20">
-            <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50 px-4 py-2 mb-6">Industries We Serve</Badge>
-            <h2 className="text-5xl md:text-6xl leading-tight mb-6 font-extrabold">
-              <div className="text-white">Transforming Industries</div>
-              <div className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">Worldwide</div>
+            <Badge className="bg-primary/20 text-cyan-400 border-primary/50 px-4 py-2 mb-6">Industries We Serve</Badge>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+              <span className="text-white">Transforming Industries </span>
+              <span className="text-primary">Worldwide</span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-gray-400 text-lg max-w-3xl mx-auto">
               Our solutions power businesses across diverse sectors, each tailored to industry-specific challenges and opportunities.
             </p>
           </div>
@@ -840,14 +840,14 @@ const SoftwareDevelopment = () => {
       {/* CTA Section */}
       <section className="relative py-24 bg-gradient-to-r from-slate-900 via-slate-800 to-black overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-emerald-500 rounded-full mix-blend-screen filter blur-3xl opacity-10 animate-blob" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary rounded-full mix-blend-screen filter blur-3xl opacity-10 animate-blob" />
         </div>
 
         <div className="relative container mx-auto px-6 text-center z-10">
-          <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50 px-4 py-2 mb-8">Ready to Get Started</Badge>
-          <h2 className="text-5xl md:text-6xl leading-tight mb-8 font-extrabold">
-            <div className="text-white">Ready to Transform Your</div>
-            <div className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">Business?</div>
+          <Badge className="bg-primary/20 text-cyan-400 border-primary/50 px-4 py-2 mb-8">Ready to Get Started</Badge>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">
+            <span className="text-white">Ready to Transform Your </span>
+            <span className="text-primary">Business?</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-12">
             Get a free consultation with our experts. Let's discuss how we can help you achieve your digital goals with custom software solutions tailored to your needs.
