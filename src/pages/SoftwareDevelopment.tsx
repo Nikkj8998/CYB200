@@ -96,7 +96,7 @@ const SoftwareDevelopment = () => {
       {/* Hero Section */}
       <section ref={heroRef} className="hero-section" style={{
         minHeight: '100vh',
-        padding: 'clamp(4rem, 8vw, 8rem) clamp(1.5rem, 5vw, 3rem) clamp(2rem, 4vw, 4rem)',
+        padding: 'clamp(2rem, 4vw, 4rem) clamp(1.5rem, 5vw, 3rem) clamp(2rem, 4vw, 4rem)',
         position: 'relative',
         overflow: 'hidden',
         display: 'flex',
@@ -198,7 +198,7 @@ const SoftwareDevelopment = () => {
           {/* Left Content */}
           <div style={{ animation: 'fadeInLeft 1s ease-out' }}>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 font-extrabold">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-relaxed mb-6 font-extrabold">
               <div className="text-white">Enterprise Software</div>
               <div className="text-primary">Development</div>
             </h1>
