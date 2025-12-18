@@ -96,7 +96,7 @@ const SoftwareDevelopment = () => {
       {/* Hero Section */}
       <section ref={heroRef} className="hero-section" style={{
         minHeight: '100vh',
-        padding: '8rem 3rem 4rem',
+        padding: 'clamp(4rem, 8vw, 8rem) clamp(1.5rem, 5vw, 3rem) clamp(2rem, 4vw, 4rem)',
         position: 'relative',
         overflow: 'hidden',
         display: 'flex',
@@ -182,42 +182,51 @@ const SoftwareDevelopment = () => {
           maxWidth: '1400px',
           margin: '0 auto',
           display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '4rem',
+          gridTemplateColumns: 'minmax(0, 1fr)',
+          gap: 'clamp(2rem, 4vw, 4rem)',
           alignItems: 'center',
           position: 'relative',
           zIndex: 1,
           width: '100%',
-          padding: '0 3rem'
-        }}>
+          padding: '0 clamp(1rem, 3vw, 3rem)'
+        }} className="md:grid-cols-2">
+          <style>{`
+            @media (min-width: 768px) {
+              div[class*="md:grid-cols-2"] {
+                grid-template-columns: 1fr 1fr;
+              }
+            }
+          `}</style>
           {/* Left Content */}
           <div style={{ animation: 'fadeInLeft 1s ease-out' }}>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 font-extrabold">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 font-extrabold">
               <div className="text-white">Enterprise Software</div>
               <div className="text-primary">Development</div>
             </h1>
 
-            <p className="text-lg md:text-xl leading-relaxed mb-10 opacity-95 text-white">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mb-6 sm:mb-10 opacity-95 text-white">
               Custom software solutions designed to transform your business. From web development to enterprise systems, we deliver end-to-end solutions with cutting-edge technology and proven expertise.
             </p>
 
-            <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', marginBottom: '2rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'flex-start', marginBottom: '1.5rem' }} className="sm:flex-row sm:gap-3 sm:items-center"
+              onMouseEnter={() => {}}>
               <Link to="/contact">
                 <button style={{
                   background: 'linear-gradient(135deg, #2563eb, #0088ff)',
                   color: '#fff',
-                  padding: '1rem 2.5rem',
+                  padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2.5rem)',
                   borderRadius: '50px',
                   fontWeight: 700,
                   border: 'none',
-                  fontSize: '1rem',
+                  fontSize: 'clamp(0.875rem, 3vw, 1rem)',
                   cursor: 'pointer',
                   boxShadow: '0 5px 30px rgba(37, 99, 235, 0.3)',
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '0.7rem',
-                  transition: 'all 0.4s ease'
+                  transition: 'all 0.4s ease',
+                  whiteSpace: 'nowrap'
                 }} onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-3px) scale(1.05)';
                   e.currentTarget.style.boxShadow = '0 8px 40px rgba(37, 99, 235, 0.5)';
@@ -231,13 +240,14 @@ const SoftwareDevelopment = () => {
               <button style={{
                 background: 'transparent',
                 color: '#fff',
-                padding: '1rem 2.5rem',
+                padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2.5rem)',
                 borderRadius: '50px',
                 fontWeight: 600,
                 border: '2px solid rgba(255, 255, 255, 0.3)',
-                fontSize: '1rem',
+                fontSize: 'clamp(0.875rem, 3vw, 1rem)',
                 cursor: 'pointer',
-                transition: 'all 0.3s ease'
+                transition: 'all 0.3s ease',
+                whiteSpace: 'nowrap'
               }} onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
                 e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.5)';
@@ -251,17 +261,17 @@ const SoftwareDevelopment = () => {
               </button>
             </div>
 
-            <p style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '0.95rem' }}>
+            <p style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: 'clamp(0.8rem, 2.5vw, 0.95rem)' }}>
               Trusted by <strong style={{ color: '#ffffff', fontWeight: 'bold' }}>150+ enterprises</strong> • Serving businesses globally
             </p>
           </div>
 
           {/* Right Content - Devices */}
-          <div style={{ position: 'relative', animation: 'fadeInRight 1s ease-out', height: '550px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ position: 'relative', animation: 'fadeInRight 1s ease-out', height: 'clamp(300px, 60vw, 550px)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '2rem' }} className="md:mt-0">
             {/* Desktop Device */}
             <div style={{
               position: 'absolute',
-              width: '500px',
+              width: 'clamp(280px, 60vw, 500px)',
               zIndex: 3,
               animation: 'deviceFloat 6s ease-in-out infinite'
             }}>
@@ -402,9 +412,9 @@ const SoftwareDevelopment = () => {
             {/* Tablet Device */}
             <div style={{
               position: 'absolute',
-              width: '220px',
-              bottom: '60px',
-              left: '-80px',
+              width: 'clamp(140px, 40vw, 220px)',
+              bottom: 'clamp(30px, 8vw, 60px)',
+              left: 'clamp(-60px, -10vw, -80px)',
               zIndex: 5,
               animation: 'tabletFloat 5s ease-in-out infinite',
               animationDelay: '1s'
@@ -495,9 +505,9 @@ const SoftwareDevelopment = () => {
             {/* Mobile Device */}
             <div style={{
               position: 'absolute',
-              width: '140px',
-              bottom: '80px',
-              right: '-50px',
+              width: 'clamp(90px, 30vw, 140px)',
+              bottom: 'clamp(40px, 10vw, 80px)',
+              right: 'clamp(-40px, -8vw, -50px)',
               zIndex: 4,
               animation: 'mobileFloat 4s ease-in-out infinite',
               animationDelay: '2s'
