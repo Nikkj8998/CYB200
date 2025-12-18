@@ -658,13 +658,13 @@ const SoftwareDevelopment = () => {
                   }`}
                   style={{ transitionDelay: `${index * 80}ms` }}
                 >
-                  <Card className="h-full bg-gradient-to-br from-gray-900/80 to-gray-800/80 border border-primary/20 hover:border-primary/50 backdrop-blur-sm shadow-lg hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:-translate-y-3 relative overflow-hidden">
+                  <Card className="h-full bg-black border border-primary/20 hover:border-primary/50 backdrop-blur-sm shadow-lg hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:-translate-y-3 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <CardContent className="p-6 relative z-10 flex gap-5">
                       {/* Icon Container */}
                       <div className="flex-shrink-0">
-                        <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Icon className="w-6 h-6 text-cyan-400" />
+                        <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary/40 transition-colors">
+                          <Icon className="w-6 h-6 text-primary group-hover:text-cyan-400 transition-colors" />
                         </div>
                       </div>
                       
