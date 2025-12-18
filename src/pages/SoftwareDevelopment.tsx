@@ -178,7 +178,7 @@ const SoftwareDevelopment = () => {
         </div>
 
         {/* Content Wrapper */}
-        <div style={{
+        <div id="hero-content-wrapper" style={{
           maxWidth: '1400px',
           margin: '0 auto',
           display: 'grid',
@@ -189,10 +189,10 @@ const SoftwareDevelopment = () => {
           zIndex: 1,
           width: '100%',
           padding: '0 clamp(1rem, 3vw, 3rem)'
-        }} className="md:grid-cols-2">
+        }}>
           <style>{`
             @media (min-width: 768px) {
-              div[class*="md:grid-cols-2"] {
+              #hero-content-wrapper {
                 grid-template-columns: 1fr 1fr;
               }
             }
