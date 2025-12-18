@@ -205,25 +205,25 @@ const SoftwareDevelopment = () => {
             <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', marginBottom: '2rem' }}>
               <Link to="/contact">
                 <button style={{
-                  background: 'linear-gradient(135deg, #00ff9d, #00b8ff)',
-                  color: '#000',
+                  background: 'linear-gradient(135deg, #2563eb, #0088ff)',
+                  color: '#fff',
                   padding: '1rem 2.5rem',
                   borderRadius: '50px',
                   fontWeight: 700,
                   border: 'none',
                   fontSize: '1rem',
                   cursor: 'pointer',
-                  boxShadow: '0 5px 30px rgba(0, 255, 157, 0.3)',
+                  boxShadow: '0 5px 30px rgba(37, 99, 235, 0.3)',
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '0.7rem',
                   transition: 'all 0.4s ease'
                 }} onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-3px) scale(1.05)';
-                  e.currentTarget.style.boxShadow = '0 8px 40px rgba(0, 255, 157, 0.5)';
+                  e.currentTarget.style.boxShadow = '0 8px 40px rgba(37, 99, 235, 0.5)';
                 }} onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                  e.currentTarget.style.boxShadow = '0 5px 30px rgba(0, 255, 157, 0.3)';
+                  e.currentTarget.style.boxShadow = '0 5px 30px rgba(37, 99, 235, 0.3)';
                 }}>
                   <ArrowRight size={20} /> Get Free Consultation
                 </button>
