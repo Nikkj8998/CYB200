@@ -34,10 +34,15 @@ const CTAPage = () => {
         <div className="mb-16 animate-fade-in" style={{ animationDelay: '400ms' }}>
           <button 
             onClick={() => {
-              const contactUrl = window.location.hostname === 'localhost' 
-                ? 'http://localhost:5000/contact'
-                : `${window.location.protocol}//${window.location.hostname.replace(':8080', '')}:5000/contact`;
-              window.location.href = contactUrl;
+              if (window.location.hostname === 'localhost') {
+                window.location.href = 'http://localhost:5000/contact';
+              } else {
+                // For production, construct URL using the URL API
+                const url = new URL(window.location.href);
+                url.port = '5000';
+                url.pathname = '/contact';
+                window.location.href = url.toString();
+              }
             }}
             className="inline-flex items-center gap-3 px-8 py-4 bg-primary-foreground text-primary rounded-full font-body font-semibold text-lg shadow-elevated hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-pointer"
           >
