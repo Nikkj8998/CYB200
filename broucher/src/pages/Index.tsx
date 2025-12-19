@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, createRef } from "react";
 import { 
   Search, 
   Share2, 
@@ -112,15 +112,38 @@ const services = [
 const Index = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
   const totalPages = services.length + 2; // Cover + Services + CTA
+
+  useEffect(() => {
+    // Initialize refs array
+    sectionRefs.current = sectionRefs.current.slice(0, totalPages);
+  }, [totalPages]);
 
   useEffect(() => {
     const handleScroll = () => {
       if (!containerRef.current) return;
       const scrollTop = window.scrollY;
-      const pageHeight = window.innerHeight;
-      const newPage = Math.round(scrollTop / pageHeight);
-      setCurrentPage(Math.min(newPage, totalPages - 1));
+      const viewportCenter = scrollTop + window.innerHeight / 2;
+
+      // Find which section is closest to viewport center
+      let closestPage = 0;
+      let closestDistance = Infinity;
+
+      sectionRefs.current.forEach((section, index) => {
+        if (!section) return;
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionCenter = sectionTop + sectionHeight / 2;
+        const distance = Math.abs(sectionCenter - viewportCenter);
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestPage = index;
+        }
+      });
+
+      setCurrentPage(closestPage);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -128,10 +151,10 @@ const Index = () => {
   }, [totalPages]);
 
   const navigateToPage = (page: number) => {
-    window.scrollTo({
-      top: page * window.innerHeight,
-      behavior: "smooth"
-    });
+    const section = sectionRefs.current[page];
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   return (
@@ -144,22 +167,30 @@ const Index = () => {
       />
 
       {/* Cover Page */}
-      <CoverPage />
+      <div ref={(el) => { if (el) sectionRefs.current[0] = el; }}>
+        <CoverPage />
+      </div>
 
       {/* Service Pages */}
       {services.map((service, index) => (
-        <ServicePage
+        <div 
           key={service.step}
-          step={service.step}
-          title={service.title}
-          items={service.items}
-          icon={service.icon}
-          isEven={index % 2 === 1}
-        />
+          ref={(el) => { if (el) sectionRefs.current[index + 1] = el; }}
+        >
+          <ServicePage
+            step={service.step}
+            title={service.title}
+            items={service.items}
+            icon={service.icon}
+            isEven={index % 2 === 1}
+          />
+        </div>
       ))}
 
       {/* CTA Page */}
-      <CTAPage />
+      <div ref={(el) => { if (el) sectionRefs.current[services.length + 1] = el; }}>
+        <CTAPage />
+      </div>
     </div>
   );
 };
