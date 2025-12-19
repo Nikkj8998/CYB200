@@ -32,13 +32,18 @@ const CTAPage = () => {
         
         {/* CTA Button */}
         <div className="mb-16 animate-fade-in" style={{ animationDelay: '400ms' }}>
-          <a 
-            href="mailto:sales@cybaemtech.com"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-primary-foreground text-primary rounded-full font-body font-semibold text-lg shadow-elevated hover:shadow-xl hover:scale-105 transition-all duration-300 group"
+          <button 
+            onClick={() => {
+              const contactUrl = window.location.hostname === 'localhost' 
+                ? 'http://localhost:5000/contact'
+                : `${window.location.protocol}//${window.location.hostname.replace(':8080', '')}:5000/contact`;
+              window.location.href = contactUrl;
+            }}
+            className="inline-flex items-center gap-3 px-8 py-4 bg-primary-foreground text-primary rounded-full font-body font-semibold text-lg shadow-elevated hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-pointer"
           >
             Get Started Today
             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-          </a>
+          </button>
         </div>
         
         {/* Contact Details */}
