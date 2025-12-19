@@ -14,16 +14,21 @@ const BookPage = ({
   if (isTitle) {
     return (
       <div
-        className={`relative h-full w-full overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 backdrop-blur-2xl shadow-2xl border-2 border-cyan-500/50 ${
+        className={`relative h-full w-full overflow-hidden bg-white backdrop-blur-2xl shadow-2xl border-2 border-cyan-500/30 ${
           side === "left"
             ? "rounded-l-lg rounded-r-none"
             : "rounded-r-lg rounded-l-none"
         }`}
       >
-        <div className="relative h-full flex flex-col items-center justify-center p-6">
+        <div className="relative h-full flex flex-col items-center justify-center p-6 space-y-6">
+          <img
+            src="/logo.png"
+            alt="CybaemTech Logo"
+            className="h-20 md:h-28 object-contain"
+          />
           <div className="text-center">
             <h2
-              className="text-3xl md:text-5xl lg:text-6xl font-bold mb-12 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent leading-tight px-4"
+              className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent leading-tight px-4"
               style={{
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
@@ -35,7 +40,7 @@ const BookPage = ({
               <br />
               Solutions
             </h2>
-            <p className="text-cyan-400 text-lg md:text-xl font-light">
+            <p className="text-cyan-600 text-lg md:text-xl font-light">
               Your Complete Defense Partner
             </p>
           </div>
@@ -46,14 +51,14 @@ const BookPage = ({
 
   return (
     <div
-      className={`relative h-full w-full overflow-hidden bg-white/5 backdrop-blur-2xl shadow-2xl ${
+      className={`relative h-full w-full overflow-hidden bg-white/95 backdrop-blur-2xl shadow-2xl border-2 border-gray-200 ${
         side === "left"
           ? "rounded-l-lg rounded-r-none"
           : "rounded-r-lg rounded-l-none"
       }`}
     >
       <div
-        className={`absolute inset-0 border-2 border-white/10 ${
+        className={`absolute inset-0 border-2 border-gray-200 ${
           side === "left"
             ? "rounded-l-lg border-r-0"
             : "rounded-r-lg border-l-0"
@@ -75,10 +80,10 @@ const BookPage = ({
           <div
             className={`inline-block h-0.5 w-12 bg-gradient-to-r ${gradient} rounded-full mb-2`}
           />
-          <h2 className="text-xl md:text-2xl font-bold text-white mb-1.5 leading-tight">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-1.5 leading-tight">
             {title}
           </h2>
-          <p className="text-xs md:text-sm text-gray-300 leading-relaxed">
+          <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
             {description}
           </p>
         </div>
@@ -107,16 +112,16 @@ const BookPage = ({
                   />
                 </svg>
               </div>
-              <span className="text-gray-200 text-xs md:text-sm group-hover:text-white transition-colors duration-300">
+              <span className="text-gray-700 text-xs md:text-sm group-hover:text-gray-900 transition-colors duration-300">
                 {feature}
               </span>
             </div>
           ))}
         </div>
 
-        <div className="relative overflow-hidden rounded-lg bg-white/5 backdrop-blur-xl border border-white/10 p-3">
+        <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-300 p-3">
           <div
-            className={`absolute inset-0 bg-gradient-to-r ${gradient} opacity-10`}
+            className={`absolute inset-0 bg-gradient-to-r ${gradient} opacity-5`}
           />
           <div className="relative text-center">
             <div
@@ -128,7 +133,7 @@ const BookPage = ({
             >
               {stats.value}
             </div>
-            <div className="text-gray-300 text-[10px] uppercase tracking-wider">
+            <div className="text-gray-600 text-[10px] uppercase tracking-wider">
               {stats.label}
             </div>
           </div>
@@ -438,23 +443,23 @@ export const CybersecurityBrochure = forwardRef<CybersecurityBrochureRef, { init
           @keyframes realistic-flip {
             0% {
               transform: rotateY(0deg) translateZ(0px);
-              box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+              box-shadow: 0 10px 40px rgba(0,0,0,0.1);
             }
             25% {
               transform: rotateY(-45deg) translateZ(50px);
-              box-shadow: -20px 10px 60px rgba(0,0,0,0.5);
+              box-shadow: -20px 10px 60px rgba(0,0,0,0.15);
             }
             50% {
               transform: rotateY(-90deg) translateZ(60px);
-              box-shadow: -30px 10px 70px rgba(0,0,0,0.6);
+              box-shadow: -30px 10px 70px rgba(0,0,0,0.2);
             }
             75% {
               transform: rotateY(-135deg) translateZ(50px);
-              box-shadow: -20px 10px 60px rgba(0,0,0,0.5);
+              box-shadow: -20px 10px 60px rgba(0,0,0,0.15);
             }
             100% {
               transform: rotateY(-180deg) translateZ(0px);
-              box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+              box-shadow: 0 10px 40px rgba(0,0,0,0.1);
             }
           }
 
@@ -465,8 +470,8 @@ export const CybersecurityBrochure = forwardRef<CybersecurityBrochureRef, { init
             width: 100%;
             height: 100%;
             background: linear-gradient(to left, 
-              rgba(0,0,0,0.4) 0%, 
-              rgba(0,0,0,0.1) 20%, 
+              rgba(0,0,0,0.1) 0%, 
+              rgba(0,0,0,0.05) 20%, 
               transparent 50%);
             opacity: 0;
             transition: opacity 0.8s;
@@ -494,15 +499,15 @@ export const CybersecurityBrochure = forwardRef<CybersecurityBrochureRef, { init
 
           .book-spine {
             background: linear-gradient(90deg, 
-              rgba(0,0,0,0.3) 0%, 
-              rgba(0,0,0,0.1) 10%,
-              rgba(255,255,255,0.1) 50%,
-              rgba(0,0,0,0.1) 90%,
-              rgba(0,0,0,0.3) 100%);
+              rgba(0,0,0,0.05) 0%, 
+              rgba(0,0,0,0.02) 10%,
+              rgba(200,200,200,0.3) 50%,
+              rgba(0,0,0,0.02) 90%,
+              rgba(0,0,0,0.05) 100%);
             box-shadow: 
-              inset 3px 0 8px rgba(0,0,0,0.5),
-              inset -3px 0 8px rgba(0,0,0,0.5),
-              0 0 15px rgba(0,0,0,0.3);
+              inset 3px 0 8px rgba(0,0,0,0.1),
+              inset -3px 0 8px rgba(0,0,0,0.1),
+              0 0 15px rgba(0,0,0,0.1);
           }
 
           .page-edge {
@@ -511,9 +516,9 @@ export const CybersecurityBrochure = forwardRef<CybersecurityBrochureRef, { init
             width: 2px;
             height: 100%;
             background: linear-gradient(to bottom,
-              rgba(255,255,255,0.3) 0%,
-              rgba(255,255,255,0.1) 50%,
-              rgba(255,255,255,0.3) 100%);
+              rgba(200,200,200,0.3) 0%,
+              rgba(200,200,200,0.1) 50%,
+              rgba(200,200,200,0.3) 100%);
           }
 
           .page-edge-left {
@@ -529,11 +534,11 @@ export const CybersecurityBrochure = forwardRef<CybersecurityBrochureRef, { init
           }
 
           .scrollbar-thin::-webkit-scrollbar-track {
-            background: rgba(255,255,255,0.05);
+            background: rgba(0,0,0,0.05);
           }
 
           .scrollbar-thin::-webkit-scrollbar-thumb {
-            background: rgba(255,255,255,0.2);
+            background: rgba(0,0,0,0.2);
             border-radius: 2px;
           }
 
@@ -543,7 +548,7 @@ export const CybersecurityBrochure = forwardRef<CybersecurityBrochureRef, { init
             left: 5%;
             width: 90%;
             height: 30px;
-            background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, transparent 70%);
+            background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%, transparent 70%);
             filter: blur(15px);
             z-index: -1;
           }
@@ -552,7 +557,7 @@ export const CybersecurityBrochure = forwardRef<CybersecurityBrochureRef, { init
         <div className="book-container">
           <div className="md:hidden relative w-full max-w-md mx-auto" style={{ aspectRatio: "3/4", maxHeight: "500px" }}>
             <div className="relative w-full h-full">
-              <div className="relative h-full shadow-2xl rounded-lg">
+              <div className="relative h-full shadow-2xl">
                 <BookPage
                   {...leftPage}
                   pageNumber={leftPageIndex + 1}
@@ -598,8 +603,8 @@ export const CybersecurityBrochure = forwardRef<CybersecurityBrochureRef, { init
                         isVisible={true}
                       />
                     ) : (
-                      <div className="relative h-full w-full bg-white/5 backdrop-blur-2xl rounded-r-lg border-2 border-white/10 border-l-0 flex items-center justify-center">
-                        <div className="text-white/30 text-2xl font-light">
+                      <div className="relative h-full w-full bg-white border-2 border-gray-200 rounded-r-lg border-l-0 flex items-center justify-center">
+                        <div className="text-gray-400 text-2xl font-light">
                           End
                         </div>
                       </div>
@@ -631,10 +636,10 @@ export const CybersecurityBrochure = forwardRef<CybersecurityBrochureRef, { init
             <button
               onClick={prevSpread}
               disabled={isFlipping}
-              className="p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-xl border border-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group"
+              className="p-3 rounded-full bg-gray-200 hover:bg-gray-300 border border-gray-300 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group"
             >
               <svg
-                className="w-6 h-6 text-white group-hover:scale-110 transition-transform"
+                className="w-6 h-6 text-gray-700 group-hover:scale-110 transition-transform"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -658,7 +663,7 @@ export const CybersecurityBrochure = forwardRef<CybersecurityBrochureRef, { init
                     className={`h-2 rounded-full transition-all duration-300 ${
                       index === currentSpread
                         ? "w-8 bg-gradient-to-r from-cyan-500 to-blue-600"
-                        : "w-2 bg-white/30 hover:bg-white/50"
+                        : "w-2 bg-gray-400 hover:bg-gray-500"
                     }`}
                   />
                 ),
@@ -668,10 +673,10 @@ export const CybersecurityBrochure = forwardRef<CybersecurityBrochureRef, { init
             <button
               onClick={nextSpread}
               disabled={isFlipping}
-              className="p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-xl border border-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group"
+              className="p-3 rounded-full bg-gray-200 hover:bg-gray-300 border border-gray-300 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group"
             >
               <svg
-                className="w-6 h-6 text-white group-hover:scale-110 transition-transform"
+                className="w-6 h-6 text-gray-700 group-hover:scale-110 transition-transform"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -687,7 +692,7 @@ export const CybersecurityBrochure = forwardRef<CybersecurityBrochureRef, { init
           </div>
 
           <div className="mt-4 text-center">
-            <span className="text-white/60 text-sm">
+            <span className="text-gray-600 text-sm">
               <span className="md:hidden">
                 Page {leftPageIndex + 1} of {pages.length}
               </span>
