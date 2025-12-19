@@ -13,12 +13,15 @@ import {
   HardDrive,
   BarChart3,
   Search as SearchIcon,
-  Users
+  Users,
+  Phone,
+  ArrowRight
 } from "lucide-react";
 import CoverPage from "@/components/brochure/CoverPage";
 import ServicePage from "@/components/brochure/ServicePage";
 import CTAPage from "@/components/brochure/CTAPage";
 import BrochureNav from "@/components/brochure/BrochureNav";
+import Logo from "@/components/brochure/Logo";
 
 const digitalMarketingServices = [
   {
@@ -229,9 +232,6 @@ const cybersecurityServices = [
 ];
 
 const CybersecurityCoverPage = () => {
-  const { Mail, Phone } = require("lucide-react");
-  const Logo = require("@/components/brochure/Logo").default;
-  
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-24 bg-gradient-subtle relative overflow-hidden">
       {/* Decorative Elements */}
@@ -294,9 +294,6 @@ const CybersecurityCoverPage = () => {
 };
 
 const CybersecurityCTAPage = () => {
-  const { Mail, Phone, ArrowRight } = require("lucide-react");
-  const Logo = require("@/components/brochure/Logo").default;
-  
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-24 relative overflow-hidden bg-gradient-hero">
       {/* Background pattern */}
