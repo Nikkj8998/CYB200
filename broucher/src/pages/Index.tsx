@@ -248,7 +248,7 @@ const CybersecurityCoverPage = () => {
       <div className="relative z-10 text-center max-w-4xl mx-auto animate-fade-in">
         {/* Logo */}
         <div className="mb-10 md:mb-14 lg:mb-16 flex justify-center">
-          <img src="/logo.png" alt="CybaemTech" className="h-16 md:h-20 lg:h-24 object-contain" />
+          <img src="/logo.png" alt="CybaemTech" className="h-20 md:h-28 lg:h-32 w-auto object-contain" />
         </div>
         
         {/* Main Title */}

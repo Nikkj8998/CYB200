@@ -1,5 +1,3 @@
-import cybaemLogo from "@/assets/cybaem-logo.png";
-
 interface LogoProps {
   variant?: "default" | "light";
   className?: string;
@@ -16,7 +14,7 @@ const Logo = ({ variant = "default", className = "", size = "md" }: LogoProps) =
   return (
     <div className={`flex items-center ${className}`}>
       <img 
-        src={cybaemLogo} 
+        src="/logo.png" 
         alt="Cybaem Tech - Beyond Limits" 
         className={`${sizeClasses[size]} w-auto object-contain ${variant === "light" ? "brightness-0 invert" : ""}`}
       />
