@@ -244,13 +244,19 @@ const MobileNavigation = ({
                     onOpenChange={() => toggleServiceCategory(category.id)}
                   >
                     <CollapsibleTrigger asChild>
-                      <Button variant="ghost" className="w-full justify-between px-7 py-2.5 text-left text-gray-300 hover:text-white hover:bg-white/5 touch-target">
-                        <div className="flex items-center gap-2">
-                          <category.icon className="h-4 w-4 text-primary/70" />
-                          <span className="text-sm">{category.name}</span>
-                        </div>
-                        <ChevronDown className={`h-3 w-3 transition-transform ${openServiceCategory === category.id ? 'rotate-180' : ''}`} />
-                      </Button>
+                      <div className="w-full">
+                        <Link
+                          to={category.path}
+                          onClick={handleMenuItemClick}
+                          className="w-full flex justify-between px-7 py-2.5 text-left text-gray-300 hover:text-white hover:bg-white/5 transition-colors no-underline touch-target"
+                        >
+                          <div className="flex items-center gap-2">
+                            <category.icon className="h-4 w-4 text-primary/70" />
+                            <span className="text-sm">{category.name}</span>
+                          </div>
+                          <ChevronDown className={`h-3 w-3 transition-transform ${openServiceCategory === category.id ? 'rotate-180' : ''}`} />
+                        </Link>
+                      </div>
                     </CollapsibleTrigger>
                     <CollapsibleContent className="bg-gray-900/80">
                       {category.services.map((service, index) => {

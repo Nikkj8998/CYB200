@@ -334,10 +334,12 @@ const Header = () => {
                     </h3>
                     <div className="space-y-1">
                       {serviceCategories.map((category) => (
-                        <div
+                        <Link
                           key={category.id}
+                          to={category.path}
+                          onClick={handleMenuItemClick}
                           onMouseEnter={() => setActiveServiceCategory(category.id)}
-                          className={`flex items-center justify-between px-3 py-2 rounded-md cursor-pointer transition-colors ${activeServiceCategory === category.id
+                          className={`flex items-center justify-between px-3 py-2 rounded-md cursor-pointer transition-colors no-underline ${activeServiceCategory === category.id
                               ? 'bg-primary text-white'
                               : 'text-gray-700 hover:bg-gray-100'
                             }`}
@@ -347,7 +349,7 @@ const Header = () => {
                             <span className="text-sm font-medium">{category.name}</span>
                           </div>
                           <ChevronRight className={`h-4 w-4 ${activeServiceCategory === category.id ? 'text-white' : 'text-gray-400'}`} />
-                        </div>
+                        </Link>
                       ))}
                     </div>
                   </div>
