@@ -1,4 +1,5 @@
-import { ChevronUp, ChevronDown } from "lucide-react";
+import { ChevronUp, ChevronDown, Download } from "lucide-react";
+import { useState } from "react";
 
 interface BrochureNavProps {
   currentPage: number;
@@ -7,8 +8,49 @@ interface BrochureNavProps {
 }
 
 const BrochureNav = ({ currentPage, totalPages, onNavigate }: BrochureNavProps) => {
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  const downloadPDF = async () => {
+    setIsDownloading(true);
+    try {
+      const html2pdf = (window as any).html2pdf;
+      if (!html2pdf) {
+        console.error("html2pdf library not loaded");
+        return;
+      }
+
+      const element = document.body;
+      const opt = {
+        margin: 0,
+        filename: "Digital-Marketing-Brochure.pdf",
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { orientation: "portrait", unit: "mm", format: "a4" },
+      };
+
+      html2pdf().set(opt).from(element).save();
+    } catch (error) {
+      console.error("Failed to download PDF:", error);
+    } finally {
+      setIsDownloading(false);
+    }
+  };
+
   return (
-    <div className="fixed right-8 top-1/2 -translate-y-1/2 z-50 flex flex-col items-center gap-3">
+    <>
+      <div className="fixed right-8 top-8 z-50 flex flex-col items-center gap-3">
+        <button
+          onClick={downloadPDF}
+          disabled={isDownloading}
+          className="w-10 h-10 rounded-full bg-primary shadow-lg border border-primary flex items-center justify-center text-white hover:bg-primary/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          aria-label="Download PDF"
+          title="Download as PDF"
+        >
+          <Download size={20} />
+        </button>
+      </div>
+
+      <div className="fixed right-8 top-1/2 -translate-y-1/2 z-50 flex flex-col items-center gap-3">
       <button
         onClick={() => onNavigate(Math.max(0, currentPage - 1))}
         disabled={currentPage === 0}
@@ -41,7 +83,8 @@ const BrochureNav = ({ currentPage, totalPages, onNavigate }: BrochureNavProps) 
       >
         <ChevronDown size={20} />
       </button>
-    </div>
+      </div>
+    </>
   );
 };
 
