@@ -11,6 +11,7 @@ import CoverPage from "@/components/brochure/CoverPage";
 import ServicePage from "@/components/brochure/ServicePage";
 import CTAPage from "@/components/brochure/CTAPage";
 import BrochureNav from "@/components/brochure/BrochureNav";
+import { CybersecurityBrochure } from "../../../src/components/CybersecurityBrochure";
 
 const services = [
   {
@@ -114,6 +115,18 @@ const Index = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
   const totalPages = services.length + 2; // Cover + Services + CTA
+  
+  // Check for cybersecurity brochure request
+  const params = new URLSearchParams(window.location.search);
+  const brochureType = params.get('type');
+  
+  if (brochureType === 'cybersecurity') {
+    return (
+      <div className="min-h-screen bg-black py-12 px-4 flex items-center justify-center">
+        <CybersecurityBrochure />
+      </div>
+    );
+  }
 
   useEffect(() => {
     // Initialize refs array

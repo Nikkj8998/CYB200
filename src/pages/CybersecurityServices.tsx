@@ -392,13 +392,12 @@ const CybersecurityServices = () => {
             </Link>
             <button
   className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 border border-cyan-500/50 text-cyan-400 rounded-lg text-base md:text-lg font-medium hover:bg-cyan-500/10 transition-all duration-300"
-  onClick={() =>
-    window.open(
-      "https://cybaemtech.com/Managed-IT-Infrastructure-CyberSecurity-and-Cloud-Services.pdf",
-      "_blank",
-      "noopener,noreferrer"
-    )
-  }
+  onClick={() => {
+    const brochureUrl = window.location.hostname === 'localhost' 
+      ? 'http://localhost:8080'
+      : `${window.location.protocol}//${window.location.hostname}:8080`;
+    window.open(brochureUrl + '?type=cybersecurity', "_blank", "noopener,noreferrer");
+  }}
 >
   Download Security Guide
 </button>
