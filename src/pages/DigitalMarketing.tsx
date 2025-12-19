@@ -432,7 +432,7 @@ const DigitalMarketing = () => {
                 onClick={() => {
                   const brochureUrl = window.location.hostname === 'localhost' 
                     ? 'http://localhost:8080'
-                    : `https://${window.location.hostname.replace('5000', '8080')}`;
+                    : `${window.location.protocol}//${window.location.hostname}:8080`;
                   window.open(brochureUrl, "_blank", "noopener,noreferrer");
                 }}
               >
