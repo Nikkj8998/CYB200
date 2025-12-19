@@ -1,13 +1,15 @@
 import { ChevronUp, ChevronDown, Download } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 
 interface BrochureNavProps {
   currentPage: number;
   totalPages: number;
   onNavigate: (page: number) => void;
+  brochureType?: string;
 }
 
-const BrochureNav = ({ currentPage, totalPages, onNavigate }: BrochureNavProps) => {
+const BrochureNav = ({ currentPage, totalPages, onNavigate, brochureType = "digital-marketing" }: BrochureNavProps) => {
   const [isDownloading, setIsDownloading] = useState(false);
 
   const downloadPDF = async () => {
@@ -15,23 +17,37 @@ const BrochureNav = ({ currentPage, totalPages, onNavigate }: BrochureNavProps) 
     try {
       const html2pdf = (window as any).html2pdf;
       if (!html2pdf) {
-        console.error("html2pdf library not loaded");
+        toast.error("PDF library not loaded. Please refresh the page.");
         return;
       }
 
-      const element = document.body;
+      // Get the brochure content
+      const element = document.documentElement;
+      
+      // Determine filename based on brochure type
+      const filename = brochureType === 'cybersecurity' 
+        ? "Cybersecurity-Services-Brochure.pdf"
+        : "Digital-Marketing-Services-Brochure.pdf";
+
       const opt = {
-        margin: 10,
-        filename: "Digital-Marketing-Brochure.pdf",
+        margin: [8, 8, 8, 8],
+        filename: filename,
         image: { type: "jpeg", quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { orientation: "portrait", unit: "mm", format: "a4" }
+        html2canvas: { 
+          scale: 2,
+          useCORS: true,
+          allowTaint: true,
+          backgroundColor: "#ffffff"
+        },
+        jsPDF: { orientation: "portrait", unit: "mm", format: "a4" },
+        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
       };
 
       html2pdf().set(opt).from(element).save();
+      toast.success("Brochure downloaded successfully!");
     } catch (error) {
       console.error("Failed to download PDF:", error);
-      alert("Failed to download PDF. Please try again.");
+      toast.error("Failed to download PDF. Please try again.");
     } finally {
       setIsDownloading(false);
     }

@@ -431,7 +431,8 @@ const Index = () => {
       <BrochureNav 
         currentPage={currentPage} 
         totalPages={totalPages} 
-        onNavigate={navigateToPage} 
+        onNavigate={navigateToPage}
+        brochureType={brochureType || 'digital-marketing'}
       />
 
       {/* Cover Page */}
