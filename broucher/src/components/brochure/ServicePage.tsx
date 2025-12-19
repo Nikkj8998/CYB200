@@ -12,7 +12,7 @@ interface ServicePageProps {
 
 const ServicePage = ({ step, title, items, icon: Icon, isEven = false }: ServicePageProps) => {
   return (
-    <section className={`min-h-screen flex items-center px-6 md:px-12 lg:px-24 py-16 relative overflow-hidden ${isEven ? 'bg-secondary/30' : 'bg-background'}`}>
+    <section className={`min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 py-24 md:py-32 lg:py-40 relative overflow-visible ${isEven ? 'bg-secondary/30' : 'bg-background'}`}>
       {/* Background decoration */}
       <div className={`absolute ${isEven ? 'left-0' : 'right-0'} top-1/2 -translate-y-1/2 w-1/2 h-3/4 bg-primary/[0.03] ${isEven ? 'rounded-r-[200px]' : 'rounded-l-[200px]'}`} />
       
@@ -21,7 +21,7 @@ const ServicePage = ({ step, title, items, icon: Icon, isEven = false }: Service
         <Logo className="scale-75 origin-left" />
       </div>
       
-      <div className="container mx-auto relative z-10 pt-12">
+      <div className="container mx-auto relative z-10">
         <div className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-center ${isEven ? 'lg:flex-row-reverse' : ''}`}>
           {/* Content Side */}
           <div className={`${isEven ? 'lg:order-2' : ''} animate-fade-in`}>
@@ -75,7 +75,7 @@ const ServicePage = ({ step, title, items, icon: Icon, isEven = false }: Service
       </div>
       
       {/* Footer contact */}
-      <div className="absolute bottom-8 left-6 md:left-12 lg:left-24 right-6 md:right-12 lg:right-24 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+      <div className="mt-16 md:mt-20 lg:mt-24 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground pt-8 border-t border-border/50">
         <a href="mailto:sales@cybaemtech.com" className="flex items-center gap-2 hover:text-primary transition-colors">
           <Mail size={14} />
           <span className="font-body">sales@cybaemtech.com</span>
