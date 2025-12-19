@@ -43,6 +43,10 @@ const Header = () => {
     }
   };
 
+  const handleMenuItemClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const serviceCategories = [
     {
       id: "digital-marketing",
@@ -369,6 +373,7 @@ const Header = () => {
                                 <Link
                                   key={index}
                                   to={`${activeCategory.path}#${serviceHash}`}
+                                  onClick={handleMenuItemClick}
                                   className="block text-xs text-gray-600 hover:text-primary hover:bg-gray-100 transition-colors py-1.5 px-2 rounded-md"
                                 >
                                   {serviceName}
@@ -391,6 +396,7 @@ const Header = () => {
                                 <Link
                                   key={index}
                                   to={`${activeCategory.path}#${serviceHash}`}
+                                  onClick={handleMenuItemClick}
                                   className="block text-xs text-gray-600 hover:text-primary hover:bg-gray-100 transition-colors py-1.5 px-2 rounded-md"
                                 >
                                   {serviceName}
@@ -413,6 +419,7 @@ const Header = () => {
                                 <Link
                                   key={index}
                                   to={`${activeCategory.path}#${serviceHash}`}
+                                  onClick={handleMenuItemClick}
                                   className="block text-xs text-gray-600 hover:text-primary hover:bg-gray-100 transition-colors py-1.5 px-2 rounded-md"
                                 >
                                   {serviceName}
@@ -433,6 +440,7 @@ const Header = () => {
                               <Link
                                 key={index}
                                 to={`${activeCategory.path}#${service.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
+                                onClick={handleMenuItemClick}
                                 className="block text-xs text-gray-600 hover:text-primary hover:bg-gray-100 transition-colors py-1.5 px-2 rounded-md"
                               >
                                 {service}
@@ -449,6 +457,7 @@ const Header = () => {
                               <Link
                                 key={index}
                                 to={`${activeCategory.path}#${service.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
+                                onClick={handleMenuItemClick}
                                 className="block text-xs text-gray-600 hover:text-primary hover:bg-gray-100 transition-colors py-1.5 px-2 rounded-md"
                               >
                                 {service}
@@ -466,6 +475,7 @@ const Header = () => {
                             <Link
                               key={index}
                               to={`${activeCategory.path}${serviceHash}`}
+                              onClick={handleMenuItemClick}
                               className="text-xs text-gray-600 hover:text-primary hover:bg-gray-100 transition-colors py-1.5 px-2 rounded-md"
                             >
                               {serviceName}

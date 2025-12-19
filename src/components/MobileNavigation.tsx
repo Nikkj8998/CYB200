@@ -28,6 +28,11 @@ const MobileNavigation = ({
     onToggle();
   };
 
+  const handleMenuItemClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    onToggle();
+  };
+
   const toggleServiceCategory = (categoryId: string) => {
     setOpenServiceCategory(openServiceCategory === categoryId ? null : categoryId);
   };
@@ -255,7 +260,7 @@ const MobileNavigation = ({
                           <Link 
                             key={index}
                             to={`${category.path}${serviceHash}`}
-                            onClick={onToggle}
+                            onClick={handleMenuItemClick}
                             className="block px-10 py-2 text-xs text-gray-400 hover:text-primary hover:bg-white/5 transition-colors touch-target"
                           >
                             {serviceName}
@@ -290,7 +295,7 @@ const MobileNavigation = ({
                   <li key={index} className="list-none">
                     <Link 
                       to={`/industries#${industry.hash}`}
-                      onClick={onToggle} 
+                      onClick={handleMenuItemClick} 
                       className="block px-7 py-2 text-sm transition-colors touch-target text-gray-300 hover:text-white hover:bg-white/5"
                     >
                       {industry.name}
