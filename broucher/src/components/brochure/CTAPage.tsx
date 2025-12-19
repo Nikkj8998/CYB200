@@ -37,11 +37,11 @@ const CTAPage = () => {
               if (window.location.hostname === 'localhost') {
                 window.location.href = 'http://localhost:5000/contact';
               } else {
-                // For production, construct URL using the URL API
-                const url = new URL(window.location.href);
-                url.port = '5000';
-                url.pathname = '/contact';
-                window.location.href = url.toString();
+                // Extract base URL without port, then navigate to contact
+                const protocol = window.location.protocol;
+                const hostname = window.location.hostname;
+                const contactUrl = `${protocol}//${hostname}/contact`;
+                window.location.href = contactUrl;
               }
             }}
             className="inline-flex items-center gap-3 px-8 py-4 bg-primary-foreground text-primary rounded-full font-body font-semibold text-lg shadow-elevated hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-pointer"
