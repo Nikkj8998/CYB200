@@ -17,8 +17,8 @@ const CoverPage = () => {
       
       <div className="relative z-10 text-center max-w-4xl mx-auto animate-fade-in">
         {/* Logo */}
-        <div className="mb-10 flex justify-center">
-          <Logo className="scale-150" />
+        <div className="mb-10 md:mb-14 lg:mb-16 flex justify-center">
+          <Logo className="scale-[1.75] md:scale-[2.25] lg:scale-[2.75]" />
         </div>
         
         {/* Main Title */}
