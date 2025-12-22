@@ -393,9 +393,10 @@ const CybersecurityServices = () => {
             <button
   className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 border border-cyan-500/50 text-cyan-400 rounded-lg text-base md:text-lg font-medium hover:bg-cyan-500/10 transition-all duration-300"
   onClick={() => {
-    const brochureUrl = window.location.hostname === 'localhost' 
-      ? 'http://localhost:8080'
-      : `${window.location.protocol}//${window.location.hostname}:8080`;
+    const brochureUrl = import.meta.env.VITE_BROCHURE_URL || 
+      (window.location.hostname === 'localhost' 
+        ? 'http://localhost:8080'
+        : `${window.location.protocol}//${window.location.hostname}:8080`);
     window.open(brochureUrl + '?type=cybersecurity', "_blank", "noopener,noreferrer");
   }}
 >
