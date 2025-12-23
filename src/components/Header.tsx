@@ -17,6 +17,7 @@ const Header = () => {
   const [activeServiceCategory, setActiveServiceCategory] = useState<string>("digital-marketing");
   const [aboutUsOpen, setAboutUsOpen] = useState(false);
   const aboutUsRef = useRef<HTMLDivElement>(null);
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -28,6 +29,20 @@ const Header = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  const handleAboutUsMouseLeave = () => {
+    closeTimeoutRef.current = setTimeout(() => {
+      setAboutUsOpen(false);
+    }, 100);
+  };
+
+  const handleAboutUsMouseEnter = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setAboutUsOpen(true);
+  };
 
   const handleLogoClick = (e: React.MouseEvent) => {
     if (location.pathname === "/") {
@@ -593,8 +608,8 @@ const Header = () => {
             <div
               ref={aboutUsRef}
               className="relative"
-              onMouseEnter={() => setAboutUsOpen(true)}
-              onMouseLeave={() => setAboutUsOpen(false)}
+              onMouseEnter={handleAboutUsMouseEnter}
+              onMouseLeave={handleAboutUsMouseLeave}
             >
               <button
                 className={`group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none ${aboutUsOpen ? 'bg-accent/50 text-primary' : 'bg-transparent text-black hover:text-primary'}`}
