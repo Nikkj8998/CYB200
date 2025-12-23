@@ -587,12 +587,17 @@ function handlePostSpreadsheet($pdo) {
     
     try {
         $stmt = $pdo->prepare($sql);
+        
+        // Convert booleans to integers (0 or 1)
+        $isActive = isset($input['is_active']) ? (int)(bool)$input['is_active'] : 1;
+        $autoSync = isset($input['auto_sync']) && ($input['auto_sync'] === true || $input['auto_sync'] === 1 || $input['auto_sync'] === '1') ? 1 : 0;
+        
         $stmt->execute([
             ':name' => trim($input['name']),
             ':url' => trim($input['url']),
-            ':is_active' => isset($input['is_active']) ? (bool)$input['is_active'] : true,
-            ':sync_interval' => intval($input['sync_interval'] ?? 5),
-            ':auto_sync' => isset($input['auto_sync']) ? (bool)$input['auto_sync'] : false
+            ':is_active' => $isActive,
+            ':sync_interval' => intval($input['sync_interval'] ?? 3600),
+            ':auto_sync' => $autoSync
         ]);
         
         $newId = $pdo->lastInsertId();
@@ -624,8 +629,10 @@ function handlePutSpreadsheet($pdo) {
     foreach ($allowedFields as $field) {
         if (isset($input[$field])) {
             $updateFields[] = "$field = :$field";
-            if ($field === 'is_active' || $field === 'auto_sync') {
-                $params[":$field"] = (bool)$input[$field];
+            if ($field === 'is_active') {
+                $params[":$field"] = (int)(bool)$input[$field];
+            } elseif ($field === 'auto_sync') {
+                $params[":$field"] = ($input[$field] === true || $input[$field] === 1 || $input[$field] === '1') ? 1 : 0;
             } elseif ($field === 'sync_interval') {
                 $params[":$field"] = intval($input[$field]);
             } else {
