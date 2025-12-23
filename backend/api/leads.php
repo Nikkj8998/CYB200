@@ -12,8 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 function getConnection() {
     // Database connection details (hardcoded for reliability)
     $host = '82.25.105.94';
-    $dbname = 'cybaemtech_CYB_db';
-    $user = 'cybaemtech_CYB_db';
+    $dbname = 'cybaemtech_contact_form_v2';
+    $user = 'cybaemtech_contact_user_v2';
     $password = 'Cybaem@2025';
     $port = '3306';
     
