@@ -310,9 +310,10 @@ function handleSpreadsheetImport() {
 }
 
 function handleGetLeads($pdo) {
-    // Return empty array if no connection
+    // Check connection
     if (!$pdo) {
-        jsonResponse(true, [], '0 leads found');
+        error_log("Database connection failed in handleGetLeads");
+        jsonResponse(false, [], 'Database connection failed', 'Unable to connect to database');
         return;
     }
     
@@ -322,22 +323,17 @@ function handleGetLeads($pdo) {
     
     // Use contact_submissions_v2 table with correct field mapping
     $sql = "SELECT 
-        id as id, 
-        COALESCE(lead_status, status, 'New - Not Contacted') as status, 
+        id, 
+        COALESCE(lead_status, status, 'New - Not Contacted') as lead_status, 
         COALESCE(full_name, name, '') as full_name, 
-        COALESCE(company_name, '') as company, 
+        COALESCE(company_name, '') as company_name, 
         COALESCE(phone, mobile_number, '') as phone, 
         COALESCE(email, '') as email, 
-        COALESCE(lead_source, entry_source, 'Website') as source, 
-        created_at as created_at, 
-        COALESCE(message, original_message, '') as questions, 
-        COALESCE(notes, '') as note, 
+        COALESCE(lead_source, entry_source, 'Website') as lead_source, 
+        created_at, 
+        COALESCE(message, original_message, '') as message, 
+        COALESCE(notes, '') as notes, 
         updated_at,
-        lead_status,
-        company_name,
-        lead_source,
-        message,
-        notes,
         mobile_number,
         country,
         location
@@ -367,19 +363,19 @@ function handleGetLeads($pdo) {
         $params[':source2'] = $source;
     }
     
-    $sql .= " ORDER BY created_at DESC";
+    $sql .= " ORDER BY created_at DESC LIMIT 1000";
     
     try {
         $stmt = $pdo->prepare($sql);
         $stmt->execute($params);
         $leads = $stmt->fetchAll();
         
+        error_log("Successfully fetched " . count($leads) . " leads from database");
         jsonResponse(true, $leads, count($leads) . ' leads found');
         
     } catch (PDOException $e) {
         error_log("Database error in handleGetLeads: " . $e->getMessage());
-        // Return empty array instead of error
-        jsonResponse(true, [], '0 leads found');
+        jsonResponse(false, [], 'Database query failed: ' . $e->getMessage());
     }
 }
 
