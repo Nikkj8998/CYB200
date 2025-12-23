@@ -21,8 +21,8 @@ const BrochureNav = ({ currentPage, totalPages, onNavigate, brochureType = "digi
         return;
       }
 
-      // Get the brochure content
-      const element = document.documentElement;
+      // Get the brochure content (prefer explicit brochure container)
+      const element = document.getElementById("brochure-content") || document.documentElement;
       
       // Determine filename based on brochure type
       const filename = brochureType === 'cybersecurity' 
@@ -30,17 +30,24 @@ const BrochureNav = ({ currentPage, totalPages, onNavigate, brochureType = "digi
         : "Digital-Marketing-Services-Brochure.pdf";
 
       const opt = {
-        margin: [8, 8, 8, 8],
+        margin: [0, 0, 0, 0],
         filename: filename,
-        image: { type: "jpeg", quality: 0.98 },
+        image: { type: "jpeg", quality: 0.99 },
         html2canvas: { 
           scale: 2,
           useCORS: true,
           allowTaint: true,
-          backgroundColor: "#ffffff"
+          backgroundColor: "#ffffff",
+          letterRendering: true,
+          logging: false
         },
-        jsPDF: { orientation: "portrait", unit: "mm", format: "a4" },
-        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+        jsPDF: { 
+          orientation: "portrait", 
+          unit: "mm", 
+          format: "a4",
+          compress: true
+        },
+        pagebreak: { mode: ['css', 'avoid-all', 'legacy'] }
       };
 
       html2pdf().set(opt).from(element).save();

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, createRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { 
   Search, 
   Share2, 
@@ -17,11 +17,14 @@ import {
   Phone,
   ArrowRight
 } from "lucide-react";
+
 import CoverPage from "@/components/brochure/CoverPage";
 import ServicePage from "@/components/brochure/ServicePage";
 import CTAPage from "@/components/brochure/CTAPage";
 import BrochureNav from "@/components/brochure/BrochureNav";
 import Logo from "@/components/brochure/Logo";
+
+/* ---------------- SERVICES DATA ---------------- */
 
 const digitalMarketingServices = [
   {
@@ -231,234 +234,115 @@ const cybersecurityServices = [
   }
 ];
 
-const CybersecurityCoverPage = () => {
-  return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-24 bg-gradient-subtle relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/5 rounded-bl-[200px]" />
-      <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-primary/5 rounded-tr-[150px]" />
-      
-      {/* Subtle grid pattern */}
-      <div className="absolute inset-0 opacity-[0.02]" style={{
-        backgroundImage: `linear-gradient(hsl(var(--primary)) 1px, transparent 1px),
-                          linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)`,
-        backgroundSize: '60px 60px'
-      }} />
-      
-      <div className="relative z-10 text-center max-w-4xl mx-auto animate-fade-in">
-        {/* Logo */}
-        <div className="mb-10 md:mb-14 lg:mb-16 flex justify-center">
-          <img src="/logo.png" alt="CybaemTech" className="h-20 md:h-28 lg:h-32 w-auto object-contain" />
-        </div>
-        
-        {/* Main Title */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-foreground mb-6 tracking-tight">
-          Cybersecurity Services
-        </h1>
-        
-        {/* Decorative Line */}
-        <div className="w-24 h-1 bg-gradient-hero mx-auto mb-8 rounded-full" />
-        
-        {/* Tagline */}
-        <p className="text-xl md:text-2xl text-muted-foreground font-body font-light tracking-wide mb-12">
-          Complete. Comprehensive. Protective.
-        </p>
-        
-        {/* Contact Info */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-muted-foreground">
-          <a 
-            href="mailto:sales@cybaemtech.com" 
-            className="flex items-center gap-2 hover:text-primary transition-colors group"
-          >
-            <Mail size={18} className="group-hover:scale-110 transition-transform" />
-            <span className="font-body">sales@cybaemtech.com</span>
-          </a>
-          <span className="hidden sm:block w-px h-4 bg-border" />
-          <a 
-            href="tel:+919028541383" 
-            className="flex items-center gap-2 hover:text-primary transition-colors group"
-          >
-            <Phone size={18} className="group-hover:scale-110 transition-transform" />
-            <span className="font-body">+91 90285 41383</span>
-          </a>
-        </div>
-      </div>
-      
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground/50 animate-bounce">
-        <span className="text-xs font-body tracking-widest uppercase">Scroll</span>
-        <div className="w-px h-8 bg-gradient-to-b from-muted-foreground/50 to-transparent" />
-      </div>
-    </section>
-  );
-};
+/* ---------------- COVER PAGE ---------------- */
 
-const CybersecurityCTAPage = () => {
-  return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-24 relative overflow-hidden bg-gradient-hero">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10" style={{
-        backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
-        backgroundSize: '40px 40px'
-      }} />
-      
-      {/* Decorative shapes */}
-      <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-white/5 rounded-br-[300px]" />
-      <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-white/5 rounded-tl-[200px]" />
-      
-      <div className="relative z-10 text-center max-w-4xl mx-auto">
-        {/* Logo */}
-        <div className="mb-6 flex justify-center animate-fade-in">
-          <Logo variant="light" className="scale-125" />
-        </div>
-        
-        {/* Main CTA Heading */}
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-8 leading-tight animate-fade-in mt-8" style={{ animationDelay: '200ms' }}>
-          Ready to Secure Your Business?
-        </h2>
-        
-        {/* Description */}
-        <p className="text-xl md:text-2xl text-primary-foreground/80 font-body font-light leading-relaxed mb-12 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '300ms' }}>
-          Partner with Cybaem Tech for comprehensive cybersecurity solutions that protect your business from evolving threats.
-        </p>
-        
-        {/* CTA Button */}
-        <div className="mb-16 animate-fade-in" style={{ animationDelay: '400ms' }}>
-          <button 
-            onClick={() => {
-              if (window.location.hostname === 'localhost') {
-                window.location.href = 'http://localhost:5000/contact';
-              } else {
-                const protocol = window.location.protocol;
-                const hostname = window.location.hostname;
-                const contactUrl = `${protocol}//${hostname}/contact`;
-                window.location.href = contactUrl;
-              }
-            }}
-            className="inline-flex items-center gap-3 px-8 py-4 bg-primary-foreground text-primary rounded-full font-body font-semibold text-lg shadow-elevated hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-pointer"
-          >
-            Schedule Assessment
-            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-          </button>
-        </div>
-        
-        {/* Contact Details */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-primary-foreground/90 animate-fade-in" style={{ animationDelay: '500ms' }}>
-          <a 
-            href="mailto:sales@cybaemtech.com" 
-            className="flex items-center gap-3 hover:text-primary-foreground transition-colors group"
-          >
-            <div className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center group-hover:bg-primary-foreground/20 transition-colors">
-              <Mail size={18} />
-            </div>
-            <span className="font-body">sales@cybaemtech.com</span>
-          </a>
-          
-          <a 
-            href="tel:+919028541383" 
-            className="flex items-center gap-3 hover:text-primary-foreground transition-colors group"
-          >
-            <div className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center group-hover:bg-primary-foreground/20 transition-colors">
-              <Phone size={18} />
-            </div>
-            <span className="font-body">+91 90285 41383</span>
-          </a>
-        </div>
+const CybersecurityCoverPage = () => (
+  <section className="page min-h-screen flex flex-col items-center justify-center px-4 md:px-8 lg:px-12 py-12 bg-gradient-subtle relative overflow-hidden">
+    <div className="relative z-10 text-center max-w-4xl mx-auto animate-fade-in">
+
+      {/* ✅ FIXED LOGO */}
+      <div className="mb-6 md:mb-8 lg:mb-10 flex justify-center">
+        <img
+          src={`${import.meta.env.BASE_URL}logo.png`}
+          alt="Cybaem Tech"
+          className="h-16 md:h-20 lg:h-24 w-auto object-contain"
+        />
       </div>
-      
-      {/* Bottom accent line */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-foreground/30 to-transparent" />
-    </section>
-  );
-};
+
+      <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold mb-4">
+        Cybersecurity Services
+      </h1>
+
+      <p className="text-lg md:text-xl lg:text-2xl mb-8">
+        Complete. Comprehensive. Protective.
+      </p>
+
+      <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 text-sm md:text-base">
+        <a href="mailto:sales@cybaemtech.com" className="flex items-center gap-2">
+          <Mail size={16} /> sales@cybaemtech.com
+        </a>
+        <a href="tel:+919028541383" className="flex items-center gap-2">
+          <Phone size={16} /> +91 90285 41383
+        </a>
+      </div>
+    </div>
+  </section>
+);
+
+/* ---------------- CTA PAGE ---------------- */
+
+const CybersecurityCTAPage = () => (
+  <section className="page min-h-screen flex flex-col items-center justify-center px-4 md:px-8 lg:px-12 py-12 bg-gradient-hero">
+    <div className="text-center max-w-4xl">
+
+      {/* ✅ Logo component already fixed */}
+      <Logo variant="light" className="mb-6 md:mb-8 scale-90 md:scale-100 lg:scale-110" />
+
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+        Ready to Secure Your Business?
+      </h2>
+
+      <button className="px-6 py-3 bg-white text-black rounded-full text-base md:text-lg font-semibold inline-flex items-center gap-2">
+        Schedule Assessment <ArrowRight size={18} />
+      </button>
+    </div>
+  </section>
+);
+
+/* ---------------- MAIN INDEX ---------------- */
 
 const Index = () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
-  
-  // Check for cybersecurity brochure request
-  const params = new URLSearchParams(window.location.search);
-  const brochureType = params.get('type');
-  const services = brochureType === 'cybersecurity' ? cybersecurityServices : digitalMarketingServices;
-  const totalPages = services.length + 2; // Cover + Services + CTA
 
-  useEffect(() => {
-    // Initialize refs array
-    sectionRefs.current = sectionRefs.current.slice(0, totalPages);
-  }, [totalPages]);
+  const params = new URLSearchParams(window.location.search);
+  const brochureType = params.get("type");
+  const services = brochureType === "cybersecurity" ? cybersecurityServices : digitalMarketingServices;
+  const totalPages = services.length + 2;
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!containerRef.current) return;
-      const scrollTop = window.scrollY;
-      const viewportCenter = scrollTop + window.innerHeight / 2;
+      const center = window.scrollY + window.innerHeight / 2;
+      let closest = 0;
+      let min = Infinity;
 
-      // Find which section is closest to viewport center
-      let closestPage = 0;
-      let closestDistance = Infinity;
-
-      sectionRefs.current.forEach((section, index) => {
-        if (!section) return;
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionCenter = sectionTop + sectionHeight / 2;
-        const distance = Math.abs(sectionCenter - viewportCenter);
-
-        if (distance < closestDistance) {
-          closestDistance = distance;
-          closestPage = index;
+      sectionRefs.current.forEach((el, i) => {
+        if (!el) return;
+        const d = Math.abs(el.offsetTop + el.offsetHeight / 2 - center);
+        if (d < min) {
+          min = d;
+          closest = i;
         }
       });
 
-      setCurrentPage(closestPage);
+      setCurrentPage(closest);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [totalPages]);
-
-  const navigateToPage = (page: number) => {
-    const section = sectionRefs.current[page];
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
+  }, []);
 
   return (
-    <div ref={containerRef} className="relative">
-      {/* Navigation */}
-      <BrochureNav 
-        currentPage={currentPage} 
-        totalPages={totalPages} 
-        onNavigate={navigateToPage}
-        brochureType={brochureType || 'digital-marketing'}
+    <div id="brochure-content">
+      <BrochureNav
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onNavigate={(p) => sectionRefs.current[p]?.scrollIntoView({ behavior: "smooth" })}
+        brochureType={brochureType || "digital-marketing"}
       />
 
-      {/* Cover Page */}
-      <div ref={(el) => { if (el) sectionRefs.current[0] = el; }}>
-        {brochureType === 'cybersecurity' ? <CybersecurityCoverPage /> : <CoverPage />}
+      <div ref={(el) => (sectionRefs.current[0] = el)}>
+        {brochureType === "cybersecurity" ? <CybersecurityCoverPage /> : <CoverPage />}
       </div>
 
-      {/* Service Pages */}
-      {services.map((service, index) => (
-        <div 
-          key={service.step}
-          ref={(el) => { if (el) sectionRefs.current[index + 1] = el; }}
-        >
-          <ServicePage
-            step={service.step}
-            title={service.title}
-            items={service.items}
-            icon={service.icon}
-            isEven={index % 2 === 1}
-          />
+      {services.map((service, i) => (
+        <div key={service.step} ref={(el) => (sectionRefs.current[i + 1] = el)}>
+          <ServicePage {...service} isEven={i % 2 === 1} />
         </div>
       ))}
 
-      {/* CTA Page */}
-      <div ref={(el) => { if (el) sectionRefs.current[services.length + 1] = el; }}>
-        {brochureType === 'cybersecurity' ? <CybersecurityCTAPage /> : <CTAPage />}
+      <div ref={(el) => (sectionRefs.current[services.length + 1] = el)}>
+        {brochureType === "cybersecurity" ? <CybersecurityCTAPage /> : <CTAPage />}
       </div>
     </div>
   );

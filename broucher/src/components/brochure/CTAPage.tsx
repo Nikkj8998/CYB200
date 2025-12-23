@@ -3,7 +3,7 @@ import Logo from "./Logo";
 
 const CTAPage = () => {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-24 relative overflow-hidden bg-gradient-hero">
+    <section className="page min-h-screen flex flex-col items-center justify-center px-4 md:px-8 lg:px-12 py-12 relative overflow-hidden bg-gradient-hero">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10" style={{
         backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
@@ -16,22 +16,22 @@ const CTAPage = () => {
       
       <div className="relative z-10 text-center max-w-4xl mx-auto">
         {/* Logo */}
-        <div className="mb-6 flex justify-center animate-fade-in">
-          <Logo variant="light" className="scale-125" />
+        <div className="mb-4 md:mb-6 flex justify-center animate-fade-in">
+          <Logo variant="light" className="scale-90 md:scale-100 lg:scale-110" />
         </div>
         
         {/* Main CTA Heading */}
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-8 leading-tight animate-fade-in mt-8" style={{ animationDelay: '200ms' }}>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary-foreground mb-6 leading-tight animate-fade-in" style={{ animationDelay: '200ms' }}>
           Ready to Grow Your Brand?
         </h2>
         
         {/* Description */}
-        <p className="text-xl md:text-2xl text-primary-foreground/80 font-body font-light leading-relaxed mb-12 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '300ms' }}>
+        <p className="text-base md:text-lg lg:text-xl text-primary-foreground/80 font-body font-light leading-relaxed mb-8 max-w-2xl mx-auto animate-fade-in text-sm" style={{ animationDelay: '300ms' }}>
           Partner with Cybaem Tech for ROI-driven digital marketing solutions that deliver measurable growth.
         </p>
         
         {/* CTA Button */}
-        <div className="mb-16 animate-fade-in" style={{ animationDelay: '400ms' }}>
+        <div className="mb-12 animate-fade-in" style={{ animationDelay: '400ms' }}>
           <button 
             onClick={() => {
               if (window.location.hostname === 'localhost') {
@@ -44,31 +44,31 @@ const CTAPage = () => {
                 window.location.href = contactUrl;
               }
             }}
-            className="inline-flex items-center gap-3 px-8 py-4 bg-primary-foreground text-primary rounded-full font-body font-semibold text-lg shadow-elevated hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-pointer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-primary-foreground text-primary rounded-full font-body font-semibold text-base shadow-elevated hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-pointer"
           >
             Get Started Today
-            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
         
         {/* Contact Details */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-primary-foreground/90 animate-fade-in" style={{ animationDelay: '500ms' }}>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-primary-foreground/90 animate-fade-in text-sm" style={{ animationDelay: '500ms' }}>
           <a 
             href="mailto:sales@cybaemtech.com" 
-            className="flex items-center gap-3 hover:text-primary-foreground transition-colors group"
+            className="flex items-center gap-2 hover:text-primary-foreground transition-colors group"
           >
-            <div className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center group-hover:bg-primary-foreground/20 transition-colors">
-              <Mail size={18} />
+            <div className="w-8 h-8 rounded-full bg-primary-foreground/10 flex items-center justify-center group-hover:bg-primary-foreground/20 transition-colors">
+              <Mail size={14} />
             </div>
             <span className="font-body">sales@cybaemtech.com</span>
           </a>
           
           <a 
             href="tel:+919028541383" 
-            className="flex items-center gap-3 hover:text-primary-foreground transition-colors group"
+            className="flex items-center gap-2 hover:text-primary-foreground transition-colors group"
           >
-            <div className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center group-hover:bg-primary-foreground/20 transition-colors">
-              <Phone size={18} />
+            <div className="w-8 h-8 rounded-full bg-primary-foreground/10 flex items-center justify-center group-hover:bg-primary-foreground/20 transition-colors">
+              <Phone size={14} />
             </div>
             <span className="font-body">+91 90285 41383</span>
           </a>
