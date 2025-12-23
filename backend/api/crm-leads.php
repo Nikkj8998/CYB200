@@ -399,31 +399,38 @@ function createLead($pdo) {
     
     try {
         $stmt = $pdo->prepare($sql);
+        
+        // Convert is_junk to integer (0 or 1)
+        $isJunk = 0;
+        if ($input['is_junk'] === true || $input['is_junk'] === 1 || $input['is_junk'] === '1' || $input['is_junk'] === 'true') {
+            $isJunk = 1;
+        }
+        
         $stmt->execute([
             ':lead_id' => $leadId,
-            ':name' => $input['full_name'],
-            ':full_name' => $input['full_name'],
-            ':phone' => $input['mobile_number'],
-            ':mobile_number' => $input['mobile_number'],
-            ':email' => $input['email'] ?? null,
-            ':company_name' => $input['company_name'] ?? null,
-            ':country' => $input['location'] ?? null,
-            ':location' => $input['location'] ?? null,
-            ':website' => $input['website'] ?? null,
+            ':name' => $input['full_name'] ?? '',
+            ':full_name' => $input['full_name'] ?? '',
+            ':phone' => $input['mobile_number'] ?? '',
+            ':mobile_number' => $input['mobile_number'] ?? '',
+            ':email' => $input['email'] ?? '',
+            ':company_name' => $input['company_name'] ?? '',
+            ':country' => $input['location'] ?? '',
+            ':location' => $input['location'] ?? '',
+            ':website' => $input['website'] ?? '',
             ':lead_source' => $input['lead_source'] ?? 'Other',
-            ':campaign_name' => $input['campaign_name'] ?? null,
-            ':service_interest' => $input['service_interest'] ?? null,
+            ':campaign_name' => $input['campaign_name'] ?? '',
+            ':service_interest' => $input['service_interest'] ?? '',
             ':lead_status' => $input['lead_status'] ?? 'New - Not Contacted',
             ':lead_quality' => $input['lead_quality'] ?? 'Cold',
             ':lead_owner' => $input['lead_owner'] ?? 'Unassigned',
-            ':lead_generated_at' => $input['lead_generated_at'] ?? date('Y-m-d H:i:s'),
+            ':lead_generated_at' => !empty($input['lead_generated_at']) ? $input['lead_generated_at'] : date('Y-m-d H:i:s'),
             ':preferred_channel' => $input['preferred_channel'] ?? 'Call',
-            ':expected_deal_value' => $input['expected_deal_value'] ?? 0,
-            ':probability_percent' => $input['probability_percent'] ?? 0,
-            ':message' => $input['original_message'] ?? null,
-            ':original_message' => $input['original_message'] ?? null,
-            ':notes' => $input['notes'] ?? null,
-            ':is_junk' => $input['is_junk'] ?? false,
+            ':expected_deal_value' => (int)($input['expected_deal_value'] ?? 0),
+            ':probability_percent' => (int)($input['probability_percent'] ?? 0),
+            ':message' => $input['original_message'] ?? '',
+            ':original_message' => $input['original_message'] ?? '',
+            ':notes' => $input['notes'] ?? '',
+            ':is_junk' => $isJunk,
             ':created_by' => $input['created_by'] ?? 'System',
             ':entry_source' => 'manual'
         ]);

@@ -79,6 +79,15 @@ interface Lead {
   message: string;
   notes: string;
   updated_at: string;
+  // Additional fields for form
+  location?: string;
+  website?: string;
+  campaign_name?: string;
+  service_interest?: string;
+  lead_quality?: string;
+  lead_owner?: string;
+  preferred_channel?: string;
+  expected_deal_value?: number;
   // Legacy field mappings for compatibility
   status?: string;
   company?: string;
@@ -436,10 +445,31 @@ export const Leads = () => {
     }
 
     try {
-      const response = await api.leads.create(newLead);
+      // Map form fields to API field names
+      const apiPayload = {
+        full_name: newLead.full_name || '',
+        mobile_number: newLead.phone || '',
+        email: newLead.email || '',
+        company_name: newLead.company_name || newLead.company || '',
+        location: newLead.location || '',
+        website: newLead.website || '',
+        lead_source: newLead.lead_source || newLead.source || 'Website',
+        campaign_name: newLead.campaign_name || '',
+        service_interest: newLead.service_interest || '',
+        lead_status: newLead.lead_status || newLead.status || 'New - Not Contacted',
+        lead_quality: newLead.lead_quality || '',
+        lead_owner: newLead.lead_owner || '',
+        preferred_channel: newLead.preferred_channel || '',
+        expected_deal_value: newLead.expected_deal_value || 0,
+        original_message: newLead.questions || newLead.message || '',
+        notes: newLead.note || newLead.notes || ''
+      };
+
+      const response = await api.leads.create(apiPayload);
       if (response.success) {
         toast.success('Lead created successfully');
         setAddDialogOpen(false);
+        setNewLead({}); // Reset form
         loadLeads(false);
       } else {
         toast.error(response.message || 'Failed to create lead');
